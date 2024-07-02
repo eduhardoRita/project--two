@@ -14,15 +14,23 @@
         <img class="header__img" src="./img/img-header-2.jpg" alt="logo de empresa 'Speed Wheels'">
         <nav class="header__links">
             <a href="./index.html">Inicio</a>
-            <a href="">Servicios</a>
+            <a href="#">Servicios</a>
+            <a href="./registro.html">Registro</a>
             <a href="">Asistencia telefonica</a>
-            <a href="">Asistencia vial</a>
         </nav>
         <section class="header__icons">
             <i><img src="./img/facebook.svg" alt="icono de facebook"></i>
             <i><img src="./img/instagram.svg" alt="icono de instagram"></i>
             <i><img src="./img/twitter.svg" alt="icono de  twitter"></i>
-            <i><img src="./img/menu.svg" alt="icono del menu"></i>
+            <i class="header__icons--menu"><img src="./img/menu.svg" alt="icono del menu"></i>
+        </section>
+        <section class="header__menu">
+            <span>Menu</span>
+            <p>Tablas de precios &#40;Proximante&#41;</p>
+            <p>Control de servicios &#40;Proximante&#41;</p>
+            <p>Talleres afiliados &#40;Proximante&#41;</p>
+            <p>Ubicacion &#40;Proximante&#41;</p>
+            <p>Salir</p>
         </section>
     </header>
     <main class="main__services">
@@ -87,13 +95,19 @@
                 </div>
             </section>
         </article>
-        <article class="main__services-comments">
+        <article class="main__services--comments">
             <h2>Opina sobre nuestros servicios</h2>
-            <form class="main__services-form">
-                <div class="main__services-textarea">
-                    <label>Escribe aqui tus comentarios:</label>
-                    <textarea></textarea>
-                </div>
+            <form class="main__services--form">
+                <fieldset class="main__services--fielset">
+                    <div class="main__comments"></div>
+                    <div class="main__services--textarea">
+                        <label>Escribe aqui tus comentarios:</label>
+                        <textarea id="main__services--comments-area"></textarea>
+                    </div>
+                    <div class="main__services--comments-button">
+                        <input type="submit" value="Enviar" id="submitButton">
+                    </div>
+                </fieldset>
             </form>
         </article>
     </main>
@@ -113,4 +127,6 @@
             </small>
         </section>
     </footer>
+    <script src="./function/functionServices.js" defer></script>
 </body>
+</html>
