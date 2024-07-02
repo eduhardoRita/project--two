@@ -32,7 +32,7 @@
             </section>
             <section class="main__welcome">
                 <section class="main__welcome--text">
-                    <h2>¡Bienvenido a Speed Wheels!</h2>
+                    <h2>¡Bienvenido a <i>Speed Wheels</i>!</h2>
                     <p>
                         En Speed Wheels, nos enorgullece ofrecer un servicio excepcional de mantenimiento y reparación de vehículos para nuestros clientes. Con años de experiencia en el sector automotriz, nuestro equipo de mecánicos altamente calificados está aquí para brindarte soluciones confiables y efectivas para todas tus necesidades de mantenimiento y reparación. En nuestro taller, nos esforzamos por proporcionar un servicio personalizado y profesional a cada cliente que entra por nuestras puertas. Ya sea que necesites una simple revisión de rutina, una reparación compleja o cualquier otro servicio, puedes confiar en nosotros para hacer el trabajo de manera eficiente y a un precio justo. <br><br>
                         
@@ -45,31 +45,40 @@
                     <button>Ver mas...</button>
                 </section>
                 <section class="main__welcome--img">
-                    <img src="./img/ma-img.jpg" alt="">
+                    <img src="./img/mechanic_887176.png" alt="imagen de bienvenida">
                 </section>
             </section>
         </article>
         <article class="main__check">
-            <span>Averigua si tu auto necesita servicio</span>
-            <div class="main__check--options">
-                <label for="number">Selecciona el tipo de aceite usado en tu ultimo servicio</label>
-                <select>
-                    <option value="">-- Aceite --</option>
-                    <option value="normal">Normal</option>
-                    <option value="sintetic">Sintetico</option>
-                </select>
-            </div>
+                <form>
+                    <fieldset>
+                        <legend>Averigua si tu auto requiere servicio</legend>
+                        <div class="main__check--options">
+                            <label for="number">Selecciona el tipo de aceite usado en tu ultimo servicio:</label>
+                            <select>
+                                <option value="">-- Aceite --</option>
+                                <option value="normal">Normal</option>
+                                <option value="sintetic">Sintetico</option>
+                            </select>
+                        </div>
+            
+                        <div class="main__check--inputs">
+                            <label for="value-one">Introduce el kilometraje del ultimo servicio:</label>
+                            <input type="number" id="value-one" name="value-one">
+                        </div>
+            
+                        <div class="main__check--inputs">
+                            <label for="value-two">Introduce el kilometraje actual:</label>
+                            <input type="number" id="value-two" name="value-two">
+                        </div>
 
-            <div class="main__check--inputs">
-                <label for="value">Introduce el kilometraje del ultimo servicio</label>
-                <input type="number" id="value" name="value">
-            </div>
-
-            <div class="main__check--inputs">
-                <label for="value">Introduce el kilometraje actual</label>
-                <input type="number" id="value" name="value">
-            </div>
+                        <div class="main__check--sumbit">
+                            <input type="submit" value="Enviar">
+                        </div>
+                    </fieldset>
+                </form>
         </article>
+        
         <article class="main__offers">
             <h3>Conoce nuestras ofertas en servicios</h3>
             <section class="main__offers--packs">
@@ -104,7 +113,7 @@
                     </section>
                 </div>
                 <div class="main__offers--packs-two">
-                    <h4>Servicio Mayor</h4>
+                    <span>Servicio Mayor</span>
                     <ul>
                         <li>Cambio de Aceite y filtro</li>
                         <li>Cambio de bujias</li>
@@ -120,14 +129,14 @@
                         <li>Lavado de motor y carroceria</li>
                     </ul>
                     <section>
-                        <h5>Varia el precio segun el vehiculo</h5>
+                        <span class="main__offers--packs-button">Varia el precio segun el vehiculo</span>
                         <button>Cotizar servicio</button>
                     </section>
                 </div>
             </section>
         </article>
         <article class="main__photos">
-            <h5>Conoce nuestras instalaciones</h5>
+            <h4>Conoce nuestras instalaciones</h4>
             <section>
                 <div>
                     <img src="./img/imag-one.jpg" alt="imagen de taller">
@@ -143,19 +152,20 @@
     </main>
 
     <aside class="aside">
-        <h6>Marcas con las que trabajamos</h6>
+        <h5>Marcas con las que trabajamos</h5>
         <section>
             <div><img src="./img/mark-one.png" alt="marca fram"></div>
-            <div><img src="./img/mark-two.png" alt=""></div>
-            <div><img src="./img/mark-three.png" alt=""></div>
-            <div><img src="./img/mark-four.jpeg" alt=""></div>
-            <div><img src="./img/mark-five.png" alt=""></div>
-            <div><img src="./img/mark-six.png" alt=""></div>
+            <div><img src="./img/mark-two.png" alt="marca mobil"></div>
+            <div><img src="./img/mark-three.png" alt="marca duralast"></div>
+            <div><img src="./img/mark-four.jpeg" alt="marca valvoline"></div>
+            <div><img src="./img/mark-five.png" alt="marca prestone"></div>
+            <div><img src="./img/mark-six.png" alt="marca mann filter"></div>
+            <div><img src="./img/mark-seven.png" alt="marca ngk"></div>
         </section>
     </aside>
 
     <footer class="footer">
-        <div><img src="./img/img-footer.jpg" alt=""></div>
+        <div><img src="./img/img-footer.jpg" alt="imagen de paisaje con auto"></div>
         <section>
             <nav>
                 <a href="https://www.facebook.com/SpeedWheelsqro">facebook</a>
@@ -166,7 +176,7 @@
             <p>Terminos y condiciones</p>
             <p>Ubicacion</p>
             <small>
-                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos.
             </small>
         </section>
     </footer>
