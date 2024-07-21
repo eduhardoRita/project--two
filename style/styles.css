@@ -3,40 +3,107 @@ body {
   background-color: #2f2b2d;
 }
 body .header {
-  width: 100%;
-  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  width: 100%;
+  height: 60px;
+  background-color: #000000;
   border-bottom: 3px solid #dc1f30;
   position: fixed;
   z-index: 1;
+}
+@media screen and (max-width: 46rem) {
+  body .header {
+    height: auto;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .header {
+    flex-direction: column;
+  }
 }
 body .header .header__img {
   width: 80px;
   padding: 10px;
 }
+@media screen and (max-width: 80em) {
+  body .header .header__img {
+    width: 75px;
+  }
+}
 body .header .header__links {
   width: 50%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-body .header .header__links a {
+@media screen and (max-width: 80em) {
+  body .header .header__links {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .header .header__links {
+    gap: 5px 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .header .header__links {
+    gap: 5px 40px;
+    padding: 10px;
+    padding-top: 0;
+    box-sizing: border-box;
+  }
+}
+body .header .header__links .header__links--link {
   font-family: "Caveat", cursive;
   color: aliceblue;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 600;
 }
-body .header .header__links a:hover {
+@media screen and (max-width: 80em) {
+  body .header .header__links .header__links--link {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+}
+body .header .header__links .header__links--link:hover {
   color: #dc1f30;
 }
 body .header .header__icons {
-  width: 30%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 30%;
   padding: 10px;
+}
+@media screen and (max-width: 80em) {
+  body .header .header__icons {
+    width: 25%;
+    padding: 8px;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .header .header__icons {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 40%;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .header .header__icons {
+    position: absolute;
+    width: 90%;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    margin-top: 60px;
+    padding: 10px 0;
+  }
 }
 body .header .header__icons i {
   cursor: pointer;
@@ -47,6 +114,16 @@ body .header .header__icons i:hover {
 body .header .header__icons i img {
   width: 25px;
   filter: invert(100%);
+}
+@media screen and (max-width: 80em) {
+  body .header .header__icons i img {
+    width: clamp(22px, 2vw, 25px);
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .header .header__icons i img {
+    width: clamp(17px, 6vw, 25px);
+  }
 }
 body .header .header__icons i img:hover {
   opacity: 0.5;
@@ -65,11 +142,16 @@ body .header .header__menu p {
   padding: 20px;
   font-size: 1.5rem;
 }
+@media screen and (max-width: 46rem) {
+  body .header .header__menu p {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+  }
+}
 body .header .header__menu.header__menu--show {
-  position: absolute;
   display: flex;
   flex-direction: column;
   width: 30%;
+  position: absolute;
   background-color: #000000;
   height: auto;
   right: 0;
@@ -78,13 +160,46 @@ body .header .header__menu.header__menu--show {
   border-left: 2px solid #dc1f30;
   border-bottom: 2px solid #dc1f30;
 }
-body .main .main__title {
+body .header .header__menu.header__menu--show .header__menu--icon-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: none;
+}
+@media screen and (max-width: 46rem) {
+  body .header .header__menu.header__menu--show .header__menu--icon-close {
+    display: block;
+  }
+}
+body .header .header__menu.header__menu--show .header__menu--icon-close img {
+  filter: invert(100%);
+}
+@media screen and (max-width: 80em) {
+  body .header .header__menu.header__menu--show {
+    width: clamp(40%, 3vw, 50%);
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .header .header__menu.header__menu--show {
+    right: 10%;
+    width: 80%;
+    top: 130px;
+    border: 2px solid #dc1f30;
+  }
+}
+body .main .main__section-one {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   justify-content: center;
 }
-body .main .main__title h1 {
-  width: 42%;
+@media screen and (max-width: 28rem) {
+  body .main .main__section-one {
+    background-color: #2f2b2d;
+  }
+}
+body .main .main__section-one .main__section-one--title {
+  width: 45%;
   font-size: 2.75rem;
   text-align: center;
   letter-spacing: 3px;
@@ -96,6 +211,36 @@ body .main .main__title h1 {
   border-radius: 100px;
   border: 2px solid #ff0000;
 }
+@media screen and (max-width: 96.875em) {
+  body .main .main__section-one .main__section-one--title {
+    width: 52.5%;
+  }
+}
+@media screen and (max-width: 80em) {
+  body .main .main__section-one .main__section-one--title {
+    width: 70%;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__section-one .main__section-one--title {
+    border: none;
+    padding: 0;
+    width: 90%;
+    background-color: #2f2b2d;
+    margin-top: 115px;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    text-shadow: -1px 0px 2px #ffffff;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__section-one .main__section-one--title {
+    width: 84%;
+    margin-top: 130px;
+    background-color: #2f2b2d;
+    font-size: clamp(1.8rem, 8vw, 2rem);
+  }
+}
 body .main .main__welcome {
   display: flex;
   width: 90%;
@@ -104,19 +249,98 @@ body .main .main__welcome {
   border: 2px solid #ffffff;
   overflow: hidden;
   position: relative;
-  background-color: #dc1f30;
+  background-color: #001f93;
   border-radius: 15px;
 }
-body .main .main__welcome .main__welcome--text {
-  width: 80%;
-  background-color: #dc1f30;
-  padding: 20px;
+@media screen and (max-width: 80em) {
+  body .main .main__welcome {
+    background-color: #001f93;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "main__welcome--title main__welcome--title main__welcome--title" "main__welcome--text main__welcome--text main__welcome--img" "main__welcome--text main__welcome--text main__welcome--img";
+  }
+  body .main .main__welcome .main__welcome--title {
+    grid-area: main__welcome--title;
+  }
+  body .main .main__welcome .main__welcome--text {
+    grid-area: main__welcome--text;
+    width: 100%;
+  }
+  body .main .main__welcome .main__welcome--img {
+    grid-area: main__welcome--img;
+    display: flex;
+    width: 20%;
+  }
 }
-body .main .main__welcome .main__welcome--text h2 {
-  text-align: center;
+@media screen and (max-width: 46rem) {
+  body .main .main__welcome {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: #c2c5ce;
+  }
+}
+body .main .main__welcome .main__welcome--title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  color: #ff0000;
+  position: absolute;
   font-size: 2.5rem;
-  color: #001f93;
-  margin: 20px;
+  text-shadow: -1px 0px 2px #000000;
+}
+@media screen and (max-width: 80em) {
+  body .main .main__welcome .main__welcome--title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 10px 0px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__welcome .main__welcome--title {
+    width: 100%;
+    font-size: clamp(1.725rem, 4vw, 2rem);
+    padding: 0 10px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__welcome .main__welcome--title {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 20px;
+    position: static;
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+    text-align: center;
+  }
+}
+body .main .main__welcome .main__welcome--text {
+  width: 100%;
+  background-color: #001f93;
+  padding-top: 80px;
+}
+@media screen and (max-width: 80em) {
+  body .main .main__welcome .main__welcome--text {
+    background-color: #001f93;
+    padding-top: clamp(30px, 4vw, 80px);
+    width: 110%;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__welcome .main__welcome--text {
+    width: 100%;
+    padding-top: 50px;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__welcome .main__welcome--text {
+    padding-top: 0px;
+  }
 }
 body .main .main__welcome .main__welcome--text p {
   font-size: 1.25rem;
@@ -124,11 +348,30 @@ body .main .main__welcome .main__welcome--text p {
   padding: 0 35px;
   color: #cfc4c4;
 }
+@media screen and (max-width: 80em) {
+  body .main .main__welcome .main__welcome--text p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__welcome .main__welcome--text p {
+    margin: 5px;
+    font-size: clamp(0.875rem, 4vw, 1rem);
+    padding: 0 10px;
+  }
+}
 body .main .main__welcome .main__welcome--text p span {
   display: flex;
-  width: 100%;
+  justify-content: space-between;
+  align-items: center;
   justify-content: center;
+  width: 100%;
   font-size: 2rem;
+}
+@media screen and (max-width: 80em) {
+  body .main .main__welcome .main__welcome--text p span {
+    display: none;
+  }
 }
 body .main .main__welcome .main__welcome--text .main__welcome--button {
   position: absolute;
@@ -148,37 +391,80 @@ body .main .main__welcome .main__welcome--text .main__welcome--button:hover {
   box-shadow: none;
   background-color: #ffffff;
 }
+@media screen and (max-width: 46rem) {
+  body .main .main__welcome .main__welcome--text .main__welcome--button {
+    width: 80px;
+    font-size: 14px;
+  }
+}
 body .main .main__welcome .main__welcome--img {
   width: 20%;
   padding: 50px;
 }
+@media screen and (max-width: 80em) {
+  body .main .main__welcome .main__welcome--img {
+    width: 100%;
+    padding: 10px;
+    padding-top: 75px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+}
 body .main .main__welcome .main__welcome--img img {
   width: 100%;
-  height: 500px;
+  height: 400px;
+  display: flex;
+}
+@media screen and (max-width: 80em) {
+  body .main .main__welcome .main__welcome--img img {
+    width: clamp(60%, 4vw, 80%);
+    height: auto;
+  }
 }
 body .main .main__check {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  justify-content: center;
   align-items: center;
   margin: 20px auto;
   background-color: #000000;
   padding: 20px;
   box-sizing: border-box;
 }
-body .main .main__check form {
+body .main .main__check .main__check--form {
   width: 85%;
 }
-body .main .main__check form .main__form-fielset {
+@media screen and (max-width: 96.875em) {
+  body .main .main__check .main__check--form {
+    width: 95%;
+  }
+}
+body .main .main__check .main__check--form .main__check--fieldset {
   display: flex;
   flex-direction: column;
   gap: 30px;
   padding: 30px 120px;
   border: 3px solid #ff0000;
 }
-body .main .main__check form .main__form-fielset legend {
+@media screen and (max-width: 96.875em) {
+  body .main .main__check .main__check--form .main__check--fieldset {
+    padding: 30px 70px;
+  }
+}
+@media screen and (max-width: 80em) {
+  body .main .main__check .main__check--form .main__check--fieldset {
+    padding: 30px 50px;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__check .main__check--form .main__check--fieldset {
+    padding: 30px;
+  }
+}
+body .main .main__check .main__check--form .main__check--fieldset legend {
   font-size: 2.5rem;
   color: #ffffff;
   font-weight: 600;
@@ -186,52 +472,131 @@ body .main .main__check form .main__form-fielset legend {
   padding: 0 20px;
   letter-spacing: 3px;
 }
-body .main .main__check form .main__form-fielset .main__check--options {
+@media screen and (max-width: 80em) {
+  body .main .main__check .main__check--form .main__check--fieldset legend {
+    font-size: clamp(1.25rem, 3vw, 2.25rem);
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__check .main__check--form .main__check--fieldset legend {
+    font-size: clamp(1rem, 5vw, 1.75rem);
+    letter-spacing: 0;
+  }
+}
+body .main .main__check .main__check--form .main__check--fieldset .main__check--options {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
-body .main .main__check form .main__form-fielset .main__check--options label {
+@media screen and (max-width: 46rem) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--options {
+    flex-direction: column;
+  }
+}
+body .main .main__check .main__check--form .main__check--fieldset .main__check--options label {
   font-size: 1.5rem;
   color: #b4cff5;
   letter-spacing: 3px;
 }
-body .main .main__check form .main__form-fielset .main__check--options label:hover {
+@media screen and (max-width: 80em) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--options label {
+    font-size: clamp(1.25rem, 2vw, 2.25rem);
+    letter-spacing: 0;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--options label {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--options label {
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+  }
+}
+body .main .main__check .main__check--form .main__check--fieldset .main__check--options label:hover {
   color: #dc1f30;
 }
-body .main .main__check form .main__form-fielset .main__check--options select {
+body .main .main__check .main__check--form .main__check--fieldset .main__check--options select {
   width: 310px;
   font-size: 1.25rem;
 }
-body .main .main__check form .main__form-fielset .main__check--options select:hover {
+body .main .main__check .main__check--form .main__check--fieldset .main__check--options select:hover {
   transform: scale(1.09);
 }
-body .main .main__check form .main__form-fielset .main__check--options select option {
+body .main .main__check .main__check--form .main__check--fieldset .main__check--options select option {
   text-align: center;
 }
-body .main .main__check form .main__form-fielset .main__check--inputs {
+@media screen and (max-width: 96.875em) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--options select {
+    width: 290px;
+  }
+}
+@media screen and (max-width: 80em) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--options select {
+    width: clamp(145px, 21vw, 290px);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+}
+body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
-body .main .main__check form .main__form-fielset .main__check--inputs label {
+@media screen and (max-width: 46rem) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs {
+    flex-direction: column;
+  }
+}
+body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label {
   font-size: 1.5rem;
   color: #b4cff5;
   letter-spacing: 3px;
 }
-body .main .main__check form .main__form-fielset .main__check--inputs label:hover {
+@media screen and (max-width: 80em) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label {
+    font-size: clamp(1.25rem, 2vw, 2.25rem);
+    letter-spacing: 0;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label {
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+  }
+}
+body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label:hover {
   color: #dc1f30;
 }
-body .main .main__check form .main__form-fielset .main__check--inputs input {
+body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs input {
   width: 300px;
+  height: 20px;
 }
-body .main .main__check form .main__form-fielset .main__check--inputs input:hover {
+@media screen and (max-width: 96.875em) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs input {
+    width: 283px;
+  }
+}
+@media screen and (max-width: 80em) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs input {
+    width: clamp(145px, 20.5vw, 290px);
+  }
+}
+body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs input:hover {
   transform: scale(1.09);
 }
-body .main .main__check form .main__form-fielset .main__check--sumbit {
+body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit {
   text-align: center;
 }
-body .main .main__check form .main__form-fielset .main__check--sumbit input {
+body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit input {
   width: 300px;
   font-size: 1.5rem;
   font-weight: 900;
@@ -241,12 +606,26 @@ body .main .main__check form .main__form-fielset .main__check--sumbit input {
   transition: all 0.3s ease;
   cursor: pointer;
 }
-body .main .main__check form .main__form-fielset .main__check--sumbit input:hover {
+@media screen and (max-width: 46rem) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit input {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit input {
+    width: 120px;
+    font-size: 1.25rem;
+  }
+}
+body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit input:hover {
   background-color: #ffffff;
   color: #338726;
 }
-body .main .main__check .answer-box {
-  width: 100%;
+body .main .main__check .main__check--answer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 200px;
   background-color: #dc1f30;
   color: #e8e900;
@@ -255,12 +634,14 @@ body .main .main__check .answer-box {
   font-weight: 900;
   margin: 20px 0;
   border: 2px solid #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
-body .main .main__check .answer-box .main__check-new-button {
+@media screen and (max-width: 46rem) {
+  body .main .main__check .main__check--answer-box {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    padding: 0px 10px;
+  }
+}
+body .main .main__check .main__check--answer-box .main__check--new-button {
   width: 300px;
   background-color: #338726;
   margin: 20px;
@@ -269,8 +650,18 @@ body .main .main__check .answer-box .main__check-new-button {
   font-weight: 900;
   padding: 10px;
 }
-body .main .main__check .answer-box-two {
-  width: 100%;
+@media screen and (max-width: 46rem) {
+  body .main .main__check .main__check--answer-box .main__check--new-button {
+    margin: 20px 0;
+    width: 180px;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+}
+body .main .main__check .main__check--answer-box-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 200px;
   background-color: #0dc01f;
   color: #000000;
@@ -279,13 +670,18 @@ body .main .main__check .answer-box-two {
   font-weight: 900;
   margin: 20px 0;
   border: 2px solid #ffffff;
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__check .main__check--answer-box-two {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    padding: 0px 10px;
+  }
+}
+body .main .main__check .main__check--answer-box-three {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-body .main .main__check .answer-box-three {
-  width: 100%;
   height: 200px;
   background-color: #dc1f30;
   color: #e8e900;
@@ -294,12 +690,14 @@ body .main .main__check .answer-box-three {
   font-weight: 900;
   margin: 20px 0;
   border: 2px solid #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
-body .main .main__check .answer-box-three .main__check-new-button-two {
+@media screen and (max-width: 46rem) {
+  body .main .main__check .main__check--answer-box-three {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    padding: 0px 10px;
+  }
+}
+body .main .main__check .main__check--answer-box-three .main__check--new-button-two {
   width: 300px;
   background-color: #338726;
   margin: 20px;
@@ -308,8 +706,18 @@ body .main .main__check .answer-box-three .main__check-new-button-two {
   font-weight: 900;
   padding: 10px;
 }
-body .main .main__check .answer-box-four {
-  width: 100%;
+@media screen and (max-width: 46rem) {
+  body .main .main__check .main__check--answer-box-three .main__check--new-button-two {
+    margin: 20px 0;
+    width: 180px;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+}
+body .main .main__check .main__check--answer-box-four {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 200px;
   background-color: #0dc01f;
   color: #000000;
@@ -318,10 +726,12 @@ body .main .main__check .answer-box-four {
   font-weight: 900;
   margin: 20px 0;
   border: 2px solid #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__check .main__check--answer-box-four {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    padding: 0px 10px;
+  }
 }
 body .main .main__offers h3 {
   font-size: 3.25rem;
@@ -330,35 +740,83 @@ body .main .main__offers h3 {
   text-shadow: -4px 0px 3px #ffffff;
   letter-spacing: 2px;
 }
+@media screen and (max-width: 80em) {
+  body .main .main__offers h3 {
+    font-size: clamp(2.25rem, 4vw, 3rem);
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__offers h3 {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__offers h3 {
+    font-size: clamp(1.75rem, 7vw, 2rem);
+    text-shadow: -1px 0px 3px #ffffff;
+  }
+}
 body .main .main__offers .main__offers--packs {
   display: flex;
   width: 100%;
   justify-content: space-around;
 }
+@media screen and (max-width: 46rem) {
+  body .main .main__offers .main__offers--packs {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
 body .main .main__offers .main__offers--packs .main__offers--packs-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 35%;
   background-color: #dc1f30;
   border: 2px solid #ffffff;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border-radius: 15px;
 }
+@media screen and (max-width: 96.875em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one {
+    width: 42.5%;
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one {
+    width: 80%;
+  }
+}
 body .main .main__offers .main__offers--packs .main__offers--packs-one span {
-  font-size: 2.5em;
+  font-size: 2.5rem;
   font-weight: 900;
   margin: 10px;
   padding: 10px;
   color: #000000;
   text-shadow: -2px 0px 2px #fffdfd;
 }
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one span {
+    font-size: clamp(1.25rem, 4vw, 2.5rem);
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one span {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    text-align: center;
+  }
+}
 body .main .main__offers .main__offers--packs .main__offers--packs-one ul {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one ul {
+    gap: 20px;
+  }
 }
 body .main .main__offers .main__offers--packs .main__offers--packs-one ul li {
   font-family: "Neuton", serif;
@@ -366,6 +824,16 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one ul li {
   color: #ffffff;
   text-shadow: -3px 0px 1px #000000;
   font-weight: 600;
+}
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one ul li {
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one ul li {
+    font-size: clamp(1.15rem, 4vw, 2rem);
+  }
 }
 body .main .main__offers .main__offers--packs .main__offers--packs-one section {
   display: flex;
@@ -375,30 +843,77 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one section {
   margin-top: 20px;
   padding: 40px 10px;
 }
+@media screen and (max-width: 96.875em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section {
+    gap: 35px;
+  }
+}
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-top: 0;
+    gap: 10px;
+  }
+}
 body .main .main__offers .main__offers--packs .main__offers--packs-one section div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #e8e900;
   border: 2px solid #000000;
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 85px;
 }
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div {
+    width: 90%;
+  }
+}
 body .main .main__offers .main__offers--packs .main__offers--packs-one section div .title-button {
   font-size: 1.45rem;
   margin: 5px;
-  padding: 10px;
+  padding: 5px;
   color: #000000;
   text-shadow: 4px 0px 2px #fffdfd;
+}
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .title-button {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .title-button {
+    font-size: clamp(1.15rem, 5vw, 2rem);
+    padding: 5px 0px;
+    margin: 15px 0px;
+  }
 }
 body .main .main__offers .main__offers--packs .main__offers--packs-one section div p {
   font-size: 1rem;
   font-weight: 900;
   text-shadow: 4px 0px 2px #ffffff;
   margin: 5px;
+}
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div p {
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div p {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    text-align: center;
+  }
 }
 body .main .main__offers .main__offers--packs .main__offers--packs-one section div button {
   width: 100px;
@@ -411,22 +926,42 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one section d
   transition: all 0.3s ease-in;
   cursor: pointer;
 }
+@media screen and (max-width: 28rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div button {
+    width: 60%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+}
 body .main .main__offers .main__offers--packs .main__offers--packs-one section div button:hover {
   color: #338726;
   background-color: #ffffff;
 }
 body .main .main__offers .main__offers--packs .main__offers--packs-two {
-  width: 35%;
-  background-color: #767681;
-  background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  width: 35%;
+  background-color: #767681;
   border-radius: 15px;
   border: 2px solid #ffffff;
+}
+@media screen and (max-width: 96.875em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two {
+    width: 42.5%;
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two {
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two {
+    width: 80%;
+  }
 }
 body .main .main__offers .main__offers--packs .main__offers--packs-two span {
   font-size: 2.5rem;
@@ -435,11 +970,27 @@ body .main .main__offers .main__offers--packs .main__offers--packs-two span {
   color: #000000;
   text-shadow: -2px 0px 2px #ffffff;
 }
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two span {
+    font-size: clamp(1.25rem, 4vw, 2.5rem);
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two span {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+}
 body .main .main__offers .main__offers--packs .main__offers--packs-two ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin: 0;
+}
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two ul {
+    gap: 25px;
+  }
 }
 body .main .main__offers .main__offers--packs .main__offers--packs-two ul li {
   font-family: "Neuton", serif;
@@ -448,17 +999,42 @@ body .main .main__offers .main__offers--packs .main__offers--packs-two ul li {
   text-shadow: -2px 0px 0px #000000;
   font-weight: 600;
 }
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two ul li {
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two ul li {
+    font-size: clamp(1.15rem, 4vw, 2rem);
+  }
+}
 body .main .main__offers .main__offers--packs .main__offers--packs-two section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 60%;
   height: 20%;
   background-color: #e8e900;
   border: 2px solid #000000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   border-radius: 85px;
   margin: 28px 0;
-  justify-content: center;
+}
+@media screen and (max-width: 96.875em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two section {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two section {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two section {
+    height: 150px;
+  }
 }
 body .main .main__offers .main__offers--packs .main__offers--packs-two section .main__offers--packs-button {
   font-size: 1.5rem;
@@ -467,6 +1043,16 @@ body .main .main__offers .main__offers--packs .main__offers--packs-two section .
   color: #000000;
   text-shadow: 4px 0px 2px #ffffff;
   text-align: center;
+}
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two section .main__offers--packs-button {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two section .main__offers--packs-button {
+    font-size: clamp(1.15rem, 5vw, 2rem);
+  }
 }
 body .main .main__offers .main__offers--packs .main__offers--packs-two section button {
   width: 180px;
@@ -478,6 +1064,17 @@ body .main .main__offers .main__offers--packs .main__offers--packs-two section b
   color: #fffdfd;
   transition: all 0.3s ease-in;
   cursor: pointer;
+}
+@media screen and (max-width: 96.875em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two section button {
+    width: 165px;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two section button {
+    width: 50%;
+    font-size: clamp(0.875rem, 3vw, 1.25rem);
+  }
 }
 body .main .main__offers .main__offers--packs .main__offers--packs-two section button:hover {
   color: #338726;
@@ -493,17 +1090,50 @@ body .main .main__photos h4 {
   text-shadow: -4px 0px 3px #ffffff;
   letter-spacing: 2px;
 }
+@media screen and (max-width: 80em) {
+  body .main .main__photos h4 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__photos h4 {
+    padding: 10px;
+    font-size: clamp(2rem, 6vw, 2.5rem);
+    text-shadow: -2px 0px 3px #ffffff;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main .main__photos h4 {
+    font-size: clamp(1.75rem, 8vw, 2rem);
+  }
+}
 body .main .main__photos section {
-  width: 90%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 90%;
   margin: 0 auto;
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__photos section {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
 }
 body .main .main__photos section div {
   width: 30%;
 }
+@media screen and (max-width: 46rem) {
+  body .main .main__photos section div {
+    width: 80%;
+  }
+}
 body .main .main__photos section div img {
   width: 100%;
+}
+body .main .main__photos section div img:hover {
+  transform: scale(1.2);
 }
 body .aside {
   width: 100%;
@@ -515,6 +1145,23 @@ body .aside h5 {
   text-shadow: -4px 0px 3px #ffffff;
   letter-spacing: 2px;
 }
+@media screen and (max-width: 80em) {
+  body .aside h5 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .aside h5 {
+    padding: 10px;
+    font-size: clamp(2rem, 6vw, 2.5rem);
+    text-shadow: -2px 0px 3px #ffffff;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .aside h5 {
+    font-size: clamp(1.75rem, 8vw, 2rem);
+  }
+}
 body .aside section {
   width: 90%;
   display: flex;
@@ -523,11 +1170,21 @@ body .aside section {
   justify-content: space-around;
   gap: 140px 40px;
 }
+@media screen and (max-width: 46rem) {
+  body .aside section {
+    gap: 80px;
+  }
+}
 body .aside section div {
   width: 300px;
   height: 150px;
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 46rem) {
+  body .aside section div {
+    width: 70%;
+  }
 }
 body .aside section div img {
   width: 100%;
@@ -544,15 +1201,20 @@ body .footer div {
   padding: 20px;
   height: 150px;
 }
+@media screen and (max-width: 46rem) {
+  body .footer div {
+    display: none;
+  }
+}
 body .footer div img {
   width: 100%;
   height: 100%;
 }
 body .footer section {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
-  flex-direction: column;
   padding: 20px;
 }
 body .footer section nav {
@@ -560,6 +1222,12 @@ body .footer section nav {
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
+}
+@media screen and (max-width: 28rem) {
+  body .footer section nav {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
 }
 body .footer section nav a {
   font-size: 1.5rem;
@@ -576,16 +1244,37 @@ body .footer section p {
 body .main__services article {
   width: 100%;
 }
-body .main__services article .main__services-title {
+body .main__services article .main__services--title {
   font-size: 3.25rem;
   text-align: center;
   color: #ff0000;
   text-shadow: -4px 0px 3px #ffffff;
   letter-spacing: 2px;
-  margin: 0px;
-  padding-top: 70px;
+  margin: 0;
+  padding-top: 90px;
+  padding-bottom: 40px;
+  font-size: clamp(2.5rem, 3vw, 3rem);
 }
-body .main__services article section {
+@media screen and (max-width: 80em) {
+  body .main__services article .main__services--title {
+    padding-top: 80px;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main__services article .main__services--title {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    padding-top: 130px;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main__services article .main__services--title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+body .main__services article .main__services--container {
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -593,34 +1282,71 @@ body .main__services article section {
   justify-content: space-around;
   gap: 30px 0;
 }
-body .main__services article section div {
+@media screen and (max-width: 80em) {
+  body .main__services article .main__services--container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main__services article .main__services--container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+body .main__services article .main__services--container .main__services--pack {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 40%;
   background-color: #872826;
   height: auto;
-  align-items: center;
 }
-body .main__services article section div h2 {
+@media screen and (max-width: 80em) {
+  body .main__services article .main__services--container .main__services--pack {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main__services article .main__services--container .main__services--pack {
+    width: 80%;
+  }
+}
+body .main__services article .main__services--container .main__services--pack span {
   font-size: 2rem;
   text-align: center;
   margin: 5px;
+  font-weight: 900;
 }
-body .main__services article section div ul {
+@media screen and (max-width: 46rem) {
+  body .main__services article .main__services--container .main__services--pack span {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+}
+body .main__services article .main__services--container .main__services--pack ul {
   width: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-body .main__services article section div ul li {
+body .main__services article .main__services--container .main__services--pack ul li {
   font-family: "Neuton", serif;
   font-size: 1.5rem;
   color: #fffdfd;
   text-shadow: -2px 0px 0px #000000;
   font-weight: 600;
 }
-body .main__services article section div button {
+@media screen and (max-width: 80em) {
+  body .main__services article .main__services--container .main__services--pack ul li {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main__services article .main__services--container .main__services--pack ul li {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+}
+body .main__services article .main__services--container .main__services--pack button {
   width: 200px;
   font-size: 1rem;
   font-weight: 900;
@@ -632,7 +1358,12 @@ body .main__services article section div button {
   transition: all 0.3s ease-in;
   cursor: pointer;
 }
-body .main__services article section div button:hover {
+@media screen and (max-width: 46rem) {
+  body .main__services article .main__services--container .main__services--pack button {
+    width: 50%;
+  }
+}
+body .main__services article .main__services--container .main__services--pack button:hover {
   color: #338726;
   background-color: #ffffff;
 }
@@ -646,6 +1377,14 @@ body .main__services .main__services--comments h2 {
   font-size: 2rem;
   padding: 10px 30px;
   margin: 0px;
+  color: #ff0000;
+  text-shadow: -2px 0px 2px #000000;
+}
+@media screen and (max-width: 46rem) {
+  body .main__services .main__services--comments h2 {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+    padding: 10px 15px;
+  }
 }
 body .main__services .main__services--comments .main__services--form {
   padding-bottom: 15px;
@@ -679,6 +1418,11 @@ body .main__services .main__services--comments .main__services--form .main__serv
   color: #000000;
   font-weight: 900;
 }
+@media screen and (max-width: 46rem) {
+  body .main__services .main__services--comments .main__services--form .main__services--fielset .main__services--textarea label {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+  }
+}
 body .main__services .main__services--comments .main__services--form .main__services--fielset .main__services--textarea #main__services--comments-area {
   width: 90%;
   height: 200px;
@@ -704,11 +1448,11 @@ body .main__services .main__services--comments .main__services--form .main__serv
   background-color: #ffffff;
 }
 body .main__register {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
   margin: 0 auto;
   padding-top: 100px;
 }
@@ -721,13 +1465,33 @@ body .main__register h1 {
   margin: 0px;
   padding-bottom: 30px;
 }
+@media screen and (max-width: 46rem) {
+  body .main__register h1 {
+    font-size: clamp(2rem, 6vw, 2.75rem);
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main__register h1 {
+    padding-top: 45px;
+    font-size: clamp(1.75rem, 7vw, 2rem);
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
 body .main__register .main__section--register {
   width: 100%;
   background-color: #000000;
   padding: 30px 0px;
 }
+@media screen and (max-width: 28rem) {
+  body .main__register .main__section--register {
+    width: 85%;
+    padding: 0;
+  }
+}
 body .main__register .main__section--register .main__section--register-welcome {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   justify-content: center;
   width: 80%;
@@ -737,21 +1501,41 @@ body .main__register .main__section--register .main__section--register-welcome {
   border: 2px solid #ffffff;
   font-size: 2rem;
 }
+@media screen and (max-width: 80em) {
+  body .main__register .main__section--register .main__section--register-welcome {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main__register .main__section--register .main__section--register-welcome {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main__register .main__section--register .main__section--register-welcome {
+    font-size: clamp(1rem, 5vw, 1.25rem);
+  }
+}
 body .main__register .main__section--register .main__section--register-form {
   width: 100%;
   display: flex;
 }
 body .main__register .main__section--register .main__section--register-form fieldset {
-  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
   margin: 0 auto;
   gap: 40px;
   text-align: center;
   padding: 40px 20px;
-  background-color: #000000;
   border: 3px solid #ff0000;
+}
+@media screen and (max-width: 28rem) {
+  body .main__register .main__section--register .main__section--register-form fieldset {
+    padding-top: 150px;
+  }
 }
 body .main__register .main__section--register .main__section--register-form fieldset legend {
   font-size: 2rem;
@@ -761,17 +1545,64 @@ body .main__register .main__section--register .main__section--register-form fiel
   padding: 0 20px;
   letter-spacing: 3px;
 }
+@media screen and (max-width: 46rem) {
+  body .main__register .main__section--register .main__section--register-form fieldset legend {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main__register .main__section--register .main__section--register-form fieldset legend {
+    position: absolute;
+    margin-top: -145px;
+    font-size: clamp(1rem, 6vw, 1.5rem);
+    padding: 10px clamp(45px, 14vw, 65px);
+  }
+}
 body .main__register .main__section--register .main__section--register-form fieldset div {
-  width: 60%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  align-items: flex-start;
+  width: 60%;
+}
+@media screen and (max-width: 80em) {
+  body .main__register .main__section--register .main__section--register-form fieldset div {
+    flex-direction: column;
+    width: 80%;
+  }
 }
 body .main__register .main__section--register .main__section--register-form fieldset div label {
   font-size: 1.5rem;
   color: #b4cff5;
 }
+@media screen and (max-width: 80em) {
+  body .main__register .main__section--register .main__section--register-form fieldset div label {
+    text-align: left;
+    padding-bottom: 15px;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main__register .main__section--register .main__section--register-form fieldset div label {
+    font-size: clamp(1.225rem, 4vw, 1.5rem);
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main__register .main__section--register .main__section--register-form fieldset div label {
+    font-size: clamp(1rem, 5vw, 1.225rem);
+  }
+}
 body .main__register .main__section--register .main__section--register-form fieldset div input {
   width: 400px;
+}
+@media screen and (max-width: 96.875em) {
+  body .main__register .main__section--register .main__section--register-form fieldset div input {
+    width: clamp(350px, 25vw, 400px);
+  }
+}
+@media screen and (max-width: 80em) {
+  body .main__register .main__section--register .main__section--register-form fieldset div input {
+    width: 100%;
+  }
 }
 body .main__register .main__section--register .main__section--register-form fieldset div input.button-register {
   margin: 0 auto;
@@ -785,6 +1616,16 @@ body .main__register .main__section--register .main__section--register-form fiel
   color: #fffdfd;
   transition: all 0.3s ease-in;
   cursor: pointer;
+}
+@media screen and (max-width: 80em) {
+  body .main__register .main__section--register .main__section--register-form fieldset div input.button-register {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 28rem) {
+  body .main__register .main__section--register .main__section--register-form fieldset div input.button-register {
+    margin-top: 0px;
+  }
 }
 body .main__register .main__section--register .main__section--register-form fieldset div input.button-register:hover {
   color: #338726;

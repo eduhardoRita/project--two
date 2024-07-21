@@ -1,34 +1,96 @@
+$colorBody: #2f2b2d;
+$colorHeader: #000000;
+$colorTitles: #ff0000;
+
+@mixin flexRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin laptops {
+    @media screen and (max-width: 96.875em) {@content};
+}
+
+@mixin tablets {
+    @media screen and (max-width: 80em) {@content};
+}
+
+@mixin cellPhone {
+    @media screen and (max-width: 46rem) {@content};
+}
+
+@mixin verticalCellphone {
+    @media screen and (max-width: 28rem) {@content};
+}
+
 body {
     margin: 0;
-    background-color: #2f2b2d;
+    background-color: $colorBody;
 
     .header {
+        @include flexRow;
         width: 100%;
         height: 60px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: black;
+        background-color: $colorHeader;
         border-bottom: 3px solid #dc1f30;
         position: fixed;
         z-index: 1;
 
+        @include cellPhone {
+            height: auto;
+        }
+
+        @include verticalCellphone {
+            flex-direction: column;
+        }
+
         .header__img {
             width: 80px;
             padding: 10px;
+
+            @include tablets {
+                width: 75px;
+            }
         }
     
         .header__links {
             width: 50%;
-            display: flex;
-            justify-content: space-between;
-    
-            a {
+            @include flexRow;
+
+            @include tablets {
+                width: 55%;
+            }
+
+            @include cellPhone {
+                gap: 5px 20px;
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            @include verticalCellphone {
+                gap: 5px 40px;
+                padding: 10px;
+                padding-top: 0;
+                box-sizing: border-box;
+            }
+
+            .header__links--link {
                 font-family: "Caveat", cursive;
                 color: aliceblue;
                 text-decoration: none;
                 font-size: 1.5rem;
                 font-weight: 600;
+
+                @include tablets {
+                    font-size: clamp(1.25rem, 3vw, 1.5rem);
+                }
 
                 &:hover {
                     color: #dc1f30;
@@ -37,10 +99,30 @@ body {
         }
     
         .header__icons {
+            @include flexRow;
             width: 30%;
-            display: flex;
-            justify-content: space-between;
             padding: 10px;
+
+            @include tablets {
+                width: 25%;
+                padding: 8px;
+            }
+
+            @include cellPhone {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 40%;
+            }
+
+            @include verticalCellphone {
+                position: absolute;
+                width: 90%;
+                flex-direction: column-reverse;
+                align-items: flex-end;
+                margin-top: 60px;
+                padding: 10px 0;
+            }
     
             i {
                 cursor: pointer;
@@ -52,6 +134,14 @@ body {
                 img {
                     width: 25px;
                     filter: invert(100%);
+
+                    @include tablets {
+                        width: clamp(22px, 2vw, 25px);
+                    }
+
+                    @include verticalCellphone {
+                        width: clamp(17px, 6vw, 25px);
+                    }
 
                     &:hover {
                         opacity: 0.5;    
@@ -75,13 +165,15 @@ body {
                 padding: 20px;
                 font-size: 1.5rem;
 
+                @include cellPhone {
+                    font-size: clamp(1.25rem, 5vw, 1.5rem);
+                }
             }
 
             &.header__menu--show {
-                position: absolute;
-                display: flex;
-                flex-direction: column;
+                @include flexColumn;
                 width: 30%;
+                position: absolute;
                 background-color: #000000;
                 height: auto;
                 right: 0;
@@ -89,28 +181,83 @@ body {
                 box-sizing: border-box;
                 border-left: 2px solid #dc1f30;
                 border-bottom: 2px solid #dc1f30;
+
+                .header__menu--icon-close {
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                    display: none;
+
+                    @include cellPhone {
+                        display: block;
+                    }
+
+                    img {
+                        filter: invert(100%);
+                    }
+                }
+
+                @include tablets {
+                    width: clamp(40%, 3vw, 50%);
+                }
+
+                @include cellPhone {
+                    right: 10%;
+                    width: 80%;
+                    top: 130px;
+                    border: 2px solid #dc1f30;
+                }
             }
         }
     }
 
     .main {
-        .main__title {
-            display: flex;
-            align-items: center;
+        .main__section-one {
+            @include flexRow;
             justify-content: center;
+
+            @include verticalCellphone {
+                background-color: #2f2b2d;
+            }
             
-            h1 {
-                width: 42%;
+            .main__section-one--title {
+                width: 45%;
                 font-size: 2.75rem;
                 text-align: center;
                 letter-spacing: 3px;
-                color: #ff0000;
+                color: $colorTitles;
                 text-shadow: -2px 0px 2px #ffffff;
                 background-color: #000000;
                 padding: 30px 50px;
                 margin-top: 95px;
                 border-radius: 100px;
                 border: 2px solid #ff0000;
+
+                @include laptops {
+                    width: 52.5%;
+                }
+
+                @include tablets {
+                    width: 70%;
+                    font-size: clamp(2rem, 4vw, 2.75rem);
+                }
+
+                @include cellPhone {
+                    border: none;
+                    padding: 0;
+                    width: 90%;
+                    background-color: #2f2b2d;
+                    margin-top: 115px;
+                    font-size: clamp(2rem, 4vw, 2.5rem);
+                    text-shadow: -1px 0px 2px #ffffff;
+                }
+
+                @include verticalCellphone {
+                    width: 84%;
+                    margin-top: 130px;
+                    background-color: #2f2b2d;
+                    font-size: clamp(1.8rem, 8vw, 2rem);
+                }
             }
         }
 
@@ -122,19 +269,94 @@ body {
             border: 2px solid #ffffff;
             overflow: hidden;
             position: relative;
-            background-color: #dc1f30;
+            background-color: #001f93;
             border-radius: 15px;
+            
+            @include tablets {
+                background-color: #001f93;
+                display: grid;
+                gap: 10px;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: auto auto auto;
+                grid-template-areas: 
+                    "main__welcome--title main__welcome--title main__welcome--title" 
+                    "main__welcome--text main__welcome--text main__welcome--img"
+                    "main__welcome--text main__welcome--text main__welcome--img"
+                ;
+
+                .main__welcome--title {
+                    grid-area: main__welcome--title;
+                }
+    
+                .main__welcome--text {
+                    grid-area: main__welcome--text;
+                    width: 100%;
+                }
+    
+                .main__welcome--img {
+                    grid-area: main__welcome--img;
+                    display: flex;
+                    width: 20%;
+                }
+            }
+
+            @include cellPhone {
+                width: 80%;
+                @include flexColumn;
+                background-color: #c2c5ce;
+            }   
+
+            .main__welcome--title {
+                @include flexRow;
+                justify-content: center;
+                width: 80%;
+                color: $colorTitles;
+                position: absolute;
+                font-size: 2.5rem;
+                text-shadow: -1px 0px 2px #000000;
+
+                @include tablets {
+                    font-size: clamp(2rem, 4vw, 3rem);
+                    margin: 10px 0px;
+                    width: 100%;
+                }
+
+                @include cellPhone {
+                    width: 100%;
+                    font-size: clamp(1.725rem, 4vw, 2rem);
+                    padding: 0 10px;
+                    box-sizing: border-box;
+                    text-align: center;
+                }
+
+                @include verticalCellphone {
+                    width: 85%;
+                    margin: 0 auto;
+                    padding-top: 20px;
+                    position: static;
+                    font-size: clamp(1.75rem, 7vw, 2.5rem);
+                    text-align: center;
+                }
+            }
 
             .main__welcome--text {
-                width: 80%;
-                background-color: #dc1f30;
-                padding: 20px;
+                width: 100%;
+                background-color: #001f93;
+                padding-top: 80px;
 
-                h2 {
-                    text-align: center;
-                    font-size: 2.5rem;
-                    color: #001f93;
-                    margin: 20px;
+                @include tablets {
+                    background-color: #001f93;
+                    padding-top: clamp(30px, 4vw, 80px);
+                    width: 110%;
+                }
+
+                @include cellPhone {
+                    width: 100%;
+                    padding-top: 50px;
+                }
+
+                @include verticalCellphone {
+                    padding-top: 0px;
                 }
 
                 p {
@@ -143,11 +365,25 @@ body {
                     padding: 0 35px;
                     color: #cfc4c4;
 
+                    @include tablets {
+                        font-size: clamp(1rem, 2vw, 1.25rem);
+                    }
+
+                    @include verticalCellphone {
+                        margin: 5px;
+                        font-size: clamp(0.875rem, 4vw, 1rem);
+                        padding: 0 10px;
+                    }
+
                     span {
-                        display: flex;
-                        width: 100%;
+                        @include flexRow;
                         justify-content: center;
+                        width: 100%;
                         font-size: 2rem;
+
+                        @include tablets {
+                            display: none;
+                        }
                     }
                 }
 
@@ -169,6 +405,11 @@ body {
                         box-shadow: none;
                         background-color: #ffffff;
                     }
+
+                    @include cellPhone {
+                        width: 80px;
+                        font-size: 14px;
+                    }
                 }
             }
 
@@ -176,34 +417,63 @@ body {
                 width: 20%;
                 padding: 50px;
 
+                @include tablets {
+                    width: 100%;
+                    padding: 10px;
+                    padding-top: 75px;
+                    padding-bottom: 30px;
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: center;
+                }
+
                 img {
                     width: 100%;
-                    height: 500px;
+                    height: 400px;
+                    display: flex;
+                    
+                    @include tablets {
+                        width: clamp(60%, 4vw, 80%);
+                        height: auto;
+                    }
                 }
             }
         }
 
         .main__check {
-            display: flex;
-            flex-direction: column;
+            @include flexColumn;
             width: 100%;
             height: 100%;
-            justify-content: center;
             align-items: center;
             margin: 20px auto;
             background-color: #000000;
             padding: 20px;
             box-sizing: border-box;
             
-            form {
+            .main__check--form {
                 width: 85%;
 
-                .main__form-fielset {
-                    display: flex;
-                    flex-direction: column;
+                @include laptops {
+                    width: 95%;
+                }
+
+                .main__check--fieldset {
+                    @include flexColumn;
                     gap: 30px;
                     padding: 30px 120px;
                     border: 3px solid #ff0000;
+
+                    @include laptops {
+                        padding: 30px 70px;
+                    }
+
+                    @include tablets {
+                        padding: 30px 50px;
+                    }
+
+                    @include cellPhone {
+                        padding: 30px;
+                    }
                     
                     legend {
                         font-size: 2.5rem;
@@ -212,17 +482,43 @@ body {
                         text-align: center;
                         padding: 0 20px;
                         letter-spacing: 3px;
+
+                        @include tablets {
+                            font-size: clamp(1.25rem, 3vw, 2.25rem);
+                        }
+
+                        @include verticalCellphone {
+                            font-size: clamp(1rem, 5vw, 1.75rem);
+                            letter-spacing: 0;
+                        }
                     }
     
                     .main__check--options {
-                        display: flex;
-                        justify-content: space-between;
+                        @include flexRow;
                         width: 100%;
+
+                        @include cellPhone {
+                            flex-direction: column;       
+                        }
         
                         label {
                             font-size: 1.5rem;
                             color: #b4cff5;
                             letter-spacing: 3px;
+
+                            @include tablets {
+                                font-size: clamp(1.25rem, 2vw, 2.25rem);
+                                letter-spacing: 0;
+                            }
+
+                            @include cellPhone {
+                                text-align: center;
+                                padding-bottom: 15px;
+                            }
+
+                            @include verticalCellphone {
+                                font-size: clamp(.875rem, 2vw, 1.25rem);
+                            }
 
                             &:hover {
                                 color: #dc1f30;
@@ -239,19 +535,45 @@ body {
         
                             option {
                                 text-align: center;
-                            }     
+                            }
+
+                            @include laptops {
+                                width: 290px;
+                            }
+                            
+                            @include tablets {
+                                width: clamp(145px, 21vw, 290px);
+                                font-size: clamp(1rem, 2vw, 1.25rem);
+                            }
                         }
                     }
     
                     .main__check--inputs {
-                        display: flex;
-                        justify-content: space-between;
+                        @include flexRow;
                         width: 100%;
+
+                        @include cellPhone {
+                            flex-direction: column;       
+                        }
         
                         label {
                             font-size: 1.5rem;
                             color: #b4cff5;
                             letter-spacing: 3px;
+
+                            @include tablets {
+                                font-size: clamp(1.25rem, 2vw, 2.25rem);
+                                letter-spacing: 0;
+                            }
+
+                            @include cellPhone {
+                                text-align: center;
+                                padding-bottom: 15px;
+                            }
+
+                            @include verticalCellphone {
+                                font-size: clamp(.875rem, 2vw, 1.25rem);
+                            }
 
                             &:hover {
                                 color: #dc1f30;
@@ -260,6 +582,15 @@ body {
         
                         input {
                             width: 300px;
+                            height: 20px;
+
+                            @include laptops {
+                                width: 283px;
+                            }
+
+                            @include tablets {
+                                width: clamp(145px, 20.5vw, 290px);
+                            }
 
                             &:hover {
                                 transform: scale(1.09);
@@ -280,6 +611,15 @@ body {
                             transition: all .30s ease;
                             cursor: pointer;
 
+                            @include cellPhone {
+                                width: 150px;
+                            }
+
+                            @include verticalCellphone {
+                                width: 120px;
+                                font-size: 1.25rem;
+                            }
+
                             &:hover {
                                 background-color: #ffffff;
                                 color: #338726;
@@ -289,8 +629,10 @@ body {
                 }
             }
 
-            .answer-box {
-                width: 100%;
+            .main__check--answer-box {
+                @include flexColumn;
+                align-items: center;
+                justify-content: center;
                 height: 200px;
                 background-color: #dc1f30;
                 color: #e8e900;
@@ -299,12 +641,13 @@ body {
                 font-weight: 900;
                 margin: 20px 0;
                 border: 2px solid #ffffff;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
 
-                .main__check-new-button {
+                @include cellPhone {
+                    font-size: clamp(1.5rem, 5vw, 2rem);
+                    padding: 0px 10px;
+                }
+
+                .main__check--new-button {
                     width: 300px;
                     background-color: #338726;
                     margin: 20px;
@@ -312,11 +655,19 @@ body {
                     font-size: 1.5rem;
                     font-weight: 900;
                     padding: 10px;
+
+                    @include cellPhone {
+                        margin: 20px 0;
+                        width: 180px;
+                        font-size: clamp(1rem, 3vw, 1.5rem);
+                    }
                 }
             }
 
-            .answer-box-two {
-                width: 100%;
+            .main__check--answer-box-two {
+                @include flexColumn;
+                align-items: center;
+                justify-content: center;
                 height: 200px;
                 background-color: #0dc01f;
                 color: #000000;
@@ -325,14 +676,17 @@ body {
                 font-weight: 900;
                 margin: 20px 0;
                 border: 2px solid #ffffff;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+
+                @include cellPhone {
+                    font-size: clamp(1.5rem, 5vw, 2rem);
+                    padding: 0px 10px;
+                }
             }
 
-            .answer-box-three {
-                width: 100%;
+            .main__check--answer-box-three {
+                @include flexColumn;
+                align-items: center;
+                justify-content: center;
                 height: 200px;
                 background-color: #dc1f30;
                 color: #e8e900;
@@ -341,12 +695,13 @@ body {
                 font-weight: 900;
                 margin: 20px 0;
                 border: 2px solid #ffffff;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
 
-                .main__check-new-button-two {
+                @include cellPhone {
+                    font-size: clamp(1.5rem, 5vw, 2rem);
+                    padding: 0px 10px;
+                }
+
+                .main__check--new-button-two {
                     width: 300px;
                     background-color: #338726;
                     margin: 20px;
@@ -354,11 +709,19 @@ body {
                     font-size: 1.5rem;
                     font-weight: 900;
                     padding: 10px;
+
+                    @include cellPhone {
+                        margin: 20px 0;
+                        width: 180px;
+                        font-size: clamp(1rem, 3vw, 1.5rem);
+                    }
                 }
             }
 
-            .answer-box-four {
-                width: 100%;
+            .main__check--answer-box-four {
+                @include flexColumn;
+                align-items: center;
+                justify-content: center;
                 height: 200px;
                 background-color: #0dc01f;
                 color: #000000;
@@ -367,10 +730,11 @@ body {
                 font-weight: 900;
                 margin: 20px 0;
                 border: 2px solid #ffffff;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+
+                @include cellPhone {
+                    font-size: clamp(1.5rem, 5vw, 2rem);
+                    padding: 0px 10px;
+                }
             }
         }
 
@@ -378,35 +742,69 @@ body {
             h3 {
                 font-size: 3.25rem;
                 text-align: center;
-                color: #ff0000;
+                color: $colorTitles;
                 text-shadow: -4px 0px 3px #ffffff;
-                letter-spacing: 2px ;
+                letter-spacing: 2px;
+
+                @include tablets {
+                    font-size: clamp(2.25rem, 4vw, 3rem);
+                }
+
+                @include cellPhone {
+                    padding: 10px;
+                }
+
+                @include verticalCellphone {
+                    font-size: clamp(1.75rem, 7vw, 2rem);
+                    text-shadow: -1px 0px 3px #ffffff;
+                }
             }
 
             .main__offers--packs {
                 display: flex;
                 width: 100%;
                 justify-content: space-around;
+
+                @include cellPhone {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 15px;
+                }
                 
                 .main__offers--packs-one {
+                    @include flexColumn;
+                    align-items: center;
+                    justify-content: center;
                     width: 35%;
                     background-color: #dc1f30;
                     border: 2px solid #ffffff;
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
                     border-radius: 15px;
+                    
+                    @include laptops {
+                        width: 42.5%;
+                        justify-content: flex-start;
+                    }
+
+                    @include cellPhone {
+                        width: 80%;
+                    }
 
                     span {
-                        font-size: 2.5em;
+                        font-size: 2.5rem;
                         font-weight: 900;
                         margin: 10px;
                         padding: 10px;
                         color: #000000;
                         text-shadow: -2px 0px 2px #fffdfd;
+                        
+                        @include tablets {
+                            font-size: clamp(1.25rem, 4vw, 2.5rem);
+                        }
+
+                        @include cellPhone {
+                            font-size: clamp(1.75rem, 5vw, 2.5rem);
+                            text-align: center;
+                        }
                     }
 
                     ul {
@@ -414,12 +812,24 @@ body {
                         flex-direction: column;
                         gap: 40px;
 
+                        @include tablets {
+                            gap: 20px;
+                        }
+
                         li {
                             font-family: "Neuton", serif;
                             font-size: 1.5rem;
                             color: #ffffff;
                             text-shadow: -3px 0px 1px #000000;
                             font-weight: 600;
+
+                            @include tablets {
+                                font-size: clamp(1.15rem, 2vw, 1.5rem);
+                            }
+
+                            @include cellPhone {
+                                font-size: clamp(1.15rem, 4vw, 2rem);
+                            }
                         }
                     }
 
@@ -431,24 +841,53 @@ body {
                         margin-top: 20px;
                         padding: 40px 10px;
 
+                        @include laptops {
+                            gap: 35px;
+                        }
+
+                        @include tablets {
+                            flex-direction: column;
+                            align-items: center;
+                            padding: 10px;
+                            margin-top: 0;
+                            gap: 10px;
+                        }
+
                         div {
+                            @include flexColumn;
+                            align-items: center;
                             background-color: #e8e900;
                             border: 2px solid #000000;
                             height: 100%;
                             width: 100%;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
                             padding: 20px;
                             box-sizing: border-box;
                             border-radius: 85px;
 
+                            @include tablets {
+                                width: 75%;
+                            }
+
+                            @include verticalCellphone {
+                                width: 90%;
+                            }
+
                             .title-button {
                                 font-size: 1.45rem;
                                 margin: 5px;
-                                padding: 10px;
+                                padding: 5px;
                                 color: #000000;
                                 text-shadow: 4px 0px 2px #fffdfd;
+
+                                @include tablets {
+                                    font-size: clamp(1.5rem, 3vw, 2rem);
+                                }
+
+                                @include verticalCellphone {
+                                    font-size: clamp(1.15rem, 5vw, 2rem);
+                                    padding: 5px 0px;
+                                    margin: 15px 0px;
+                                }
                             }
 
                             p {
@@ -456,6 +895,15 @@ body {
                                 font-weight: 900;
                                 text-shadow: 4px 0px 2px #ffffff;
                                 margin: 5px;
+
+                                @include tablets {
+                                    font-size: clamp(1.15rem, 2vw, 1.40rem);
+                                }
+
+                                @include verticalCellphone {
+                                    font-size: clamp(1rem, 4vw, 1.5rem);
+                                    text-align: center;
+                                }
                             }
 
                             button {
@@ -469,6 +917,12 @@ body {
                                 transition: all .30s ease-in;
                                 cursor: pointer;
 
+                                @include verticalCellphone {
+                                    width: 60%;
+                                    padding: 5px;
+                                    box-sizing: border-box;
+                                }
+
                                 &:hover {
                                     color: #338726;
                                     background-color: #ffffff;
@@ -479,17 +933,26 @@ body {
                 }
 
                 .main__offers--packs-two {
-                    width: 35%;
-                    background-color: #767681;
-                    background-size: cover;
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    display: flex;
-                    flex-direction: column;
+                    @include flexColumn;
                     justify-content: space-around;
                     align-items: center;
+                    width: 35%;
+                    background-color: #767681;
                     border-radius: 15px;
                     border: 2px solid #ffffff;
+
+                    @include laptops {
+                        width: 42.5%;
+                        justify-content: flex-start;
+                    }
+
+                    @include tablets {
+                        justify-content: space-between;
+                    }
+
+                    @include cellPhone {
+                        width: 80%;
+                    }
 
                     span {
                         font-size: 2.5rem;
@@ -497,13 +960,25 @@ body {
                         padding: 10px;
                         color: #000000;
                         text-shadow: -2px 0px 2px #ffffff;
+
+                        @include tablets {
+                            font-size: clamp(1.25rem, 4vw, 2.5rem);
+                            margin-top: 10px;
+                        }
+
+                        @include cellPhone {
+                            font-size: clamp(1.75rem, 5vw, 2.5rem)
+                        }
                     }
 
                     ul {
-                        display: flex;
-                        flex-direction: column;
+                        @include flexColumn;
                         gap: 10px;
                         margin: 0;
+
+                        @include tablets {
+                            gap: 25px;
+                        }
 
                         li {
                             font-family: "Neuton", serif;
@@ -511,28 +986,55 @@ body {
                             color: #fffdfd;
                             text-shadow: -2px 0px 0px #000000;
                             font-weight: 600;
+
+                            @include tablets {
+                                font-size: clamp(1.15rem, 2vw, 1.5rem);
+                            }
+
+                            @include cellPhone {
+                                font-size: clamp(1.15rem, 4vw, 2rem);
+                            }
                         }
                     }
 
                     section {
+                        @include flexColumn;
+                        align-items: center;
+                        justify-content: center;
                         width: 60%;
                         height: 20%;
                         background-color: #e8e900;
                         border: 2px solid #000000;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
                         border-radius: 85px;
                         margin: 28px 0;
-                        justify-content: center;
+
+                        @include laptops {
+                            width: 75%;
+                        }
+
+                        @include tablets {
+                            width: 80%;
+                        }
+
+                        @include cellPhone {
+                            height: 150px;
+                        }
 
                         .main__offers--packs-button {
                             font-size: 1.5rem;
                             margin: 5px;
                             padding: 10px;
-                            color: #000000;
+                            color: #000000; 
                             text-shadow: 4px 0px 2px #ffffff;
                             text-align: center;
+
+                            @include tablets {
+                                font-size: clamp(1.25rem, 3vw, 1.75rem);
+                            }
+
+                            @include verticalCellphone {
+                                font-size: clamp(1.15rem, 5vw, 2rem);
+                            }
                         }
 
                         button {
@@ -545,6 +1047,15 @@ body {
                             color: #fffdfd;
                             transition: all .30s ease-in;
                             cursor: pointer;
+
+                            @include laptops {
+                                width: 165px;
+                            }
+
+                            @include verticalCellphone {
+                                width: 50%;
+                                font-size: clamp(.875rem, 3vw, 1.25rem);
+                            }
 
                             &:hover {
                                 color: #338726;
@@ -562,22 +1073,49 @@ body {
             h4 {
                 font-size: 3rem;
                 text-align: center;
-                color: #ff0000;
+                color: $colorTitles;
                 text-shadow: -4px 0px 3px #ffffff;
-                letter-spacing: 2px ;
+                letter-spacing: 2px;
+
+                @include tablets {
+                    font-size: clamp(2.5rem, 4vw, 4rem);
+                }
+
+                @include cellPhone {
+                    padding: 10px;
+                    font-size: clamp(2rem, 6vw, 2.5rem);
+                    text-shadow: -2px 0px 3px #ffffff;
+                }
+
+                @include verticalCellphone {
+                    font-size: clamp(1.75rem, 8vw, 2rem);
+                }
             }
 
             section {
+                @include flexRow;
                 width: 90%;
-                display: flex;
-                justify-content: space-between;
                 margin: 0 auto;
+
+                @include cellPhone {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 30px;
+                }
 
                 div {
                     width: 30%;
 
+                    @include cellPhone {
+                        width: 80%;
+                    }
+
                     img {
                         width: 100%;
+                        
+                        &:hover {
+                            transform: scale(1.2);
+                        }
                     }
                 }
             }
@@ -590,9 +1128,23 @@ body {
         h5 {
             font-size: 3rem;
             text-align: center;
-            color: #ff0000;
+            color: $colorTitles;
             text-shadow: -4px 0px 3px #ffffff;
             letter-spacing: 2px;
+
+            @include tablets {
+                font-size: clamp(2.5rem, 5vw, 4rem);
+            }
+
+            @include cellPhone {
+                padding: 10px;
+                font-size: clamp(2rem, 6vw, 2.5rem);
+                text-shadow: -2px 0px 3px #ffffff;
+            }
+
+            @include verticalCellphone {
+                font-size: clamp(1.75rem, 8vw, 2rem);
+            }
         }
     
         section {
@@ -603,11 +1155,19 @@ body {
             justify-content: space-around;
             gap: 140px 40px;
 
+            @include cellPhone {
+                gap: 80px;
+            }
+
             div {
                 width: 300px;
                 height: 150px;
                 display: flex;
                 align-items: center;
+
+                @include cellPhone {
+                    width: 70%;
+                }
                 
                 img {
                     width: 100%;
@@ -628,6 +1188,10 @@ body {
             padding: 20px;
             height: 150px;
 
+            @include cellPhone {
+                display: none;
+            }
+
             img {
                 width: 100%;
                 height: 100%;
@@ -635,10 +1199,9 @@ body {
         } 
 
         section {
-            display: flex;
+            @include flexColumn;
             width: 100%;
             height: 100%;
-            flex-direction: column;
             padding: 20px;
             
             nav{
@@ -646,6 +1209,11 @@ body {
                 display: flex;
                 justify-content: space-around;
                 margin: 0 auto;
+
+                @include verticalCellphone {
+                    flex-wrap: wrap;
+                    gap: 32px;
+                }
 
                 a {
                     font-size: 1.5rem;
@@ -668,36 +1236,75 @@ body {
         article {
             width: 100%;
     
-            .main__services-title {
+            .main__services--title {
                 font-size: 3.25rem;
                 text-align: center;
-                color: #ff0000;
+                color: $colorTitles;
                 text-shadow: -4px 0px 3px #ffffff;
                 letter-spacing: 2px;
-                margin: 0px;
-                padding-top: 70px;
+                margin: 0;
+                padding-top: 90px;
+                padding-bottom: 40px;
+                font-size: clamp(2.5rem, 3vw, 3rem);
+
+                @include tablets {
+                    padding-top: 80px;
+                    margin-bottom: 30px;
+                }
+
+                @include cellPhone {
+                    font-size: clamp(2rem, 3vw, 2.5rem);
+                    padding-top: 130px;
+                }
+
+                @include verticalCellphone {
+                    font-size: clamp(1.5rem, 7vw, 2rem);
+                    padding-left: 30px;
+                    padding-right: 30px;
+                }
             }   
     
-            section {
+            .main__services--container {
                 width: 80%;
                 margin: 0 auto;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
                 gap: 30px 0;
-    
-                div {
-                    display: flex;
+
+                @include tablets {
+                    width: 90%;
+                }
+
+                @include cellPhone {
                     flex-direction: column;
+                    align-items: center;
+                }
+    
+                .main__services--pack {
+                    @include flexColumn;
+                    align-items: center;
                     width: 40%;
                     background-color: #872826;
                     height: auto;
-                    align-items: center;
+
+                    @include tablets {
+                        width: 45%;
+                    }
+
+                    @include cellPhone {
+                        width: 80%;
+                    }
     
-                    h2 {
+                    span {
                         font-size: 2rem;
                         text-align: center;
                         margin: 5px;  
+                        font-weight: 900;
+
+                        @include cellPhone {
+                            font-size: clamp(1.5rem,5vw, 2rem);
+                        }
                     }
     
                     ul {
@@ -713,6 +1320,14 @@ body {
                             color: #fffdfd;
                             text-shadow: -2px 0px 0px #000000;
                             font-weight: 600;
+
+                            @include tablets {
+                                font-size: clamp(1.25rem, 3vw, 1.5rem);                           
+                            }
+
+                            @include verticalCellphone {
+                                font-size: clamp(1rem, 4vw, 1.5rem);                           
+                            }
                         }
                     }
     
@@ -727,6 +1342,10 @@ body {
                         background-color: #338726;
                         transition: all .30s ease-in;
                         cursor: pointer;
+
+                        @include cellPhone {
+                            width: 50%;
+                        }
     
                         &:hover {
                             color: #338726;
@@ -747,6 +1366,13 @@ body {
                 font-size: 2rem;
                 padding: 10px 30px;
                 margin: 0px;
+                color: $colorTitles;
+                text-shadow: -2px 0px 2px #000000;
+
+                @include cellPhone {
+                    font-size: clamp(1.2rem, 5vw, 2rem);
+                    padding: 10px 15px;
+                }
             }
 
             .main__services--form {
@@ -759,8 +1385,7 @@ body {
                     padding-bottom: 0;
     
                     .main__comments {
-                        display: flex;
-                        flex-direction: column;
+                        @include flexColumn;
                         gap: 20px;
                         padding-left: 15px;
     
@@ -773,8 +1398,7 @@ body {
                     }
     
                     .main__services--textarea {
-                        display: flex;
-                        flex-direction: column;
+                        @include flexColumn;
 
                         label {
                             font-size: 1.5rem;
@@ -782,6 +1406,10 @@ body {
                             padding-bottom: 20px;
                             color: #000000;
                             font-weight: 900;
+
+                            @include cellPhone {
+                                font-size: clamp(1.10rem, 3vw, 1.5rem);
+                            }
                         }
             
                         #main__services--comments-area {
@@ -818,22 +1446,32 @@ body {
     }
 
     .main__register {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
+        @include flexColumn;
         justify-content: center;
         align-items: center;
+        width: 100%;
         margin: 0 auto;
         padding-top: 100px;
 
         h1 {
             font-size: 3.25rem;
             text-align: center;
-            color: #ff0000;
+            color: $colorTitles;
             text-shadow: -4px 0px 3px #ffffff;
             letter-spacing: 2px;
             margin: 0px;
             padding-bottom: 30px;
+
+            @include cellPhone {
+                font-size: clamp(2rem, 6vw, 2.75rem);
+            }
+
+            @include verticalCellphone {
+                padding-top: 45px;
+                font-size: clamp(1.75rem, 7vw, 2rem);
+                padding-left: 25px;
+                padding-right: 25px;
+            }
         }
 
         .main__section--register {
@@ -841,9 +1479,13 @@ body {
             background-color: #000000;
             padding: 30px 0px;
 
+            @include verticalCellphone {
+                width: 85%;
+                padding: 0;
+            }
+
             .main__section--register-welcome {
-                display: flex;
-                align-items: center;
+                @include flexRow;
                 justify-content: center;
                 width: 80%;
                 height: 200px;
@@ -851,6 +1493,19 @@ body {
                 background-color: #4d904b;
                 border: 2px solid #ffffff;
                 font-size: 2rem;
+
+                @include tablets {
+                    font-size: 1.75rem;
+                    text-align: center;
+                }
+
+                @include cellPhone {
+                    font-size: clamp(1.25rem, 4vw, 1.5rem);
+                }
+
+                @include verticalCellphone {
+                    font-size: clamp(1rem, 5vw, 1.25rem);
+                }
             }
 
             .main__section--register-form {
@@ -858,16 +1513,18 @@ body {
                 display: flex;
 
                 fieldset {
-                    width: 80%;
-                    display: flex;
-                    flex-direction: column;
+                    @include flexColumn;
                     align-items: center;
+                    width: 80%;
                     margin: 0 auto;
                     gap: 40px;
                     text-align: center;
                     padding: 40px 20px;
-                    background-color: #000000;
                     border: 3px solid #ff0000;
+
+                    @include verticalCellphone {
+                        padding-top: 150px;
+                    }
 
                     legend {
                         font-size: 2rem;
@@ -876,20 +1533,57 @@ body {
                         text-align: center;
                         padding: 0 20px;
                         letter-spacing: 3px;
+
+                        @include cellPhone {
+                            font-size: clamp(1.25rem, 4vw, 1.75rem);
+                        }
+
+                        @include verticalCellphone {
+                            position: absolute;
+                            margin-top: -145px;
+                            font-size: clamp(1rem, 6vw, 1.5rem);
+                            padding: 10px clamp(45px, 14vw, 65px);
+                        }
                     }
 
                     div {
+                        @include flexRow;
+                        align-items: flex-start;
                         width: 60%;
-                        display: flex;
-                        justify-content: space-between;
+
+                        @include tablets {
+                            flex-direction: column;
+                            width: 80%;
+                        }
 
                         label {
                             font-size: 1.5rem;
                             color: #b4cff5;
+
+                            @include tablets {
+                                text-align: left;
+                                padding-bottom: 15px;
+                            }
+
+                            @include cellPhone {
+                                font-size: clamp(1.225rem, 4vw, 1.5rem);
+                            }
+
+                            @include verticalCellphone {
+                                font-size: clamp(1rem, 5vw, 1.225rem);
+                            }
                         }
 
                         input {
                             width: 400px;
+
+                            @include laptops {
+                                width: clamp(350px, 25vw, 400px);
+                            }
+
+                            @include tablets {
+                                width: 100%;
+                            }
 
                             &.button-register {
                                 margin: 0 auto;
@@ -903,6 +1597,14 @@ body {
                                 color: #fffdfd;
                                 transition: all .30s ease-in;
                                 cursor: pointer;
+
+                                @include tablets {
+                                    width: 60%;
+                                }
+
+                                @include verticalCellphone {
+                                    margin-top: 0px;
+                                }
 
                                 &:hover {
                                     color: #338726;

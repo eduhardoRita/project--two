@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">    
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <header class="header">
-        <img class="header__img" src="./img/img-header-2.jpg" alt="logo de empresa 'Speed Wheels'">
+        <img class="header__img" src="./img/img-header-2.jpg" alt="logo de empresa 'Speed Wheels'" id="headerImg">
         <nav class="header__links">
-            <a href="#">Inicio</a>
-            <a href="./services.html">Servicios</a>
-            <a href="./registro.html">Registro</a>
-            <a href="">Asistencia telefonica</a>
+            <a href="#" class="header__links--link">Inicio</a>
+            <a href="./services.html" class="header__links--link">Servicios</a>
+            <a href="./registro.html" class="header__links--link">Registro</a>
+            <a href="" class="header__links--link">Asistencia telefonica</a>
         </nav>
         <section class="header__icons">
             <i><img src="./img/facebook.svg" alt="icono de facebook"></i>
@@ -25,6 +25,7 @@
             <i class="header__icons--menu"><img src="./img/menu.svg" alt="icono del menu"></i>
         </section>
         <section class="header__menu">
+            <i class="header__menu--icon-close"><img src="./img/x.svg" alt="icono para cerrar menu"></i>
             <span>Menu</span>
             <p>Tablas de precios &#40;Proximante&#41;</p>
             <p>Control de servicios &#40;Proximante&#41;</p>
@@ -35,14 +36,14 @@
     </header>
     <main class="main">
         <article>
-            <section class="main__title">
-                <h1>Servicio Mecánico Automotriz</h1>
+            <section class="main__section-one">
+                <h1 class="main__section-one--title">Servicio Mecánico Automotriz</h1>
             </section>
             <section class="main__welcome">
+                <h2 class="main__welcome--title">¡Bienvenido a Speed Wheels!</h2>
                 <section class="main__welcome--text">
-                    <h2>¡Bienvenido a <i>Speed Wheels</i>!</h2>
                     <p>
-                        En Speed Wheels, nos enorgullece ofrecer un servicio excepcional de mantenimiento y reparación de vehículos para nuestros clientes. Con años de experiencia en el sector automotriz, nuestro equipo de mecánicos altamente calificados está aquí para brindarte soluciones confiables y efectivas para todas tus necesidades de mantenimiento y reparación. En nuestro taller, nos esforzamos por proporcionar un servicio personalizado y profesional a cada cliente que entra por nuestras puertas. Ya sea que necesites una simple revisión de rutina, una reparación compleja o cualquier otro servicio, puedes confiar en nosotros para hacer el trabajo de manera eficiente y a un precio justo. <br><br>
+                        En Speed Wheels, nos enorgullece ofrecer un 4servicio excepcional de mantenimiento y reparación de vehículos para nuestros clientes. Con años de experiencia en el sector automotriz, nuestro equipo de mecánicos altamente calificados está aquí para brindarte soluciones confiables y efectivas para todas tus necesidades de mantenimiento y reparación. En nuestro taller, nos esforzamos por proporcionar un servicio personalizado y profesional a cada cliente que entra por nuestras puertas. Ya sea que necesites una simple revisión de rutina, una reparación compleja o cualquier otro servicio, puedes confiar en nosotros para hacer el trabajo de manera eficiente y a un precio justo. <br><br>
                         
                         Navega por nuestro sitio web para conocer más sobre los servicios que ofrecemos, echa un vistazo a nuestra galería de trabajos realizados para ver ejemplos de nuestro trabajo de calidad, y no dudes en ponerte en contacto con nosotros si tienes alguna pregunta o si deseas programar una cita. <br>
                         
@@ -57,16 +58,17 @@
                 </section>
             </section>
         </article>
+
         <article class="main__check">
-                <form class="main__form">
-                    <fieldset class="main__form-fielset">
+                <form class="main__check--form">
+                    <fieldset class="main__check--fieldset">
                         <legend>Averigua si tu auto requiere servicio</legend>
                         <div class="main__check--options">
-                            <label for="select-value">Selecciona el tipo de aceite usado en tu ultimo servicio:</label>
+                            <label for="select-value">Selecciona el aceite usado en ultimo servicio:</label>
                             <select id="select-value" required>
                                 <option value="">-- Aceite --</option>
                                 <option value="normal">Normal</option>
-                                <option value="sintetic">Sintet ico</option>
+                                <option value="sintetic">Sintetico</option>
                             </select>
                         </div>
             
@@ -138,7 +140,7 @@
                     </ul>
                     <section>
                         <span class="main__offers--packs-button">Varia el precio segun el vehiculo</span>
-                        <button>Cotizar servicio</button>
+                        <button>Cotizar</button>
                     </section>
                 </div>
             </section>
