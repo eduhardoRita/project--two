@@ -18,7 +18,7 @@ body .header {
     height: auto;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .header {
     flex-direction: column;
   }
@@ -51,7 +51,7 @@ body .header .header__links {
     justify-content: space-around;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .header .header__links {
     gap: 5px 40px;
     padding: 10px;
@@ -95,7 +95,7 @@ body .header .header__icons {
     width: 40%;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .header .header__icons {
     position: absolute;
     width: 90%;
@@ -120,7 +120,7 @@ body .header .header__icons i img {
     width: clamp(22px, 2vw, 25px);
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .header .header__icons i img {
     width: clamp(17px, 6vw, 25px);
   }
@@ -193,7 +193,7 @@ body .main .main__section-one {
   align-items: center;
   justify-content: center;
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__section-one {
     background-color: #2f2b2d;
   }
@@ -233,7 +233,7 @@ body .main .main__section-one .main__section-one--title {
     text-shadow: -1px 0px 2px #ffffff;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__section-one .main__section-one--title {
     width: 84%;
     margin-top: 130px;
@@ -309,13 +309,13 @@ body .main .main__welcome .main__welcome--title {
     text-align: center;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__welcome .main__welcome--title {
     width: 85%;
     margin: 0 auto;
     padding-top: 20px;
     position: static;
-    font-size: clamp(1.75rem, 7vw, 2.5rem);
+    font-size: clamp(1.25rem, 6vw, 2.5rem);
     text-align: center;
   }
 }
@@ -337,7 +337,7 @@ body .main .main__welcome .main__welcome--text {
     padding-top: 50px;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__welcome .main__welcome--text {
     padding-top: 0px;
   }
@@ -353,7 +353,7 @@ body .main .main__welcome .main__welcome--text p {
     font-size: clamp(1rem, 2vw, 1.25rem);
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__welcome .main__welcome--text p {
     margin: 5px;
     font-size: clamp(0.875rem, 4vw, 1rem);
@@ -477,7 +477,7 @@ body .main .main__check .main__check--form .main__check--fieldset legend {
     font-size: clamp(1.25rem, 3vw, 2.25rem);
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__check .main__check--form .main__check--fieldset legend {
     font-size: clamp(1rem, 5vw, 1.75rem);
     letter-spacing: 0;
@@ -511,7 +511,7 @@ body .main .main__check .main__check--form .main__check--fieldset .main__check--
     padding-bottom: 15px;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__check .main__check--form .main__check--fieldset .main__check--options label {
     font-size: clamp(0.875rem, 2vw, 1.25rem);
   }
@@ -568,7 +568,7 @@ body .main .main__check .main__check--form .main__check--fieldset .main__check--
     padding-bottom: 15px;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label {
     font-size: clamp(0.875rem, 2vw, 1.25rem);
   }
@@ -611,7 +611,7 @@ body .main .main__check .main__check--form .main__check--fieldset .main__check--
     width: 150px;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit input {
     width: 120px;
     font-size: 1.25rem;
@@ -750,7 +750,7 @@ body .main .main__offers h3 {
     padding: 10px;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__offers h3 {
     font-size: clamp(1.75rem, 7vw, 2rem);
     text-shadow: -1px 0px 3px #ffffff;
@@ -874,7 +874,7 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one section d
     width: 75%;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__offers .main__offers--packs .main__offers--packs-one section div {
     width: 90%;
   }
@@ -891,7 +891,7 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one section d
     font-size: clamp(1.5rem, 3vw, 2rem);
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__offers .main__offers--packs .main__offers--packs-one section div .title-button {
     font-size: clamp(1.15rem, 5vw, 2rem);
     padding: 5px 0px;
@@ -909,7 +909,7 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one section d
     font-size: clamp(1.15rem, 2vw, 1.4rem);
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__offers .main__offers--packs .main__offers--packs-one section div p {
     font-size: clamp(1rem, 4vw, 1.5rem);
     text-align: center;
@@ -926,7 +926,7 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one section d
   transition: all 0.3s ease-in;
   cursor: pointer;
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__offers .main__offers--packs .main__offers--packs-one section div button {
     width: 60%;
     padding: 5px;
@@ -1049,7 +1049,7 @@ body .main .main__offers .main__offers--packs .main__offers--packs-two section .
     font-size: clamp(1.25rem, 3vw, 1.75rem);
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__offers .main__offers--packs .main__offers--packs-two section .main__offers--packs-button {
     font-size: clamp(1.15rem, 5vw, 2rem);
   }
@@ -1070,7 +1070,7 @@ body .main .main__offers .main__offers--packs .main__offers--packs-two section b
     width: 165px;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__offers .main__offers--packs .main__offers--packs-two section button {
     width: 50%;
     font-size: clamp(0.875rem, 3vw, 1.25rem);
@@ -1102,7 +1102,7 @@ body .main .main__photos h4 {
     text-shadow: -2px 0px 3px #ffffff;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main .main__photos h4 {
     font-size: clamp(1.75rem, 8vw, 2rem);
   }
@@ -1157,7 +1157,7 @@ body .aside h5 {
     text-shadow: -2px 0px 3px #ffffff;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .aside h5 {
     font-size: clamp(1.75rem, 8vw, 2rem);
   }
@@ -1181,12 +1181,24 @@ body .aside section div {
   display: flex;
   align-items: center;
 }
+body .aside section div a {
+  width: 100%;
+  height: 100%;
+}
+body .aside section div a img {
+  width: 10%;
+  height: 100%;
+}
 @media screen and (max-width: 46rem) {
   body .aside section div {
     width: 70%;
   }
 }
-body .aside section div img {
+body .aside section div a {
+  width: 100%;
+  height: 100%;
+}
+body .aside section div a img {
   width: 100%;
   height: 100%;
 }
@@ -1223,7 +1235,7 @@ body .footer section nav {
   justify-content: space-around;
   margin: 0 auto;
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .footer section nav {
     flex-wrap: wrap;
     gap: 32px;
@@ -1267,7 +1279,7 @@ body .main__services article .main__services--title {
     padding-top: 130px;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main__services article .main__services--title {
     font-size: clamp(1.5rem, 7vw, 2rem);
     padding-left: 30px;
@@ -1341,7 +1353,7 @@ body .main__services article .main__services--container .main__services--pack ul
     font-size: clamp(1.25rem, 3vw, 1.5rem);
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main__services article .main__services--container .main__services--pack ul li {
     font-size: clamp(1rem, 4vw, 1.5rem);
   }
@@ -1470,7 +1482,7 @@ body .main__register h1 {
     font-size: clamp(2rem, 6vw, 2.75rem);
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main__register h1 {
     padding-top: 45px;
     font-size: clamp(1.75rem, 7vw, 2rem);
@@ -1483,7 +1495,7 @@ body .main__register .main__section--register {
   background-color: #000000;
   padding: 30px 0px;
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main__register .main__section--register {
     width: 85%;
     padding: 0;
@@ -1512,7 +1524,7 @@ body .main__register .main__section--register .main__section--register-welcome {
     font-size: clamp(1.25rem, 4vw, 1.5rem);
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main__register .main__section--register .main__section--register-welcome {
     font-size: clamp(1rem, 5vw, 1.25rem);
   }
@@ -1532,7 +1544,7 @@ body .main__register .main__section--register .main__section--register-form fiel
   padding: 40px 20px;
   border: 3px solid #ff0000;
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main__register .main__section--register .main__section--register-form fieldset {
     padding-top: 150px;
   }
@@ -1550,7 +1562,7 @@ body .main__register .main__section--register .main__section--register-form fiel
     font-size: clamp(1.25rem, 4vw, 1.75rem);
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main__register .main__section--register .main__section--register-form fieldset legend {
     position: absolute;
     margin-top: -145px;
@@ -1586,7 +1598,7 @@ body .main__register .main__section--register .main__section--register-form fiel
     font-size: clamp(1.225rem, 4vw, 1.5rem);
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main__register .main__section--register .main__section--register-form fieldset div label {
     font-size: clamp(1rem, 5vw, 1.225rem);
   }
@@ -1622,7 +1634,7 @@ body .main__register .main__section--register .main__section--register-form fiel
     width: 60%;
   }
 }
-@media screen and (max-width: 28rem) {
+@media screen and (max-width: 32rem) {
   body .main__register .main__section--register .main__section--register-form fieldset div input.button-register {
     margin-top: 0px;
   }

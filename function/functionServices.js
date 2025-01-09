@@ -13,7 +13,11 @@ const renderComments = () => {
     comments.forEach(comment => {
         const commentElement = document.createElement("div");
         commentElement.className = "main__services--new-comment";
-        commentElement.textContent = comment;
+        const linkRegex = /(https?:\/\/[^\s]+|www\.[^\s]+)/g;
+        const commentWithLinks = comment.replace(linkRegex, (match) => {
+            return `<a href="${match}" rel="ugc">${match}</a>`;
+        });
+        commentElement.innerHTML = commentWithLinks;
         commentsContainer.appendChild(commentElement);
     });
 };
