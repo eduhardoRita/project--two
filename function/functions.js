@@ -21,7 +21,7 @@ buttonWelcome.addEventListener("click", () => {
     }
 })
 
-const form = document.querySelector(".main__form");
+const form = document.querySelector(".main__check--form");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -32,49 +32,52 @@ form.addEventListener("submit", (event) => {
     let numberCurrentMileage = parseFloat(currentMileage);
     const valueSelect = document.getElementById("select-value").value;
     const submit = document.querySelector(".main__check--sumbit");
-    const fielset = document.querySelector(".main__form-fielset");
+    const fieldset = document.querySelector(".main__check--fieldset");
 
     if (valueSelect === "normal") {
         numberLastMileage += 5000;
+       
         if (numberCurrentMileage > numberLastMileage) {
             let residueMileage = numberCurrentMileage - numberLastMileage;
             const answerBox = document.createElement("div");
-            answerBox.className = "answer-box";
+            answerBox.className = "main__check--answer-box";
             answerBox.textContent = "¡Necesitas servicio, te has pasado con " + residueMileage + " kilometros!";
             const newButton = document.createElement("button");
-            newButton.className = "main__check-new-button";
+            newButton.className = "main__check--new-button";
             newButton.textContent = "Agendar cita";
             answerBox.appendChild(newButton);
-            fielset.appendChild(answerBox);
+            fieldset.appendChild(answerBox);
             submit.style.display = "none";
         } else {
             let residueMileageTwo = numberLastMileage - numberCurrentMileage;
             const answerBoxTwo = document.createElement("div");
-            answerBoxTwo.className = "answer-box-two";
+            answerBoxTwo.className = "main__check--answer-box-two";
             answerBoxTwo.textContent = "Tu auto esta en optimas condiciones, te hacen faltan " + residueMileageTwo + " kilometros por recorrer para tu proximo servicio";
-            fielset.appendChild(answerBoxTwo);
+            fieldset.appendChild(answerBoxTwo);
             submit.style.display = "none";
         }
     } else {
         numberLastMileage += 10000;
+        
         if (numberCurrentMileage > numberLastMileage) {
             let residueMileageThree = numberCurrentMileage - numberLastMileage;
             const answerBoxThree = document.createElement("div");
-            answerBoxThree.className = "answer-box-three";
+            answerBoxThree.className = "main__check--answer-box-three";
             answerBoxThree.textContent = "Necesitas servicio, te has pasado con " + residueMileageThree + " kilometros";
             const newButtonTwo = document.createElement("button");
-            newButtonTwo.className = "main__check-new-button-two";
+            newButtonTwo.className = "main__check--new-button-two";
             newButtonTwo.textContent = "Agendar cita";
             answerBoxThree.appendChild(newButtonTwo);
-            fielset.appendChild(answerBoxThree);
+            fieldset.appendChild(answerBoxThree);
             submit.style.display = "none";
         } else {
             let residueMileageFour = numberLastMileage - numberCurrentMileage;
             const answerBoxFour = document.createElement("div");
-            answerBoxFour.className = "answer-box-four";
+            answerBoxFour.className = "main__check--answer-box-four";
             answerBoxFour.textContent = "Tu auto esta en optimas condiciones, te hacen falta " + residueMileageFour + " kilometros por recorrer";
-            fielset.appendChild(answerBoxFour);
+            fieldset.appendChild(answerBoxFour);
             submit.style.display = "none";
         }
     }
 })
+
