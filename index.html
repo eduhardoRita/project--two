@@ -15,14 +15,22 @@
         <nav class="header__links">
             <a href="#">Inicio</a>
             <a href="./services.html">Servicios</a>
+            <a href="./registro.html">Registro</a>
             <a href="">Asistencia telefonica</a>
-            <a href="">Asistencia vial</a>
         </nav>
         <section class="header__icons">
             <i><img src="./img/facebook.svg" alt="icono de facebook"></i>
             <i><img src="./img/instagram.svg" alt="icono de instagram"></i>
             <i><img src="./img/twitter.svg" alt="icono de  twitter"></i>
-            <i><img src="./img/menu.svg" alt="icono del menu"></i>
+            <i class="header__icons--menu"><img src="./img/menu.svg" alt="icono del menu"></i>
+        </section>
+        <section class="header__menu">
+            <span>Menu</span>
+            <p>Tablas de precios &#40;Proximante&#41;</p>
+            <p>Control de servicios &#40;Proximante&#41;</p>
+            <p>Talleres afiliados &#40;Proximante&#41;</p>
+            <p>Ubicacion &#40;Proximante&#41;</p>
+            <p>Salir</p>
         </section>
     </header>
     <main class="main">
@@ -42,7 +50,7 @@
                         
                         <span>¡Esperamos poder atenderte pronto!</span>
                     </p>
-                    <button>Ver mas...</button>
+                    <button class="main__welcome--button">Ver mas...</button>
                 </section>
                 <section class="main__welcome--img">
                     <img src="./img/mechanic_887176.png" alt="imagen de bienvenida">
@@ -50,26 +58,26 @@
             </section>
         </article>
         <article class="main__check">
-                <form>
-                    <fieldset>
+                <form class="main__form">
+                    <fieldset class="main__form-fielset">
                         <legend>Averigua si tu auto requiere servicio</legend>
                         <div class="main__check--options">
-                            <label for="number">Selecciona el tipo de aceite usado en tu ultimo servicio:</label>
-                            <select>
+                            <label for="select-value">Selecciona el tipo de aceite usado en tu ultimo servicio:</label>
+                            <select id="select-value" required>
                                 <option value="">-- Aceite --</option>
                                 <option value="normal">Normal</option>
-                                <option value="sintetic">Sintetico</option>
+                                <option value="sintetic">Sintet ico</option>
                             </select>
                         </div>
             
                         <div class="main__check--inputs">
                             <label for="value-one">Introduce el kilometraje del ultimo servicio:</label>
-                            <input type="number" id="value-one" name="value-one">
+                            <input type="number" id="value-one" name="value-one" required>
                         </div>
             
                         <div class="main__check--inputs">
                             <label for="value-two">Introduce el kilometraje actual:</label>
-                            <input type="number" id="value-two" name="value-two">
+                            <input type="number" id="value-two" name="value-two" required>
                         </div>
 
                         <div class="main__check--sumbit">
@@ -180,5 +188,6 @@
             </small>
         </section>
     </footer>
+    <script src="./function/functions.js" defer></script>
 </body>
 </html>
