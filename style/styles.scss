@@ -21,11 +21,11 @@ $colorTitles: #ff0000;
     @media screen and (max-width: 80em) {@content};
 }
 
-@mixin cellPhone {
+@mixin verticalCellPhone {
     @media screen and (max-width: 46rem) {@content};
 }
 
-@mixin verticalCellphone {
+@mixin horizontalCellPhone {
     @media screen and (max-width: 32rem) {@content};
 }
 
@@ -42,11 +42,11 @@ body {
         position: fixed;
         z-index: 1;
 
-        @include cellPhone {
+        @include verticalCellPhone {
             height: auto;
         }
 
-        @include verticalCellphone {
+        @include horizontalCellPhone {
             flex-direction: column;
         }
 
@@ -67,14 +67,14 @@ body {
                 width: 55%;
             }
 
-            @include cellPhone {
+            @include verticalCellPhone {
                 gap: 5px 20px;
                 width: 100%;
                 flex-wrap: wrap;
                 justify-content: space-around;
             }
 
-            @include verticalCellphone {
+            @include horizontalCellPhone {
                 gap: 5px 40px;
                 padding: 10px;
                 padding-top: 0;
@@ -92,8 +92,10 @@ body {
                     font-size: clamp(1.25rem, 3vw, 1.5rem);
                 }
 
-                &:hover {
-                    color: #dc1f30;
+                @media(hover:hover) {
+                    &:hover {
+                        color: #dc1f30;
+                    }
                 }
             }
         }
@@ -108,14 +110,14 @@ body {
                 padding: 8px;
             }
 
-            @include cellPhone {
+            @include verticalCellPhone {
                 position: absolute;
                 top: 60px;
                 right: 0;
                 width: 40%;
             }
 
-            @include verticalCellphone {
+            @include horizontalCellPhone {
                 position: absolute;
                 width: 90%;
                 flex-direction: column-reverse;
@@ -127,8 +129,10 @@ body {
             i {
                 cursor: pointer;
                 
-                &:hover {
-                    border-bottom: solid 3px red;    
+                @media(hover:hover) {
+                    &:hover {
+                        border-bottom: solid 3px red;
+                    }
                 }
 
                 img {
@@ -139,7 +143,7 @@ body {
                         width: clamp(22px, 2vw, 25px);
                     }
 
-                    @include verticalCellphone {
+                    @include horizontalCellPhone {
                         width: clamp(17px, 6vw, 25px);
                     }
 
@@ -165,7 +169,7 @@ body {
                 padding: 20px;
                 font-size: 1.5rem;
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     font-size: clamp(1.25rem, 5vw, 1.5rem);
                 }
             }
@@ -188,7 +192,7 @@ body {
                     top: 10px;
                     display: none;
 
-                    @include cellPhone {
+                    @include verticalCellPhone {
                         display: block;
                     }
 
@@ -201,7 +205,7 @@ body {
                     width: clamp(40%, 3vw, 50%);
                 }
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     right: 10%;
                     width: 80%;
                     top: 130px;
@@ -216,7 +220,7 @@ body {
             @include flexRow;
             justify-content: center;
 
-            @include verticalCellphone {
+            @include horizontalCellPhone {
                 background-color: #2f2b2d;
             }
             
@@ -242,7 +246,7 @@ body {
                     font-size: clamp(2rem, 4vw, 2.75rem);
                 }
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     border: none;
                     padding: 0;
                     width: 90%;
@@ -252,7 +256,7 @@ body {
                     text-shadow: -1px 0px 2px #ffffff;
                 }
 
-                @include verticalCellphone {
+                @include horizontalCellPhone {
                     width: 84%;
                     margin-top: 130px;
                     background-color: #2f2b2d;
@@ -300,7 +304,7 @@ body {
                 }
             }
 
-            @include cellPhone {
+            @include verticalCellPhone {
                 width: 80%;
                 @include flexColumn;
                 background-color: #c2c5ce;
@@ -321,7 +325,7 @@ body {
                     width: 100%;
                 }
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     width: 100%;
                     font-size: clamp(1.725rem, 4vw, 2rem);
                     padding: 0 10px;
@@ -329,7 +333,7 @@ body {
                     text-align: center;
                 }
 
-                @include verticalCellphone {
+                @include horizontalCellPhone {
                     width: 85%;
                     margin: 0 auto;
                     padding-top: 20px;
@@ -350,12 +354,12 @@ body {
                     width: 110%;
                 }
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     width: 100%;
                     padding-top: 50px;
                 }
 
-                @include verticalCellphone {
+                @include horizontalCellPhone {
                     padding-top: 0px;
                 }
 
@@ -369,7 +373,7 @@ body {
                         font-size: clamp(1rem, 2vw, 1.25rem);
                     }
 
-                    @include verticalCellphone {
+                    @include horizontalCellPhone {
                         margin: 5px;
                         font-size: clamp(0.875rem, 4vw, 1rem);
                         padding: 0 10px;
@@ -400,15 +404,17 @@ body {
                     transition: all .25s ease;
                     cursor: pointer;
 
-                    &:hover {
-                        color: #338726;
-                        box-shadow: none;
-                        background-color: #ffffff;
-                    }
-
-                    @include cellPhone {
+                    @include verticalCellPhone {
                         width: 80px;
                         font-size: 14px;
+                    }
+
+                    @media(hover:hover) {
+                        &:hover {
+                            color: #338726;
+                            box-shadow: none;
+                            background-color: #ffffff;
+                        }
                     }
                 }
             }
@@ -471,7 +477,7 @@ body {
                         padding: 30px 50px;
                     }
 
-                    @include cellPhone {
+                    @include verticalCellPhone {
                         padding: 30px;
                     }
                     
@@ -487,7 +493,7 @@ body {
                             font-size: clamp(1.25rem, 3vw, 2.25rem);
                         }
 
-                        @include verticalCellphone {
+                        @include horizontalCellPhone {
                             font-size: clamp(1rem, 5vw, 1.75rem);
                             letter-spacing: 0;
                         }
@@ -497,7 +503,7 @@ body {
                         @include flexRow;
                         width: 100%;
 
-                        @include cellPhone {
+                        @include verticalCellPhone {
                             flex-direction: column;       
                         }
         
@@ -511,17 +517,19 @@ body {
                                 letter-spacing: 0;
                             }
 
-                            @include cellPhone {
+                            @include verticalCellPhone {
                                 text-align: center;
                                 padding-bottom: 15px;
                             }
 
-                            @include verticalCellphone {
+                            @include horizontalCellPhone {
                                 font-size: clamp(.875rem, 2vw, 1.25rem);
                             }
 
-                            &:hover {
-                                color: #dc1f30;
+                            @media(hover:hover) {
+                                &:hover {
+                                    color: #dc1f30;
+                                }
                             }
                         }
                         
@@ -552,7 +560,7 @@ body {
                         @include flexRow;
                         width: 100%;
 
-                        @include cellPhone {
+                        @include verticalCellPhone {
                             flex-direction: column;       
                         }
         
@@ -566,17 +574,19 @@ body {
                                 letter-spacing: 0;
                             }
 
-                            @include cellPhone {
+                            @include verticalCellPhone {
                                 text-align: center;
                                 padding-bottom: 15px;
                             }
 
-                            @include verticalCellphone {
+                            @include horizontalCellPhone {
                                 font-size: clamp(.875rem, 2vw, 1.25rem);
                             }
 
-                            &:hover {
-                                color: #dc1f30;
+                            @media(hover:hover) {
+                                &:hover {
+                                    color: #dc1f30;
+                                }
                             }
                         }   
         
@@ -611,18 +621,20 @@ body {
                             transition: all .30s ease;
                             cursor: pointer;
 
-                            @include cellPhone {
+                            @include verticalCellPhone {
                                 width: 150px;
                             }
 
-                            @include verticalCellphone {
+                            @include horizontalCellPhone {
                                 width: 120px;
                                 font-size: 1.25rem;
                             }
 
-                            &:hover {
-                                background-color: #ffffff;
-                                color: #338726;
+                            @media(hover:hover) {
+                                &:hover {
+                                    background-color: #ffffff;
+                                    color: #338726;
+                                }
                             }
                         }
                     }
@@ -642,7 +654,7 @@ body {
                 margin: 20px 0;
                 border: 2px solid #ffffff;
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     font-size: clamp(1.5rem, 5vw, 2rem);
                     padding: 0px 10px;
                 }
@@ -656,7 +668,7 @@ body {
                     font-weight: 900;
                     padding: 10px;
 
-                    @include cellPhone {
+                    @include verticalCellPhone {
                         margin: 20px 0;
                         width: 180px;
                         font-size: clamp(1rem, 3vw, 1.5rem);
@@ -677,7 +689,7 @@ body {
                 margin: 20px 0;
                 border: 2px solid #ffffff;
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     font-size: clamp(1.5rem, 5vw, 2rem);
                     padding: 0px 10px;
                 }
@@ -696,7 +708,7 @@ body {
                 margin: 20px 0;
                 border: 2px solid #ffffff;
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     font-size: clamp(1.5rem, 5vw, 2rem);
                     padding: 0px 10px;
                 }
@@ -710,7 +722,7 @@ body {
                     font-weight: 900;
                     padding: 10px;
 
-                    @include cellPhone {
+                    @include verticalCellPhone {
                         margin: 20px 0;
                         width: 180px;
                         font-size: clamp(1rem, 3vw, 1.5rem);
@@ -731,7 +743,7 @@ body {
                 margin: 20px 0;
                 border: 2px solid #ffffff;
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     font-size: clamp(1.5rem, 5vw, 2rem);
                     padding: 0px 10px;
                 }
@@ -750,11 +762,11 @@ body {
                     font-size: clamp(2.25rem, 4vw, 3rem);
                 }
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     padding: 10px;
                 }
 
-                @include verticalCellphone {
+                @include horizontalCellPhone {
                     font-size: clamp(1.75rem, 7vw, 2rem);
                     text-shadow: -1px 0px 3px #ffffff;
                 }
@@ -765,7 +777,7 @@ body {
                 width: 100%;
                 justify-content: space-around;
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     flex-direction: column;
                     align-items: center;
                     gap: 15px;
@@ -785,7 +797,7 @@ body {
                         justify-content: flex-start;
                     }
 
-                    @include cellPhone {
+                    @include verticalCellPhone {
                         width: 80%;
                     }
 
@@ -801,7 +813,7 @@ body {
                             font-size: clamp(1.25rem, 4vw, 2.5rem);
                         }
 
-                        @include cellPhone {
+                        @include verticalCellPhone {
                             font-size: clamp(1.75rem, 5vw, 2.5rem);
                             text-align: center;
                         }
@@ -827,7 +839,7 @@ body {
                                 font-size: clamp(1.15rem, 2vw, 1.5rem);
                             }
 
-                            @include cellPhone {
+                            @include verticalCellPhone {
                                 font-size: clamp(1.15rem, 4vw, 2rem);
                             }
                         }
@@ -837,7 +849,7 @@ body {
                         display: flex;
                         width: 85%;
                         justify-content: space-around;
-                        gap: 70px;
+                        gap: 40px;
                         margin-top: 20px;
                         padding: 40px 10px;
 
@@ -868,7 +880,7 @@ body {
                                 width: 75%;
                             }
 
-                            @include verticalCellphone {
+                            @include horizontalCellPhone {
                                 width: 90%;
                             }
 
@@ -883,7 +895,7 @@ body {
                                     font-size: clamp(1.5rem, 3vw, 2rem);
                                 }
 
-                                @include verticalCellphone {
+                                @include horizontalCellPhone {
                                     font-size: clamp(1.15rem, 5vw, 2rem);
                                     padding: 5px 0px;
                                     margin: 15px 0px;
@@ -900,32 +912,76 @@ body {
                                     font-size: clamp(1.15rem, 2vw, 1.40rem);
                                 }
 
-                                @include verticalCellphone {
+                                @include horizontalCellPhone {
                                     font-size: clamp(1rem, 4vw, 1.5rem);
                                     text-align: center;
                                 }
                             }
 
-                            button {
-                                width: 100px;
-                                font-size: .75rem;
-                                font-weight: 900;
-                                padding: 10px;
-                                border-radius: 10px;
-                                color: #fffdfd;
-                                background-color: #338726;
-                                transition: all .30s ease-in;
-                                cursor: pointer;
+                            .main__off--pack-div-btn {
+                                display: flex;
+                                flex-direction: row;
+                                border: none;
+                                position: relative;
+                                align-items: center;
+                                padding: 0px 5px;
+                                width: 130px;
 
-                                @include verticalCellphone {
-                                    width: 60%;
-                                    padding: 5px;
-                                    box-sizing: border-box;
+                                @include tablets {
+                                    width: 155px;
+                                    padding-bottom: 15px;
                                 }
 
-                                &:hover {
-                                    color: #338726;
-                                    background-color: #ffffff;
+                                @include verticalCellPhone {
+                                    width: 200px;
+                                }
+
+                                @include horizontalCellPhone {
+                                    width: 120px;
+                                }
+
+                                img {
+                                    width: 45px;
+                                    position: absolute;
+                                    left: 0px;
+
+                                    @include tablets {
+                                        left: 14px;
+                                    }
+
+                                    @include horizontalCellPhone {
+                                        width: 30px;
+                                        left: 8px;
+                                    }
+                                }
+
+                                button {
+                                    width: 100%;
+                                    font-size: .75rem;
+                                    font-weight: 900;
+                                    padding: 10px;
+                                    border-radius: 10px;
+                                    color: #fffdfd;
+                                    background-color: #32d951;
+                                    transition: all .30s ease-in;
+                                    cursor: pointer;
+    
+                                    @include verticalCellPhone {
+                                        width: 100%;
+                                    }
+
+                                    @include horizontalCellPhone {
+                                        width: 155px;
+                                        padding: 5px;
+                                        box-sizing: border-box;
+                                    }
+    
+                                    @media(hover:hover) {
+                                        &:hover {
+                                            color: #338726;
+                                            background-color: #ffffff;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -950,7 +1006,7 @@ body {
                         justify-content: space-between;
                     }
 
-                    @include cellPhone {
+                    @include verticalCellPhone {
                         width: 80%;
                     }
 
@@ -966,7 +1022,7 @@ body {
                             margin-top: 10px;
                         }
 
-                        @include cellPhone {
+                        @include verticalCellPhone {
                             font-size: clamp(1.75rem, 5vw, 2.5rem)
                         }
                     }
@@ -991,7 +1047,7 @@ body {
                                 font-size: clamp(1.15rem, 2vw, 1.5rem);
                             }
 
-                            @include cellPhone {
+                            @include verticalCellPhone {
                                 font-size: clamp(1.15rem, 4vw, 2rem);
                             }
                         }
@@ -1016,7 +1072,7 @@ body {
                             width: 80%;
                         }
 
-                        @include cellPhone {
+                        @include verticalCellPhone {
                             height: 150px;
                         }
 
@@ -1032,34 +1088,55 @@ body {
                                 font-size: clamp(1.25rem, 3vw, 1.75rem);
                             }
 
-                            @include verticalCellphone {
+                            @include horizontalCellPhone {
                                 font-size: clamp(1.15rem, 5vw, 2rem);
                             }
                         }
 
-                        button {
-                            width: 180px;
-                            font-size: 1rem;
-                            font-weight: 900;
-                            padding: 10px;
-                            border-radius: 10px;
-                            background-color: #338726;
-                            color: #fffdfd;
-                            transition: all .30s ease-in;
-                            cursor: pointer;
+                        div {
+                            position: relative;
 
-                            @include laptops {
-                                width: 165px;
+                            @include horizontalCellPhone {
+                                width: 135px;
+                                padding: 10px;
                             }
 
-                            @include verticalCellphone {
-                                width: 50%;
-                                font-size: clamp(.875rem, 3vw, 1.25rem);
+                            img {
+                                width: 50px;
+                                position: absolute;
+
+                                @include horizontalCellPhone {
+                                    width: 45px;
+                                    left: 5px;
+                                }
                             }
 
-                            &:hover {
-                                color: #338726;
-                                background-color: #fffdfd;
+                            button {
+                                width: 180px;
+                                font-size: 1rem;
+                                font-weight: 900;
+                                padding: 10px;
+                                border-radius: 10px;
+                                background-color: #32d951;
+                                color: #fffdfd;
+                                transition: all .30s ease-in;
+                                cursor: pointer;
+    
+                                @include laptops {
+                                    width: 165px;
+                                }
+    
+                                @include horizontalCellPhone {
+                                    width: 100%;
+                                    font-size: clamp(.875rem, 3vw, 1.25rem);
+                                }
+    
+                                @media(hover:hover) {
+                                    &:hover {
+                                        color: #338726;
+                                        background-color: #fffdfd;
+                                    }
+                                }
                             }
                         }
                     }
@@ -1081,13 +1158,13 @@ body {
                     font-size: clamp(2.5rem, 4vw, 4rem);
                 }
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     padding: 10px;
                     font-size: clamp(2rem, 6vw, 2.5rem);
                     text-shadow: -2px 0px 3px #ffffff;
                 }
 
-                @include verticalCellphone {
+                @include horizontalCellPhone {
                     font-size: clamp(1.75rem, 8vw, 2rem);
                 }
             }
@@ -1097,7 +1174,7 @@ body {
                 width: 90%;
                 margin: 0 auto;
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     flex-direction: column;
                     align-items: center;
                     gap: 30px;
@@ -1106,7 +1183,7 @@ body {
                 div {
                     width: 30%;
 
-                    @include cellPhone {
+                    @include verticalCellPhone {
                         width: 80%;
                     }
 
@@ -1136,13 +1213,13 @@ body {
                 font-size: clamp(2.5rem, 5vw, 4rem);
             }
 
-            @include cellPhone {
+            @include verticalCellPhone {
                 padding: 10px;
                 font-size: clamp(2rem, 6vw, 2.5rem);
                 text-shadow: -2px 0px 3px #ffffff;
             }
 
-            @include verticalCellphone {
+            @include horizontalCellPhone {
                 font-size: clamp(1.75rem, 8vw, 2rem);
             }
         }
@@ -1155,7 +1232,7 @@ body {
             justify-content: space-around;
             gap: 140px 40px;
 
-            @include cellPhone {
+            @include verticalCellPhone {
                 gap: 80px;
             }
 
@@ -1175,7 +1252,7 @@ body {
                     }
                 }
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     width: 70%;
                 }
                 
@@ -1204,7 +1281,7 @@ body {
             padding: 20px;
             height: 150px;
 
-            @include cellPhone {
+            @include verticalCellPhone {
                 display: none;
             }
 
@@ -1226,7 +1303,7 @@ body {
                 justify-content: space-around;
                 margin: 0 auto;
 
-                @include verticalCellphone {
+                @include horizontalCellPhone {
                     flex-wrap: wrap;
                     gap: 32px;
                 }
@@ -1268,12 +1345,12 @@ body {
                     margin-bottom: 30px;
                 }
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     font-size: clamp(2rem, 3vw, 2.5rem);
                     padding-top: 130px;
                 }
 
-                @include verticalCellphone {
+                @include horizontalCellPhone {
                     font-size: clamp(1.5rem, 7vw, 2rem);
                     padding-left: 30px;
                     padding-right: 30px;
@@ -1292,7 +1369,7 @@ body {
                     width: 90%;
                 }
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     flex-direction: column;
                     align-items: center;
                 }
@@ -1308,7 +1385,7 @@ body {
                         width: 45%;
                     }
 
-                    @include cellPhone {
+                    @include verticalCellPhone {
                         width: 80%;
                     }
     
@@ -1318,7 +1395,7 @@ body {
                         margin: 5px;  
                         font-weight: 900;
 
-                        @include cellPhone {
+                        @include verticalCellPhone {
                             font-size: clamp(1.5rem,5vw, 2rem);
                         }
                     }
@@ -1341,31 +1418,67 @@ body {
                                 font-size: clamp(1.25rem, 3vw, 1.5rem);                           
                             }
 
-                            @include verticalCellphone {
+                            @include horizontalCellPhone {
                                 font-size: clamp(1rem, 4vw, 1.5rem);                           
                             }
                         }
                     }
-    
-                    button {
-                        width: 200px;
-                        font-size: 1rem;
-                        font-weight: 900;
-                        margin: 20px;
-                        padding: 10px;
-                        border-radius: 10px;
-                        color: #fffdfd;
-                        background-color: #338726;
-                        transition: all .30s ease-in;
-                        cursor: pointer;
 
-                        @include cellPhone {
-                            width: 50%;
+                    .main__serv--pack-butt-cont {
+                        position: relative;
+
+                        @include verticalCellPhone {
+                            width: 405px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
                         }
-    
-                        &:hover {
-                            color: #338726;
-                            background-color: #ffffff;
+
+                        @include horizontalCellPhone {
+                            width: 150px;
+                        }
+
+                        .whatsapp-icon {
+                            width: 60px;
+                            position: absolute;
+                            top: 13px;
+                            left: 40px;
+
+                            @include verticalCellPhone {
+                                left: 120px;
+                            }
+
+                            @include horizontalCellPhone  {
+                                left: -5px;
+                            }
+                        }
+                        
+                        .button-link {
+                            width: 200px;
+                            font-size: 1rem;
+                            font-weight: 900;
+                            margin: 20px;
+                            padding: 10px;
+                            border-radius: 10px;
+                            color: #fffdfd;
+                            background-color: #32d951;
+                            transition: all .30s ease-in;
+                            cursor: pointer;
+
+                            @include verticalCellPhone {
+                                width: 50%;
+                            }
+
+                            @include horizontalCellPhone {
+                                width: 100%;
+                            }
+
+                           @media (hover:hover) {
+                                &.button-link:hover {
+                                    color: #338726;
+                                    background-color: #ffffff;
+                                }
+                            }
                         }
                     }
                 }
@@ -1385,7 +1498,7 @@ body {
                 color: $colorTitles;
                 text-shadow: -2px 0px 2px #000000;
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     font-size: clamp(1.2rem, 5vw, 2rem);
                     padding: 10px 15px;
                 }
@@ -1423,7 +1536,7 @@ body {
                             color: #000000;
                             font-weight: 900;
 
-                            @include cellPhone {
+                            @include verticalCellPhone {
                                 font-size: clamp(1.10rem, 3vw, 1.5rem);
                             }
                         }
@@ -1449,10 +1562,12 @@ body {
                             color: #ffffff;
                             font-weight: 900;
                             cursor: pointer;
-                            
-                            &:hover {
-                                color: #338726;
-                                background-color: #ffffff;
+
+                            @media(hover:hover) {
+                                &:hover {
+                                    color: #338726;
+                                    background-color: #ffffff;
+                                }
                             }
                         }
                     }
@@ -1462,6 +1577,7 @@ body {
     }
 
     .main__register {
+        
         @include flexColumn;
         justify-content: center;
         align-items: center;
@@ -1478,11 +1594,11 @@ body {
             margin: 0px;
             padding-bottom: 30px;
 
-            @include cellPhone {
+            @include verticalCellPhone {
                 font-size: clamp(2rem, 6vw, 2.75rem);
             }
 
-            @include verticalCellphone {
+            @include horizontalCellPhone {
                 padding-top: 45px;
                 font-size: clamp(1.75rem, 7vw, 2rem);
                 padding-left: 25px;
@@ -1495,7 +1611,7 @@ body {
             background-color: #000000;
             padding: 30px 0px;
 
-            @include verticalCellphone {
+            @include horizontalCellPhone {
                 width: 85%;
                 padding: 0;
             }
@@ -1515,11 +1631,11 @@ body {
                     text-align: center;
                 }
 
-                @include cellPhone {
+                @include verticalCellPhone {
                     font-size: clamp(1.25rem, 4vw, 1.5rem);
                 }
 
-                @include verticalCellphone {
+                @include horizontalCellPhone {
                     font-size: clamp(1rem, 5vw, 1.25rem);
                 }
             }
@@ -1538,7 +1654,7 @@ body {
                     padding: 40px 20px;
                     border: 3px solid #ff0000;
 
-                    @include verticalCellphone {
+                    @include horizontalCellPhone {
                         padding-top: 150px;
                     }
 
@@ -1550,11 +1666,11 @@ body {
                         padding: 0 20px;
                         letter-spacing: 3px;
 
-                        @include cellPhone {
+                        @include verticalCellPhone {
                             font-size: clamp(1.25rem, 4vw, 1.75rem);
                         }
 
-                        @include verticalCellphone {
+                        @include horizontalCellPhone {
                             position: absolute;
                             margin-top: -145px;
                             font-size: clamp(1rem, 6vw, 1.5rem);
@@ -1581,11 +1697,11 @@ body {
                                 padding-bottom: 15px;
                             }
 
-                            @include cellPhone {
+                            @include verticalCellPhone {
                                 font-size: clamp(1.225rem, 4vw, 1.5rem);
                             }
 
-                            @include verticalCellphone {
+                            @include horizontalCellPhone {
                                 font-size: clamp(1rem, 5vw, 1.225rem);
                             }
                         }
@@ -1618,13 +1734,15 @@ body {
                                     width: 60%;
                                 }
 
-                                @include verticalCellphone {
+                                @include horizontalCellPhone {
                                     margin-top: 0px;
                                 }
 
-                                &:hover {
-                                    color: #338726;
-                                    background-color: #fffdfd;
+                                @media(hover:hover) {
+                                    &:hover {
+                                        color: #338726;
+                                        background-color: #fffdfd;
+                                    }
                                 }
                             }
                         }
