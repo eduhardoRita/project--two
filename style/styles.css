@@ -71,8 +71,10 @@ body .header .header__links .header__links--link {
     font-size: clamp(1.25rem, 3vw, 1.5rem);
   }
 }
-body .header .header__links .header__links--link:hover {
-  color: #dc1f30;
+@media (hover: hover) {
+  body .header .header__links .header__links--link:hover {
+    color: #dc1f30;
+  }
 }
 body .header .header__icons {
   display: flex;
@@ -108,8 +110,10 @@ body .header .header__icons {
 body .header .header__icons i {
   cursor: pointer;
 }
-body .header .header__icons i:hover {
-  border-bottom: solid 3px red;
+@media (hover: hover) {
+  body .header .header__icons i:hover {
+    border-bottom: solid 3px red;
+  }
 }
 body .header .header__icons i img {
   width: 25px;
@@ -386,15 +390,17 @@ body .main .main__welcome .main__welcome--text .main__welcome--button {
   transition: all 0.25s ease;
   cursor: pointer;
 }
-body .main .main__welcome .main__welcome--text .main__welcome--button:hover {
-  color: #338726;
-  box-shadow: none;
-  background-color: #ffffff;
-}
 @media screen and (max-width: 46rem) {
   body .main .main__welcome .main__welcome--text .main__welcome--button {
     width: 80px;
     font-size: 14px;
+  }
+}
+@media (hover: hover) {
+  body .main .main__welcome .main__welcome--text .main__welcome--button:hover {
+    color: #338726;
+    box-shadow: none;
+    background-color: #ffffff;
   }
 }
 body .main .main__welcome .main__welcome--img {
@@ -516,8 +522,10 @@ body .main .main__check .main__check--form .main__check--fieldset .main__check--
     font-size: clamp(0.875rem, 2vw, 1.25rem);
   }
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--options label:hover {
-  color: #dc1f30;
+@media (hover: hover) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--options label:hover {
+    color: #dc1f30;
+  }
 }
 body .main .main__check .main__check--form .main__check--fieldset .main__check--options select {
   width: 310px;
@@ -573,8 +581,10 @@ body .main .main__check .main__check--form .main__check--fieldset .main__check--
     font-size: clamp(0.875rem, 2vw, 1.25rem);
   }
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label:hover {
-  color: #dc1f30;
+@media (hover: hover) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label:hover {
+    color: #dc1f30;
+  }
 }
 body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs input {
   width: 300px;
@@ -617,9 +627,11 @@ body .main .main__check .main__check--form .main__check--fieldset .main__check--
     font-size: 1.25rem;
   }
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit input:hover {
-  background-color: #ffffff;
-  color: #338726;
+@media (hover: hover) {
+  body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit input:hover {
+    background-color: #ffffff;
+    color: #338726;
+  }
 }
 body .main .main__check .main__check--answer-box {
   display: flex;
@@ -839,7 +851,7 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one section {
   display: flex;
   width: 85%;
   justify-content: space-around;
-  gap: 70px;
+  gap: 40px;
   margin-top: 20px;
   padding: 40px 10px;
 }
@@ -915,27 +927,75 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one section d
     text-align: center;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one section div button {
-  width: 100px;
+body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  position: relative;
+  align-items: center;
+  padding: 0px 5px;
+  width: 130px;
+}
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn {
+    width: 155px;
+    padding-bottom: 15px;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 32rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn {
+    width: 120px;
+  }
+}
+body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn img {
+  width: 45px;
+  position: absolute;
+  left: 0px;
+}
+@media screen and (max-width: 80em) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn img {
+    left: 14px;
+  }
+}
+@media screen and (max-width: 32rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn img {
+    width: 30px;
+    left: 8px;
+  }
+}
+body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn button {
+  width: 100%;
   font-size: 0.75rem;
   font-weight: 900;
   padding: 10px;
   border-radius: 10px;
   color: #fffdfd;
-  background-color: #338726;
+  background-color: #32d951;
   transition: all 0.3s ease-in;
   cursor: pointer;
 }
+@media screen and (max-width: 46rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn button {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 32rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div button {
-    width: 60%;
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn button {
+    width: 155px;
     padding: 5px;
     box-sizing: border-box;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one section div button:hover {
-  color: #338726;
-  background-color: #ffffff;
+@media (hover: hover) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn button:hover {
+    color: #338726;
+    background-color: #ffffff;
+  }
 }
 body .main .main__offers .main__offers--packs .main__offers--packs-two {
   display: flex;
@@ -1054,31 +1114,52 @@ body .main .main__offers .main__offers--packs .main__offers--packs-two section .
     font-size: clamp(1.15rem, 5vw, 2rem);
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-two section button {
+body .main .main__offers .main__offers--packs .main__offers--packs-two section div {
+  position: relative;
+}
+@media screen and (max-width: 32rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two section div {
+    width: 135px;
+    padding: 10px;
+  }
+}
+body .main .main__offers .main__offers--packs .main__offers--packs-two section div img {
+  width: 50px;
+  position: absolute;
+}
+@media screen and (max-width: 32rem) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two section div img {
+    width: 45px;
+    left: 5px;
+  }
+}
+body .main .main__offers .main__offers--packs .main__offers--packs-two section div button {
   width: 180px;
   font-size: 1rem;
   font-weight: 900;
   padding: 10px;
   border-radius: 10px;
-  background-color: #338726;
+  background-color: #32d951;
   color: #fffdfd;
   transition: all 0.3s ease-in;
   cursor: pointer;
 }
 @media screen and (max-width: 96.875em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two section button {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two section div button {
     width: 165px;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two section button {
-    width: 50%;
+  body .main .main__offers .main__offers--packs .main__offers--packs-two section div button {
+    width: 100%;
     font-size: clamp(0.875rem, 3vw, 1.25rem);
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-two section button:hover {
-  color: #338726;
-  background-color: #fffdfd;
+@media (hover: hover) {
+  body .main .main__offers .main__offers--packs .main__offers--packs-two section div button:hover {
+    color: #338726;
+    background-color: #fffdfd;
+  }
 }
 body .main .main__photos {
   width: 100%;
@@ -1358,7 +1439,39 @@ body .main__services article .main__services--container .main__services--pack ul
     font-size: clamp(1rem, 4vw, 1.5rem);
   }
 }
-body .main__services article .main__services--container .main__services--pack button {
+body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont {
+  position: relative;
+}
+@media screen and (max-width: 46rem) {
+  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont {
+    width: 405px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 32rem) {
+  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont {
+    width: 150px;
+  }
+}
+body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .whatsapp-icon {
+  width: 60px;
+  position: absolute;
+  top: 13px;
+  left: 40px;
+}
+@media screen and (max-width: 46rem) {
+  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .whatsapp-icon {
+    left: 120px;
+  }
+}
+@media screen and (max-width: 32rem) {
+  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .whatsapp-icon {
+    left: -5px;
+  }
+}
+body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .button-link {
   width: 200px;
   font-size: 1rem;
   font-weight: 900;
@@ -1366,18 +1479,25 @@ body .main__services article .main__services--container .main__services--pack bu
   padding: 10px;
   border-radius: 10px;
   color: #fffdfd;
-  background-color: #338726;
+  background-color: #32d951;
   transition: all 0.3s ease-in;
   cursor: pointer;
 }
 @media screen and (max-width: 46rem) {
-  body .main__services article .main__services--container .main__services--pack button {
+  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .button-link {
     width: 50%;
   }
 }
-body .main__services article .main__services--container .main__services--pack button:hover {
-  color: #338726;
-  background-color: #ffffff;
+@media screen and (max-width: 32rem) {
+  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .button-link {
+    width: 100%;
+  }
+}
+@media (hover: hover) {
+  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .button-link.button-link:hover {
+    color: #338726;
+    background-color: #ffffff;
+  }
 }
 body .main__services .main__services--comments {
   width: 100%;
@@ -1455,9 +1575,11 @@ body .main__services .main__services--comments .main__services--form .main__serv
   font-weight: 900;
   cursor: pointer;
 }
-body .main__services .main__services--comments .main__services--form .main__services--fielset .main__services--comments-button input:hover {
-  color: #338726;
-  background-color: #ffffff;
+@media (hover: hover) {
+  body .main__services .main__services--comments .main__services--form .main__services--fielset .main__services--comments-button input:hover {
+    color: #338726;
+    background-color: #ffffff;
+  }
 }
 body .main__register {
   display: flex;
@@ -1639,7 +1761,9 @@ body .main__register .main__section--register .main__section--register-form fiel
     margin-top: 0px;
   }
 }
-body .main__register .main__section--register .main__section--register-form fieldset div input.button-register:hover {
-  color: #338726;
-  background-color: #fffdfd;
+@media (hover: hover) {
+  body .main__register .main__section--register .main__section--register-form fieldset div input.button-register:hover {
+    color: #338726;
+    background-color: #fffdfd;
+  }
 }/*# sourceMappingURL=styles.css.map */
