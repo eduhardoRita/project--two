@@ -1,6 +1,5 @@
 $colorBody: #2f2b2d;
-$colorHeader: #000000;
-$colorTitles: #ff0000;
+$colorHeader: #1e1a1a;
 
 @mixin flexRow {
     display: flex;
@@ -14,18 +13,18 @@ $colorTitles: #ff0000;
 }
 
 @mixin laptops {
-    @media screen and (max-width: 96.875em) {@content};
+    @media screen and (max-width: 120em) {@content};
 }
 
 @mixin tablets {
-    @media screen and (max-width: 80em) {@content};
+    @media screen and (max-width: 85em) {@content};
 }
 
-@mixin verticalCellPhone {
+@mixin horizontalCellPhones {
     @media screen and (max-width: 46rem) {@content};
 }
 
-@mixin horizontalCellPhone {
+@mixin verticalCellPhone {
     @media screen and (max-width: 32rem) {@content};
 }
 
@@ -36,30 +35,30 @@ body {
     .header {
         @include flexRow;
         width: 100%;
-        height: 60px;
+        height: 70px;
         background-color: $colorHeader;
         border-bottom: 3px solid #dc1f30;
         position: fixed;
         z-index: 1;
 
-        @include verticalCellPhone {
+        @include horizontalCellPhones {
             height: auto;
         }
 
-        @include horizontalCellPhone {
+        @include verticalCellPhone {
             flex-direction: column;
         }
 
-        .header__img {
-            width: 80px;
+        .hdr__img {
+            width: 150px;
             padding: 10px;
 
             @include tablets {
-                width: 75px;
+                width: 120px;
             }
         }
     
-        .header__links {
+        .hdr__nav {
             width: 50%;
             @include flexRow;
 
@@ -67,29 +66,41 @@ body {
                 width: 55%;
             }
 
-            @include verticalCellPhone {
+            @include horizontalCellPhones {
                 gap: 5px 20px;
                 width: 100%;
                 flex-wrap: wrap;
                 justify-content: space-around;
             }
 
-            @include horizontalCellPhone {
-                gap: 5px 40px;
+            @include horizontalCellPhones {
+                gap: 5px 45px;
+            }
+
+            @include verticalCellPhone {
+                gap: 5px 50px;
                 padding: 10px;
                 padding-top: 0;
                 box-sizing: border-box;
             }
 
-            .header__links--link {
+            .hdr__nav--link {
                 font-family: "Caveat", cursive;
                 color: aliceblue;
                 text-decoration: none;
-                font-size: 1.5rem;
+                font-size: 1.75rem;
                 font-weight: 600;
 
                 @include tablets {
                     font-size: clamp(1.25rem, 3vw, 1.5rem);
+                }
+
+                @include verticalCellPhone {
+                    font-size: clamp(1.25rem, 6vw, 1.75rem);
+                }
+
+                @include horizontalCellPhones {
+                    font-size: 1.5rem
                 }
 
                 @media(hover:hover) {
@@ -100,7 +111,7 @@ body {
             }
         }
     
-        .header__icons {
+        .hdr__sec-icns {
             @include flexRow;
             width: 30%;
             padding: 10px;
@@ -110,19 +121,19 @@ body {
                 padding: 8px;
             }
 
-            @include verticalCellPhone {
+            @include horizontalCellPhones {
                 position: absolute;
                 top: 60px;
                 right: 0;
                 width: 40%;
             }
 
-            @include horizontalCellPhone {
+            @include verticalCellPhone {    
                 position: absolute;
-                width: 90%;
+                width: 10%;
                 flex-direction: column-reverse;
                 align-items: flex-end;
-                margin-top: 60px;
+                margin-top: 70px;
                 padding: 10px 0;
             }
     
@@ -131,19 +142,19 @@ body {
                 
                 @media(hover:hover) {
                     &:hover {
-                        border-bottom: solid 3px red;
+                        border-bottom: solid 3px #dc1f30;
                     }
                 }
 
                 img {
-                    width: 25px;
+                    width: 30px;
                     filter: invert(100%);
 
                     @include tablets {
                         width: clamp(22px, 2vw, 25px);
                     }
 
-                    @include horizontalCellPhone {
+                    @include verticalCellPhone {
                         width: clamp(17px, 6vw, 25px);
                     }
 
@@ -154,7 +165,7 @@ body {
             }
         }
 
-        .header__menu {
+        .hdr__sec--menu {
             display: none;
 
             span {
@@ -169,30 +180,30 @@ body {
                 padding: 20px;
                 font-size: 1.5rem;
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     font-size: clamp(1.25rem, 5vw, 1.5rem);
                 }
             }
 
-            &.header__menu--show {
+            &.hdr__menu--show {
                 @include flexColumn;
                 width: 30%;
                 position: absolute;
-                background-color: #000000;
+                background-color: #1e1a1a;
                 height: auto;
                 right: 0;
-                top: 60px;
+                top: 70px;
                 box-sizing: border-box;
-                border-left: 2px solid #dc1f30;
-                border-bottom: 2px solid #dc1f30;
+                border-left: 3px solid #dc1f30;
+                border-bottom: 3px solid #dc1f30;
 
-                .header__menu--icon-close {
+                .hdr__menu--icn-cls {
                     position: absolute;
                     right: 10px;
                     top: 10px;
                     display: none;
 
-                    @include verticalCellPhone {
+                    @include horizontalCellPhones {
                         display: block;
                     }
 
@@ -205,7 +216,7 @@ body {
                     width: clamp(40%, 3vw, 50%);
                 }
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     right: 10%;
                     width: 80%;
                     top: 130px;
@@ -216,24 +227,24 @@ body {
     }
 
     .main {
-        .main__section-one {
+        .main__sec-one {
             @include flexRow;
             justify-content: center;
 
-            @include horizontalCellPhone {
+            @include verticalCellPhone {
                 background-color: #2f2b2d;
             }
             
-            .main__section-one--title {
+            .main__sec-on--ttl {
+                font-family: "Goblin One", serif;
                 width: 45%;
                 font-size: 2.75rem;
+                font-weight: 100;
                 text-align: center;
-                letter-spacing: 3px;
-                color: $colorTitles;
-                text-shadow: -2px 0px 2px #ffffff;
-                background-color: #000000;
+                color: #ffffff;
+                background-color: #1e1a1a;
                 padding: 30px 50px;
-                margin-top: 95px;
+                margin-top: 115px;
                 border-radius: 100px;
                 border: 2px solid #ff0000;
 
@@ -246,49 +257,52 @@ body {
                     font-size: clamp(2rem, 4vw, 2.75rem);
                 }
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     border: none;
                     padding: 0;
                     width: 90%;
+                    color: #c12131;
                     background-color: #2f2b2d;
                     margin-top: 115px;
                     font-size: clamp(2rem, 4vw, 2.5rem);
-                    text-shadow: -1px 0px 2px #ffffff;
+                    text-shadow: 0px 3px 2px #000000;
                 }
 
-                @include horizontalCellPhone {
-                    width: 84%;
-                    margin-top: 130px;
+                @include verticalCellPhone {
+                    letter-spacing: 3px;
+                    margin-top: 160px;
                     background-color: #2f2b2d;
-                    font-size: clamp(1.8rem, 8vw, 2rem);
+                    font-weight: 100;
+                    font-size: clamp(1.25rem, 5vw, 2rem);
+                    text-shadow: 0px 3px 1px #000000;
                 }
             }
         }
 
-        .main__welcome {
+        .main__sec-welcome {
             display: flex;
             width: 90%;
-            height: 180px;  
+            height: 210px;  
             margin: 0 auto;
-            border: 2px solid #ffffff;
+            border: 2px solid #c12131;
             overflow: hidden;
             position: relative;
-            background-color: #001f93;
+            background-color: #1e1a1a;
             border-radius: 15px;
             
             @include tablets {
-                background-color: #001f93;
+                background-color: #1e1a1a;
                 display: grid;
                 gap: 10px;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: auto auto auto;
-                grid-template-areas: 
-                    "main__welcome--title main__welcome--title main__welcome--title" 
-                    "main__welcome--text main__welcome--text main__welcome--img"
-                    "main__welcome--text main__welcome--text main__welcome--img"
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                grid-template-areas:     
+                    "main__welcome--title main__welcome--title" 
+                    "main__welcome--text main__welcome--img"
+                    "main__welcome--text  main__welcome--img"
                 ;
 
-                .main__welcome--title {
+                .main__sec-wel--ttl {
                     grid-area: main__welcome--title;
                 }
     
@@ -304,20 +318,28 @@ body {
                 }
             }
 
-            @include verticalCellPhone {
+            @include horizontalCellPhones {
                 width: 80%;
                 @include flexColumn;
-                background-color: #c2c5ce;
+                background-color: #1e1a1a;
+                border: none;
+                border: 2px solid #ffffff
             }   
 
-            .main__welcome--title {
+            @include verticalCellPhone {
+                border: none
+            }
+
+            .main__sec-wel--ttl {
                 @include flexRow;
                 justify-content: center;
-                width: 80%;
+                width: 75%;
+                margin: 15px 35px;
                 color: $colorTitles;
                 position: absolute;
-                font-size: 2.5rem;
-                text-shadow: -1px 0px 2px #000000;
+                font-family: "Caveat", cursive;
+                font-size: 3.5rem;
+                border-radius: 15px;
 
                 @include tablets {
                     font-size: clamp(2rem, 4vw, 3rem);
@@ -325,58 +347,78 @@ body {
                     width: 100%;
                 }
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     width: 100%;
-                    font-size: clamp(1.725rem, 4vw, 2rem);
+                    font-size: clamp(1.75rem, 5vw, 2rem);
+                    color: #ffffff;
+                    background-color: #c12131;
                     padding: 0 10px;
                     box-sizing: border-box;
                     text-align: center;
+                    border-radius: 0px;
                 }
 
-                @include horizontalCellPhone {
-                    width: 85%;
+                @include verticalCellPhone {
+                    width: 75%;
                     margin: 0 auto;
-                    padding-top: 20px;
+                    padding-top: 5px;
                     position: static;
-                    font-size: clamp(1.25rem, 6vw, 2.5rem);
+                    font-size: clamp(1.75rem, 6vw, 2.5rem);
+                    color: #ffffff;
                     text-align: center;
+                    background-color: #1e1a1a;
                 }
             }
 
-            .main__welcome--text {
+            .main__sec-wel--txt {
                 width: 100%;
-                background-color: #001f93;
+                background-color: #1e1a1a;
+                border-radius: 15px;
                 padding-top: 80px;
 
                 @include tablets {
-                    background-color: #001f93;
+                    background-color: #1e1a1a;
                     padding-top: clamp(30px, 4vw, 80px);
                     width: 110%;
                 }
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     width: 100%;
                     padding-top: 50px;
+
                 }
 
-                @include horizontalCellPhone {
+                @include verticalCellPhone {
                     padding-top: 0px;
+                    background-color: #c12131;
+                    border-radius: 20px;
                 }
 
                 p {
-                    font-size: 1.25rem;
+                    font-size: 1.75rem;
                     text-align: justify;
                     padding: 0 35px;
-                    color: #cfc4c4;
+                    color: #ffffff;
 
                     @include tablets {
                         font-size: clamp(1rem, 2vw, 1.25rem);
                     }
 
-                    @include horizontalCellPhone {
+                    @include horizontalCellPhones {
+                        font-size: clamp(1.25rem, 3vw, 1.75rem);
+                    }
+
+                    @include verticalCellPhone {
                         margin: 5px;
-                        font-size: clamp(0.875rem, 4vw, 1rem);
+                        font-family: "Caveat", cursive;
+                        font-size: clamp(1.25rem, 6vw, 1.75rem);
                         padding: 0 10px;
+                        color: #ffffff;
+                        text-shadow: 
+                            1px 1px 0 #000000,
+                            -1px 1px 0 #000000,
+                            1px -1px 0 #000000,
+                            -1px -1px 0 #000000;
                     }
 
                     span {
@@ -391,27 +433,38 @@ body {
                     }
                 }
 
-                .main__welcome--button {
+                .main__sec-wel--btn {
                     position: absolute;
-                    right: 10px;
-                    bottom: 10px;
-                    width: 100px;
-                    font-size: 1rem;
+                    right: 0px; 
+                    bottom: 0px;
+                    width: 120px;
+                    height: 30px;
+                    font-size: 1.25rem;
                     color: #ffffff;
-                    background-color: #338726;
-                    box-shadow: -4px 3px 3px #ffffff;
+                    background-color: #c12131;
+                    box-shadow: -4px 0px 3px #ffffff;
                     border-radius: 15px;
                     transition: all .25s ease;
                     cursor: pointer;
 
+                    @include tablets {
+                        font-size: 1rem;
+                        width: 100px;
+                    }
+
+                    @include horizontalCellPhones {
+                        width: 105px;
+                        font-size: 1.15rem;
+                        box-shadow: none;
+                    }
+
                     @include verticalCellPhone {
-                        width: 80px;
-                        font-size: 14px;
+                        background-color: #1e1a1a;
                     }
 
                     @media(hover:hover) {
                         &:hover {
-                            color: #338726;
+                            color: #c12131;
                             box-shadow: none;
                             background-color: #ffffff;
                         }
@@ -419,7 +472,7 @@ body {
                 }
             }
 
-            .main__welcome--img {
+            .main__sec-wel--img {
                 width: 20%;
                 padding: 50px;
 
@@ -435,7 +488,7 @@ body {
 
                 img {
                     width: 100%;
-                    height: 400px;
+                    height: 600px;
                     display: flex;
                     
                     @include tablets {
@@ -446,24 +499,28 @@ body {
             }
         }
 
-        .main__check {
+        .main__sec-check {
             @include flexColumn;
             width: 100%;
             height: 100%;
             align-items: center;
-            margin: 20px auto;
-            background-color: #000000;
+            margin: 50px auto;
+            background-color: #1e1a1a;
             padding: 20px;
             box-sizing: border-box;
             
-            .main__check--form {
+            @include verticalCellPhone {
+                margin: 10px auto;
+            }
+
+            .main__sec-chk--frm {
                 width: 85%;
 
                 @include laptops {
                     width: 95%;
                 }
 
-                .main__check--fieldset {
+                .main__sec-chk--fset {
                     @include flexColumn;
                     gap: 30px;
                     padding: 30px 120px;
@@ -477,14 +534,16 @@ body {
                         padding: 30px 50px;
                     }
 
-                    @include verticalCellPhone {
+                    @include horizontalCellPhones {
                         padding: 30px;
+                    
                     }
                     
                     legend {
+                        font-family: "Anton", serif;
                         font-size: 2.5rem;
                         color: #ffffff;
-                        font-weight: 600;
+                        font-weight: 100;
                         text-align: center;
                         padding: 0 20px;
                         letter-spacing: 3px;
@@ -493,22 +552,27 @@ body {
                             font-size: clamp(1.25rem, 3vw, 2.25rem);
                         }
 
-                        @include horizontalCellPhone {
-                            font-size: clamp(1rem, 5vw, 1.75rem);
+                        @include horizontalCellPhones {
+                            font-size: clamp(1.25rem, 4vw, 2.25rem);
+                        }
+
+                        @include verticalCellPhone {
+                            font-size: clamp(1.5rem, 4vw, 1.75rem);
                             letter-spacing: 0;
+                            width: 80%;
                         }
                     }
     
-                    .main__check--options {
+                    .main__sec-chk--opts {
                         @include flexRow;
                         width: 100%;
 
-                        @include verticalCellPhone {
+                        @include horizontalCellPhones {
                             flex-direction: column;       
                         }
         
                         label {
-                            font-size: 1.5rem;
+                            font-size: 1.75rem;
                             color: #b4cff5;
                             letter-spacing: 3px;
 
@@ -517,13 +581,15 @@ body {
                                 letter-spacing: 0;
                             }
 
-                            @include verticalCellPhone {
+                            @include horizontalCellPhones {
+                                font-family: "Della Respira", serif;
+                                font-weight: 300;
                                 text-align: center;
                                 padding-bottom: 15px;
                             }
 
-                            @include horizontalCellPhone {
-                                font-size: clamp(.875rem, 2vw, 1.25rem);
+                            @include verticalCellPhone {
+                                font-size: clamp(1.25rem, 4vw, 1.5rem);
                             }
 
                             @media(hover:hover) {
@@ -535,6 +601,7 @@ body {
                         
                         select {
                             width: 310px;
+                            height: 30px;
                             font-size: 1.25rem;
 
                             &:hover {
@@ -553,19 +620,27 @@ body {
                                 width: clamp(145px, 21vw, 290px);
                                 font-size: clamp(1rem, 2vw, 1.25rem);
                             }
+
+                            @include horizontalCellPhones {
+                                width: 50%;
+                            }
+
+                            @include verticalCellPhone {
+                                width: 70%;
+                            }
                         }
                     }
     
-                    .main__check--inputs {
+                    .main__div-chk--inpt {
                         @include flexRow;
                         width: 100%;
 
-                        @include verticalCellPhone {
+                        @include horizontalCellPhones {
                             flex-direction: column;       
                         }
-        
+
                         label {
-                            font-size: 1.5rem;
+                            font-size: 1.75rem;
                             color: #b4cff5;
                             letter-spacing: 3px;
 
@@ -574,13 +649,15 @@ body {
                                 letter-spacing: 0;
                             }
 
-                            @include verticalCellPhone {
+                            @include horizontalCellPhones {
+                                font-family: "Della Respira", serif;
+                                font-weight: 300;
                                 text-align: center;
                                 padding-bottom: 15px;
                             }
 
-                            @include horizontalCellPhone {
-                                font-size: clamp(.875rem, 2vw, 1.25rem);
+                            @include verticalCellPhone {
+                                font-size: clamp(1.25rem, 4vw, 1.5rem);
                             }
 
                             @media(hover:hover) {
@@ -591,8 +668,8 @@ body {
                         }   
         
                         input {
-                            width: 300px;
-                            height: 20px;
+                            width: 305px;
+                            height: 25px;
 
                             @include laptops {
                                 width: 283px;
@@ -602,18 +679,27 @@ body {
                                 width: clamp(145px, 20.5vw, 290px);
                             }
 
+                            @include horizontalCellPhones {
+                                width: 50%;
+                            }
+
+                            @include verticalCellPhone {
+                                width: 70%;
+                            }    
+
                             &:hover {
                                 transform: scale(1.09);
                             }
                         }
                     }
 
-                    .main__check--sumbit {
+                    .main__div-chk--sum {
                         text-align: center;
                         
                         input {
                             width: 300px;
-                            font-size: 1.5rem;
+                            height: 50px;
+                            font-size: 2rem;
                             font-weight: 900;
                             color: #ffffff;
                             background-color: #338726;
@@ -621,13 +707,20 @@ body {
                             transition: all .30s ease;
                             cursor: pointer;
 
-                            @include verticalCellPhone {
-                                width: 150px;
+                            @include tablets {
+                                width: 40%;
+                                font-size: clamp(1.5rem, 3vw, 2rem);
                             }
 
-                            @include horizontalCellPhone {
-                                width: 120px;
+                            @include horizontalCellPhones {
+                                width: 40%;
+                            }
+
+                            @include verticalCellPhone {
+                                width: 50%;
                                 font-size: 1.25rem;
+                                font-family: "Goblin One", Arial, Helvetica, sans-serif;
+                                border-radius: 30px;
                             }
 
                             @media(hover:hover) {
@@ -641,42 +734,26 @@ body {
                 }
             }
 
-            .main__check--answer-box {
+            .main__chk--answ-box {
                 @include flexColumn;
                 align-items: center;
                 justify-content: center;
                 height: 200px;
                 background-color: #dc1f30;
                 color: #e8e900;
-                font-size: 2rem;
+                font-size: 2.5rem;
                 text-align: center;
                 font-weight: 900;
                 margin: 20px 0;
                 border: 2px solid #ffffff;
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     font-size: clamp(1.5rem, 5vw, 2rem);
                     padding: 0px 10px;
                 }
-
-                .main__check--new-button {
-                    width: 300px;
-                    background-color: #338726;
-                    margin: 20px;
-                    border-radius: 15px;
-                    font-size: 1.5rem;
-                    font-weight: 900;
-                    padding: 10px;
-
-                    @include verticalCellPhone {
-                        margin: 20px 0;
-                        width: 180px;
-                        font-size: clamp(1rem, 3vw, 1.5rem);
-                    }
-                }
             }
 
-            .main__check--answer-box-two {
+            .main__chk--answ-box-two {
                 @include flexColumn;
                 align-items: center;
                 justify-content: center;
@@ -689,13 +766,13 @@ body {
                 margin: 20px 0;
                 border: 2px solid #ffffff;
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     font-size: clamp(1.5rem, 5vw, 2rem);
                     padding: 0px 10px;
                 }
             }
 
-            .main__check--answer-box-three {
+            .main__chk--answ-box-thr {
                 @include flexColumn;
                 align-items: center;
                 justify-content: center;
@@ -708,29 +785,13 @@ body {
                 margin: 20px 0;
                 border: 2px solid #ffffff;
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     font-size: clamp(1.5rem, 5vw, 2rem);
                     padding: 0px 10px;
                 }
-
-                .main__check--new-button-two {
-                    width: 300px;
-                    background-color: #338726;
-                    margin: 20px;
-                    border-radius: 15px;
-                    font-size: 1.5rem;
-                    font-weight: 900;
-                    padding: 10px;
-
-                    @include verticalCellPhone {
-                        margin: 20px 0;
-                        width: 180px;
-                        font-size: clamp(1rem, 3vw, 1.5rem);
-                    }
-                }
             }
 
-            .main__check--answer-box-four {
+            .main__chk--answ-box-fr {
                 @include flexColumn;
                 align-items: center;
                 justify-content: center;
@@ -743,53 +804,56 @@ body {
                 margin: 20px 0;
                 border: 2px solid #ffffff;
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     font-size: clamp(1.5rem, 5vw, 2rem);
                     padding: 0px 10px;
                 }
             }
         }
 
-        .main__offers {
+        .main__sec-offers {
             h3 {
-                font-size: 3.25rem;
+                font-size: 3.5rem;
                 text-align: center;
-                color: $colorTitles;
-                text-shadow: -4px 0px 3px #ffffff;
+                color: #ffffff;
                 letter-spacing: 2px;
 
                 @include tablets {
                     font-size: clamp(2.25rem, 4vw, 3rem);
                 }
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     padding: 10px;
+                    color: #c12131;
+                    text-shadow: 0 1px 1px #000000;
                 }
 
-                @include horizontalCellPhone {
-                    font-size: clamp(1.75rem, 7vw, 2rem);
-                    text-shadow: -1px 0px 3px #ffffff;
+                @include verticalCellPhone {
+                    font-size: clamp(1rem, 5vw, 2rem);
+                    font-family: "Goblin One", serif;
+                    color: #c12131;
+                    margin-top: 0;
                 }
             }
 
-            .main__offers--packs {
+            .main__sec-off--pks {
                 display: flex;
                 width: 100%;
                 justify-content: space-around;
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     flex-direction: column;
                     align-items: center;
                     gap: 15px;
                 }
                 
-                .main__offers--packs-one {
+                .main__sec-off--pk-one {
                     @include flexColumn;
                     align-items: center;
                     justify-content: center;
                     width: 35%;
-                    background-color: #dc1f30;
-                    border: 2px solid #ffffff;
+                    background-color: #c12131;
+                    border: 3px solid #ffffff;
                     border-radius: 15px;
                     
                     @include laptops {
@@ -797,25 +861,40 @@ body {
                         justify-content: flex-start;
                     }
 
-                    @include verticalCellPhone {
+                    @include horizontalCellPhones {
                         width: 80%;
                     }
 
-                    span {
-                        font-size: 2.5rem;
-                        font-weight: 900;
-                        margin: 10px;
-                        padding: 10px;
+                    .main__sec-off--pk-ttl {
+                        font-family: "Faster One", Arial, Helvetica, sans-serif;
+                        font-size: 3rem;
+                        text-align: center;
+                        word-spacing: 180px;
+                        width: 100%;
+                        margin-top: 20px;
+                        padding: 10px 0;
                         color: #000000;
+                        background-color: #ffffff   ;
                         text-shadow: -2px 0px 2px #fffdfd;
+
+                        @include laptops {
+                            word-spacing: 300px;
+                        }
                         
                         @include tablets {
                             font-size: clamp(1.25rem, 4vw, 2.5rem);
                         }
 
-                        @include verticalCellPhone {
+                        @include horizontalCellPhones {
                             font-size: clamp(1.75rem, 5vw, 2.5rem);
                             text-align: center;
+                            margin: 0;
+                            margin-top: 20px;
+                            background-color: #ffffff;
+                        }
+
+                        @include verticalCellPhone {
+                            font-size: clamp(1.75rem, 7vw, 2rem);
                         }
                     }
 
@@ -823,6 +902,11 @@ body {
                         display: flex;
                         flex-direction: column;
                         gap: 40px;
+                        margin-top: 40px;
+
+                        @include laptops {
+                            margin-top: 20px;
+                        }
 
                         @include tablets {
                             gap: 20px;
@@ -830,17 +914,37 @@ body {
 
                         li {
                             font-family: "Neuton", serif;
-                            font-size: 1.5rem;
+                            font-size: 2rem;
                             color: #ffffff;
-                            text-shadow: -3px 0px 1px #000000;
                             font-weight: 600;
+                            text-shadow: 
+                                2px 2px 0 #000000,
+                                -2px 2px 0 #000000,
+                                2px -2px 0 #000000,
+                                -2px -2px 0 #000000;
+
+                            @include laptops {
+                                font-size: 1.75rem;
+                            }                            
 
                             @include tablets {
                                 font-size: clamp(1.15rem, 2vw, 1.5rem);
                             }
 
+                            @include horizontalCellPhones {
+                                font-size: clamp(1.25rem, 4vw, 1.5rem);
+                                font-family: "Fugaz One", serif;
+                                font-weight: 100;
+                                text-shadow: 
+                                    2px 2px 0 #000000,
+                                    -2px 2px 0 #000000,
+                                    2px -2px 0 #000000,
+                                    -2px -2px 0 #000000;
+                            }
+
                             @include verticalCellPhone {
-                                font-size: clamp(1.15rem, 4vw, 2rem);
+                                font-size: clamp(1.15rem, 4vw, 1.25rem);
+                                padding: 0 10px;
                             }
                         }
                     }
@@ -865,7 +969,7 @@ body {
                             gap: 10px;
                         }
 
-                        div {
+                        .main__sec-off--div {
                             @include flexColumn;
                             align-items: center;
                             background-color: #e8e900;
@@ -880,84 +984,104 @@ body {
                                 width: 75%;
                             }
 
-                            @include horizontalCellPhone {
+                            @include verticalCellPhone {
                                 width: 90%;
                             }
 
-                            .title-button {
-                                font-size: 1.45rem;
+                            .main-off--div-ttl {
+                                font-family: "Goblin One", Arial, Helvetica, sans-serif;
+                                font-size: 1.25rem;
+                                text-align: center;
                                 margin: 5px;
                                 padding: 5px;
                                 color: #000000;
                                 text-shadow: 4px 0px 2px #fffdfd;
 
-                                @include tablets {
-                                    font-size: clamp(1.5rem, 3vw, 2rem);
+                                @include laptops {
+                                    font-size: clamp(1rem, 1vw, 1.75rem);    
                                 }
 
-                                @include horizontalCellPhone {
-                                    font-size: clamp(1.15rem, 5vw, 2rem);
+                                @include tablets {
+                                    font-size: clamp(1rem, 2vw, 2rem);
+                                }
+
+                                @include verticalCellPhone {
+                                    font-size: clamp(1rem, 4vw, 2rem);
+                                    font-family: "Goblin One", Arial, Helvetica, sans-serif;
                                     padding: 5px 0px;
                                     margin: 15px 0px;
                                 }
                             }
 
                             p {
-                                font-size: 1rem;
+                                font-size: 1.5rem;
                                 font-weight: 900;
                                 text-shadow: 4px 0px 2px #ffffff;
                                 margin: 5px;
+
+                                @include laptops {
+                                    font-size: clamp(1rem, 2vw, 1.25rem);
+                                }
 
                                 @include tablets {
                                     font-size: clamp(1.15rem, 2vw, 1.40rem);
                                 }
 
-                                @include horizontalCellPhone {
+                                @include verticalCellPhone {
                                     font-size: clamp(1rem, 4vw, 1.5rem);
                                     text-align: center;
                                 }
                             }
 
-                            .main__off--pack-div-btn {
+                            .main__off--div-btn {
                                 display: flex;
                                 flex-direction: row;
                                 border: none;
                                 position: relative;
                                 align-items: center;
                                 padding: 0px 5px;
-                                width: 130px;
+                                width: 180px;
+
+                                @include laptops {
+                                    width: 75%;
+                                }
 
                                 @include tablets {
-                                    width: 155px;
+                                    width: 90%;
                                     padding-bottom: 15px;
                                 }
 
-                                @include verticalCellPhone {
-                                    width: 200px;
+                                @include horizontalCellPhones {
+                                    width: 65%;
                                 }
 
-                                @include horizontalCellPhone {
-                                    width: 120px;
+                                @include verticalCellPhone {
+                                    width: 85%;
                                 }
 
                                 img {
-                                    width: 45px;
+                                    width: 55px;
                                     position: absolute;
                                     left: 0px;
 
-                                    @include tablets {
-                                        left: 14px;
+                                    @include laptops {
+                                        width: clamp(30px, 3vw, 55px);
                                     }
 
-                                    @include horizontalCellPhone {
-                                        width: 30px;
-                                        left: 8px;
+                                    @include tablets {
+                                        width: clamp(45px, 5vw, 70px);
+                                        left: clamp(-1px, -1vw, 14px);
+                                    }
+
+                                    @include verticalCellPhone {
+                                        width: 50px;
+                                        left: 4px;
                                     }
                                 }
 
                                 button {
                                     width: 100%;
-                                    font-size: .75rem;
+                                    font-size: 1.25rem;
                                     font-weight: 900;
                                     padding: 10px;
                                     border-radius: 10px;
@@ -965,14 +1089,20 @@ body {
                                     background-color: #32d951;
                                     transition: all .30s ease-in;
                                     cursor: pointer;
+
+                                    @include laptops {
+                                        margin: 0 auto;
+                                        font-size: clamp(1rem, 1vw, 1.25rem);
+                                    }
     
-                                    @include verticalCellPhone {
+                                    @include horizontalCellPhones {
                                         width: 100%;
                                     }
 
-                                    @include horizontalCellPhone {
-                                        width: 155px;
+                                    @include verticalCellPhone {
+                                        width: 100%;
                                         padding: 5px;
+                                        padding-left: 20px;
                                         box-sizing: border-box;
                                     }
     
@@ -988,7 +1118,7 @@ body {
                     }
                 }
 
-                .main__offers--packs-two {
+                .main__sec-off--pk-two {
                     @include flexColumn;
                     justify-content: space-around;
                     align-items: center;
@@ -1006,24 +1136,44 @@ body {
                         justify-content: space-between;
                     }
 
-                    @include verticalCellPhone {
+                    @include horizontalCellPhones {
                         width: 80%;
                     }
 
-                    span {
-                        font-size: 2.5rem;
-                        font-weight: 900;
-                        padding: 10px;
-                        color: #000000;
-                        text-shadow: -2px 0px 2px #ffffff;
+                    .main__off--pk-ttl-two {
+                        width: 100%;
+                        font-family: "Faster One", Arial, Helvetica, sans-serif;
+                        font-size: 3rem;
+                        font-weight: 100;
+                        margin-top: 10px;
+                        padding: 10px 0;
+                        background-color: #ffffff;
+                        text-align: center;
+                        word-spacing: 500px;                     
+
+                        @include laptops {
+                            margin-top: 20px;
+                        }
 
                         @include tablets {
                             font-size: clamp(1.25rem, 4vw, 2.5rem);
-                            margin-top: 10px;
+                            margin-top: 20px;
                         }
 
-                        @include verticalCellPhone {
+                        @include horizontalCellPhones {
+                            width: 100%;
+                            text-align: center;
                             font-size: clamp(1.75rem, 5vw, 2.5rem)
+                        }
+
+                        @include verticalCellPhone { 
+                            background-color: #ffffff;
+                            width: 100%;
+                            padding: 10px 0;
+                            margin: 20px 0;
+                            font-weight: 100;
+                            word-spacing: 200px;
+                            font-size: clamp(1.75rem, 7vw, 2rem);
                         }
                     }
 
@@ -1032,23 +1182,48 @@ body {
                         gap: 10px;
                         margin: 0;
 
+                        @include laptops {
+                            margin-top: 20px;
+                        }
+
                         @include tablets {
-                            gap: 25px;
+                            margin-top: 15px;
+                            gap: 35px;
                         }
 
                         li {
                             font-family: "Neuton", serif;
-                            font-size: 1.5rem;
+                            font-size: 2rem;
                             color: #fffdfd;
-                            text-shadow: -2px 0px 0px #000000;
                             font-weight: 600;
+                            text-shadow: 
+                                2px 2px 0 #000000,
+                                -2px 2px 0 #000000,
+                                2px -2px 0 #000000,
+                                -2px -2px 0 #000000;
+
+                            @include laptops {
+                                font-size: 1.75rem;
+                            }  
 
                             @include tablets {
                                 font-size: clamp(1.15rem, 2vw, 1.5rem);
                             }
 
+                            @include horizontalCellPhones {
+                                font-size: clamp(1.25rem, 4vw, 1.5rem);
+                                font-weight: 100;
+                                font-family: "Fugaz One", serif;
+                                text-shadow: 
+                                    2px 2px 0 #000000,
+                                    -2px 2px 0 #000000,
+                                    2px -2px 0 #000000,
+                                    -2px -2px 0 #000000;
+                            }
+
                             @include verticalCellPhone {
-                                font-size: clamp(1.15rem, 4vw, 2rem);
+                                font-size: clamp(1.15rem, 4vw, 1.25rem);
+                                padding: 0 10px;
                             }
                         }
                     }
@@ -1072,12 +1247,13 @@ body {
                             width: 80%;
                         }
 
-                        @include verticalCellPhone {
+                        @include horizontalCellPhones {
                             height: 150px;
                         }
 
-                        .main__offers--packs-button {
-                            font-size: 1.5rem;
+                        .main__off--div-tw-ttl {
+                            font-family: "Goblin One", Arial, Helvetica, sans-serif;
+                            font-size: 1.25rem;
                             margin: 5px;
                             padding: 10px;
                             color: #000000; 
@@ -1085,35 +1261,49 @@ body {
                             text-align: center;
 
                             @include tablets {
-                                font-size: clamp(1.25rem, 3vw, 1.75rem);
+                                font-size: clamp(1rem, 2vw, 1.75rem);
                             }
 
-                            @include horizontalCellPhone {
-                                font-size: clamp(1.15rem, 5vw, 2rem);
+                            @include verticalCellPhone {
+                                font-family: "Goblin One", Arial, Helvetica, sans-serif;
+                                font-size: clamp(1rem, 4vw, 2rem);
+                                padding: 0;
                             }
                         }
 
-                        div {
+                        .main__off--div-btn {
                             position: relative;
 
-                            @include horizontalCellPhone {
+                            @include laptops {
+                                width: 60%;
+                            }
+
+                            @include verticalCellPhone {
                                 width: 135px;
                                 padding: 10px;
                             }
 
                             img {
-                                width: 50px;
+                                width: 80px;
                                 position: absolute;
+                                top: -12px;
 
-                                @include horizontalCellPhone {
+                                @include tablets {
+                                    width: clamp(50px, 5vw, 80px);
+                                    left: 0;
+                                    top: clamp(-3px, 2vw, -12px);
+                                }
+
+                                @include verticalCellPhone {
                                     width: 45px;
-                                    left: 5px;
+                                    left: 8px;
+                                    top: 9px;
                                 }
                             }
 
                             button {
-                                width: 180px;
-                                font-size: 1rem;
+                                width: 250px;
+                                font-size: 1.5rem;
                                 font-weight: 900;
                                 padding: 10px;
                                 border-radius: 10px;
@@ -1123,10 +1313,14 @@ body {
                                 cursor: pointer;
     
                                 @include laptops {
-                                    width: 165px;
+                                    width: 100%;
+                                }
+
+                                @include tablets {
+                                    font-size: clamp(1rem, 2vw, 1.5rem);
                                 }
     
-                                @include horizontalCellPhone {
+                                @include verticalCellPhone {
                                     width: 100%;
                                     font-size: clamp(.875rem, 3vw, 1.25rem);
                                 }
@@ -1148,24 +1342,26 @@ body {
             width: 100%;
         
             h4 {
-                font-size: 3rem;
+                font-size: 3.5rem;
                 text-align: center;
-                color: $colorTitles;
-                text-shadow: -4px 0px 3px #ffffff;
+                color: #ffffff;
                 letter-spacing: 2px;
 
                 @include tablets {
                     font-size: clamp(2.5rem, 4vw, 4rem);
                 }
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     padding: 10px;
                     font-size: clamp(2rem, 6vw, 2.5rem);
-                    text-shadow: -2px 0px 3px #ffffff;
+                    color: #c12131;
+                    text-shadow: 0px 2px 1px #000000;
                 }
 
-                @include horizontalCellPhone {
-                    font-size: clamp(1.75rem, 8vw, 2rem);
+                @include verticalCellPhone {
+                    font-family: "Goblin One";
+                    font-size: clamp(1.25rem, 5vw, 2rem);
+                    text-shadow: 0px 2px 3px #000000;
                 }
             }
 
@@ -1174,7 +1370,7 @@ body {
                 width: 90%;
                 margin: 0 auto;
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     flex-direction: column;
                     align-items: center;
                     gap: 30px;
@@ -1183,7 +1379,7 @@ body {
                 div {
                     width: 30%;
 
-                    @include verticalCellPhone {
+                    @include horizontalCellPhones {
                         width: 80%;
                     }
 
@@ -1203,24 +1399,25 @@ body {
         width: 100%;
 
         h5 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             text-align: center;
-            color: $colorTitles;
-            text-shadow: -4px 0px 3px #ffffff;
+            color: #ffffff;
             letter-spacing: 2px;
 
             @include tablets {
                 font-size: clamp(2.5rem, 5vw, 4rem);
             }
 
-            @include verticalCellPhone {
+            @include horizontalCellPhones {
                 padding: 10px;
+                color: #c12131;
+                text-shadow: 0px 2px 1px #000000;
                 font-size: clamp(2rem, 6vw, 2.5rem);
-                text-shadow: -2px 0px 3px #ffffff;
             }
 
-            @include horizontalCellPhone {
-                font-size: clamp(1.75rem, 8vw, 2rem);
+            @include verticalCellPhone {
+                font-family: "Goblin One";
+                font-size: clamp(1.25rem, 5vw, 2rem);
             }
         }
     
@@ -1232,7 +1429,7 @@ body {
             justify-content: space-around;
             gap: 140px 40px;
 
-            @include verticalCellPhone {
+            @include horizontalCellPhones {
                 gap: 80px;
             }
 
@@ -1252,7 +1449,7 @@ body {
                     }
                 }
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     width: 70%;
                 }
                 
@@ -1281,7 +1478,7 @@ body {
             padding: 20px;
             height: 150px;
 
-            @include verticalCellPhone {
+            @include horizontalCellPhones {
                 display: none;
             }
 
@@ -1303,7 +1500,7 @@ body {
                 justify-content: space-around;
                 margin: 0 auto;
 
-                @include horizontalCellPhone {
+                @include verticalCellPhone {
                     flex-wrap: wrap;
                     gap: 32px;
                 }
@@ -1329,35 +1526,43 @@ body {
         article {
             width: 100%;
     
-            .main__services--title {
-                font-size: 3.25rem;
+            .main__ser--ttl {
+                font-family: "Goblin One", Arial, Helvetica, sans-serif;
+                font-size: 3rem;
                 text-align: center;
                 color: $colorTitles;
-                text-shadow: -4px 0px 3px #ffffff;
                 letter-spacing: 2px;
                 margin: 0;
                 padding-top: 90px;
                 padding-bottom: 40px;
                 font-size: clamp(2.5rem, 3vw, 3rem);
+                text-shadow: 
+                    1px 1px 0 #ffffff,
+                    -1px 1px 0 #ffffff,
+                    1px -1px 0 #ffffff,
+                    -1px -1px 0 #ffffff;
 
                 @include tablets {
-                    padding-top: 80px;
-                    margin-bottom: 30px;
+                    padding-bottom: 20px;
+                    font-size: clamp(2rem, 4vw, 3rem);
+                    width: 90%;
+                    margin: 0 auto;
+                }
+
+                @include horizontalCellPhones {
+                    font-size: 1.75rem;
+                    padding-top: 100px;
                 }
 
                 @include verticalCellPhone {
-                    font-size: clamp(2rem, 3vw, 2.5rem);
-                    padding-top: 130px;
-                }
-
-                @include horizontalCellPhone {
-                    font-size: clamp(1.5rem, 7vw, 2rem);
-                    padding-left: 30px;
-                    padding-right: 30px;
+                    font-size: clamp(1.25rem, 5vw, 2rem);
+                    text-shadow: 0px 3px 1px #000000;
+                    width: 90%;
+                    padding-top: 145px;
                 }
             }   
     
-            .main__services--container {
+            .main__ser--pck-cntr {
                 width: 80%;
                 margin: 0 auto;
                 display: flex;
@@ -1367,36 +1572,65 @@ body {
 
                 @include tablets {
                     width: 90%;
+                    flex-direction: column;
                 }
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     flex-direction: column;
                     align-items: center;
                 }
     
-                .main__services--pack {
+                .main__ser--pck {
                     @include flexColumn;
                     align-items: center;
                     width: 40%;
-                    background-color: #872826;
+                    background-color: #c12131;
                     height: auto;
+                    border: 3px solid #ffffff;
 
                     @include tablets {
-                        width: 45%;
+                        //width: 45%;
+                        width: 70%;
+                        margin: 0 auto;
+                    }
+
+                    @include horizontalCellPhones {
+                        width: 80%;
                     }
 
                     @include verticalCellPhone {
-                        width: 80%;
+                        width: 90%;
+                        border-radius: 20px;
                     }
     
-                    span {
-                        font-size: 2rem;
+                    .main__ser--pck-ttl {
+                        width: 100%;
+                        font-family: "Faster One", Arial, Helvetica, sans-serif;
+                        font-size: 3rem;
+                        font-weight: 100;
+                        word-spacing: 200px;
+                        background-color: #ffffff;
                         text-align: center;
-                        margin: 5px;  
-                        font-weight: 900;
+                        margin-top: 25px;
+                        padding: 25px 0;  
+
+                        @include tablets {
+                            font-size: clamp(2rem, 5vw, 3rem);
+                            word-spacing: 500px;
+                        }
+
+                        @include horizontalCellPhones {
+                            font-size: clamp(1.75rem,6vw, 2.25rem);
+                        }
 
                         @include verticalCellPhone {
-                            font-size: clamp(1.5rem,5vw, 2rem);
+                            font-size: clamp(1.75rem, 8vw, 2.5rem);
+                            font-weight: 100;
+                            width: 100%;
+                            padding: 10px;
+                            box-sizing: border-box;
+                            word-spacing: 35px;
+                            margin: 20px 0;
                         }
                     }
     
@@ -1406,71 +1640,118 @@ body {
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
+
+                        @include verticalCellPhone {
+                            width: 90%;
+                            padding: 0 20px;
+                            box-sizing: border-box;
+                            margin-top: 0;
+                        }
     
                         li {
-                            font-family: "Neuton", serif;
-                            font-size: 1.5rem;
+                            font-family: "Fugaz One", Arial, Helvetica, sans-serif;
+                            font-size: 1.75rem;
                             color: #fffdfd;
-                            text-shadow: -2px 0px 0px #000000;
-                            font-weight: 600;
+                            font-weight: 100;
+                            text-shadow: 
+                                    1px 1px 0 #000000,
+                                    -1px 1px 0 #000000,
+                                    1px -1px 0 #000000,
+                                    -1px -1px 0 #000000;
 
                             @include tablets {
-                                font-size: clamp(1.25rem, 3vw, 1.5rem);                           
+                                font-size: clamp(1.25rem, 3vw, 1.85rem);
                             }
 
-                            @include horizontalCellPhone {
+                            @include verticalCellPhone {
                                 font-size: clamp(1rem, 4vw, 1.5rem);                           
+                                font-weight: 100;
                             }
                         }
                     }
 
-                    .main__serv--pack-butt-cont {
+                    .main__ser--pck-btn {
                         position: relative;
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
 
-                        @include verticalCellPhone {
-                            width: 405px;
-                            display: flex;
+                        @include laptops {
+                            width: 70%;
+                        }
+
+                        @include tablets {
+                            width: 60%;
+                        }
+
+                        @include horizontalCellPhones {
+                            width: 60%;
                             flex-direction: column;
                             align-items: center;
                         }
 
-                        @include horizontalCellPhone {
-                            width: 150px;
+                        @include verticalCellPhone {
+                            width: 75%;
                         }
 
                         .whatsapp-icon {
-                            width: 60px;
+                            width: 55px;
                             position: absolute;
-                            top: 13px;
-                            left: 40px;
+                            top: 22px;
+                            left: 25px;
 
-                            @include verticalCellPhone {
-                                left: 120px;
+                            @include tablets {
+                                width: 45px;
+                                left: clamp(25px, 5vw, 60px);
                             }
 
-                            @include horizontalCellPhone  {
-                                left: -5px;
+                            @include horizontalCellPhones {
+                                left: 10px;
+                            }
+
+                            @include verticalCellPhone {
+                                left: inherit;
+                                width: 60px;
+                                top: 4px;
+                                border-radius: 50px;
+                                border: 10px solid #4fe760;
+                                background-color: #4fe760;
+                                right: 0px;
                             }
                         }
                         
                         .button-link {
-                            width: 200px;
-                            font-size: 1rem;
+                            width: 100%;
+                            height: 60px;
+                            font-size: 1.5rem;
                             font-weight: 900;
                             margin: 20px;
                             padding: 10px;
                             border-radius: 10px;
                             color: #fffdfd;
-                            background-color: #32d951;
+                            background-color: #4fe760;
                             transition: all .30s ease-in;
                             cursor: pointer;
 
-                            @include verticalCellPhone {
-                                width: 50%;
+                            @include tablets {
+                                height: 50px;
+                                padding: 0;
                             }
 
-                            @include horizontalCellPhone {
+                            @include horizontalCellPhones {
                                 width: 100%;
+                            }
+
+                            @include verticalCellPhone {
+                                width: 100%;
+                                font-family: "Goblin One", Arial, Helvetica, sans-serif;
+                                font-size: clamp(1rem, 4vw, 1.5rem);
+                                font-weight: 100;
+                                border: none;
+                                border-radius: 50px;
+                                text-align: left;
+                                padding-left: clamp(5px, 11vw, 65px);
+                                margin-bottom: 20px;
                             }
 
                            @media (hover:hover) {
@@ -1485,78 +1766,148 @@ body {
             }
         }
     
-        .main__services--comments {
+        .main__ser--com {
             width: 100%;
             height: 100%;
             margin-top: 40px;
             background-color: #a5a19e;
     
             h2 {
-                font-size: 2rem;
+                font-size: 3.5rem;
                 padding: 10px 30px;
                 margin: 0px;
                 color: $colorTitles;
                 text-shadow: -2px 0px 2px #000000;
 
-                @include verticalCellPhone {
+                @include tablets {
+                    font-size: clamp(1.75rem, 5vw, 3rem);
+                }
+
+                @include horizontalCellPhones {
                     font-size: clamp(1.2rem, 5vw, 2rem);
                     padding: 10px 15px;
                 }
-            }
 
-            .main__services--form {
-                padding-bottom: 15px;
-
-                .main__services--fielset {
+                @include verticalCellPhone {
+                    font-family: "Goblin One", Arial, Helvetica, sans-serif;
+                    font-size: clamp(1.25rem, 5vw, 2rem);
+                    font-weight: 100;
+                    text-shadow: 0px 2px 3px #000000;
                     width: 90%;
                     margin: 0 auto;
-                    padding: 15px;
+                    text-align: center;
+                }
+            }
+
+            .main__ser--frm {
+                padding-bottom: 15px;
+
+                .main__ser--flst {
+                    width: 90%;
+                    margin: 0 auto;
+                    padding: 15px 0;
                     padding-bottom: 0;
     
-                    .main__comments {
+                    .main__com--box-div {
+                        
                         @include flexColumn;
                         gap: 20px;
                         padding-left: 15px;
+
+                        @include verticalCellPhone {
+                            padding: 0;
+                            align-items: center;
+                        }
+
+                        .main__services--new-comment {
+                            padding: 10px 0;
+                            font-size: 1.75rem;
+                            color: #ffffff;
+
+                            a {
+                                font-weight: 900;
+                                display: block;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: nowrap;
+                            }
+
+                            @include tablets {
+                                font-size: clamp(1.5rem, 3vw, 1.75rem)
+                            }
+
+                            @include horizontalCellPhones {
+                                padding: 0;
+                                font-size: clamp(1.25rem, 4vw, 1.5rem);
+                            }
+                        }
     
                         .main__services--new-comment {
-                            background-color: #699967;
+                            background-color: #cB5959;
                             border: 2px outset #ffffff;
                             padding: 10px 20px;
                             width: 80%;
+                            border: none;
                         }
                     }
     
-                    .main__services--textarea {
+                    .main__ser--txtar {
                         @include flexColumn;
 
+                        @include verticalCellPhone {
+                            align-items: center;
+                        }
+
                         label {
-                            font-size: 1.5rem;
-                            padding: 10px;
-                            padding-bottom: 20px;
+                            font-size: 2rem;
+                            padding: 10px 30px;
                             color: #000000;
                             font-weight: 900;
 
+                            @include tablets {
+                                font-size: clamp(1.75rem, 3vw, 2rem);
+                            }
+
+                            @include horizontalCellPhones {
+                                font-size: clamp(1.75rem, 3vw, 2rem);
+                            }
+
                             @include verticalCellPhone {
-                                font-size: clamp(1.10rem, 3vw, 1.5rem);
+                                width: 100%;
+                                font-size: clamp(1rem, 3vw, 1.5rem);
+                                font-family: "Goldman", serif;
+                                font-weight: 100;
+                                box-sizing: border-box;
+                                padding-left: 10px;
+
                             }
                         }
             
-                        #main__services--comments-area {
+                        #main__ser--com-ar {
                             width: 90%;
                             height: 200px;
                             background-color: gray;
                             margin: 0 auto;
+
+                            @include verticalCellPhone {
+                                margin: 0;
+                            }
                         }
                     }
     
-                    .main__services--comments-button {
+                    .main__ser--com-btn {
                         width: 90%;
                         display: flex;
                         justify-content: end;
                         margin: 0 auto;
                         padding: 15px 0;
+
+                        @include verticalCellPhone {
+                            margin: 0;
+                        }
     
                         input {
+                            font-family: "Goldman", Arial, Helvetica, sans-serif;
                             background-color: #0dc01f;
                             width: 100px;
                             color: #ffffff;
@@ -1577,7 +1928,6 @@ body {
     }
 
     .main__register {
-        
         @include flexColumn;
         justify-content: center;
         align-items: center;
@@ -1588,30 +1938,32 @@ body {
         h1 {
             font-size: 3.25rem;
             text-align: center;
-            color: $colorTitles;
-            text-shadow: -4px 0px 3px #ffffff;
+            color: #ffffff;
             letter-spacing: 2px;
             margin: 0px;
             padding-bottom: 30px;
 
-            @include verticalCellPhone {
+            @include horizontalCellPhones {
                 font-size: clamp(2rem, 6vw, 2.75rem);
             }
 
-            @include horizontalCellPhone {
+            @include verticalCellPhone {
+                font-family: "Goblin One", Arial, Helvetica, sans-serif;
+                font-weight: 100;
+                color: #c12131;
+                text-shadow: 0px 2px 3px #000000;  
                 padding-top: 45px;
-                font-size: clamp(1.75rem, 7vw, 2rem);
-                padding-left: 25px;
-                padding-right: 25px;
+                font-size: clamp(1.25rem, 5vw, 2rem);
+                margin-top: 20px;
             }
         }
 
-        .main__section--register {
+        .main__sec--rgtr {
             width: 100%;
-            background-color: #000000;
+            background-color: #1e1a1a;
             padding: 30px 0px;
 
-            @include horizontalCellPhone {
+            @include verticalCellPhone {
                 width: 85%;
                 padding: 0;
             }
@@ -1631,16 +1983,16 @@ body {
                     text-align: center;
                 }
 
-                @include verticalCellPhone {
+                @include horizontalCellPhones {
                     font-size: clamp(1.25rem, 4vw, 1.5rem);
                 }
 
-                @include horizontalCellPhone {
+                @include verticalCellPhone {
                     font-size: clamp(1rem, 5vw, 1.25rem);
                 }
             }
 
-            .main__section--register-form {
+            .main__sec--rgtr-frm {
                 width: 100%;
                 display: flex;
 
@@ -1654,7 +2006,7 @@ body {
                     padding: 40px 20px;
                     border: 3px solid #ff0000;
 
-                    @include horizontalCellPhone {
+                    @include verticalCellPhone {
                         padding-top: 150px;
                     }
 
@@ -1666,15 +2018,19 @@ body {
                         padding: 0 20px;
                         letter-spacing: 3px;
 
-                        @include verticalCellPhone {
+                        @include horizontalCellPhones {
                             font-size: clamp(1.25rem, 4vw, 1.75rem);
                         }
 
-                        @include horizontalCellPhone {
+                        @include verticalCellPhone {
+                            width: 90%;
+                            box-sizing: border-box;
+                            font-family: "Goldman", Arial, Helvetica, sans-serif;
+                            font-weight: 300;
                             position: absolute;
-                            margin-top: -145px;
-                            font-size: clamp(1rem, 6vw, 1.5rem);
-                            padding: 10px clamp(45px, 14vw, 65px);
+                            margin-top: -125px;
+                            font-size: clamp(1rem, 4vw, 1.5rem);
+                            padding: 10px clamp(45px, 14vw, 70px);
                         }
                     }
 
@@ -1689,6 +2045,7 @@ body {
                         }
 
                         label {
+                            font-family: "Goldman", Arial, Helvetica, sans-serif;
                             font-size: 1.5rem;
                             color: #b4cff5;
 
@@ -1697,12 +2054,13 @@ body {
                                 padding-bottom: 15px;
                             }
 
-                            @include verticalCellPhone {
+                            @include horizontalCellPhones {
                                 font-size: clamp(1.225rem, 4vw, 1.5rem);
                             }
 
-                            @include horizontalCellPhone {
-                                font-size: clamp(1rem, 5vw, 1.225rem);
+                            @include verticalCellPhone {
+                                font-size: clamp(1rem, 4vw, 1.225rem);
+                                font-weight: 100;
                             }
                         }
 
@@ -1725,7 +2083,7 @@ body {
                                 font-weight: 900;
                                 padding: 10px;
                                 border-radius: 10px;
-                                background-color: #338726;
+                                background-color: #5bd071;
                                 color: #fffdfd;
                                 transition: all .30s ease-in;
                                 cursor: pointer;
@@ -1734,8 +2092,9 @@ body {
                                     width: 60%;
                                 }
 
-                                @include horizontalCellPhone {
+                                @include verticalCellPhone {
                                     margin-top: 0px;
+                                    border-radius: 30px;
                                 }
 
                                 @media(hover:hover) {

@@ -6,25 +6,26 @@
     <link rel="stylesheet" href="./style/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@400..700&family=Faster+One&family=Fugaz+One&family=Goblin+One&family=Goldman:wght@400;700&display=swap" rel="stylesheet">
     <title>Servicio Automotriz</title>
 </head>
 <body>
     <header class="header">
-        <img class="header__img" src="./img/img-header-2.jpg" alt="logo de empresa 'Speed Wheels'">
-        <nav class="header__links">
-            <a href="./index.html" class="header__links--link">Inicio</a>
-            <a href="#" class="header__links--link">Servicio</a>
-            <a href="./registro.html" class="header__links--link">Registro</a>
-            <a href="" class="header__links--link">Asistencia telefonica</a>
+        <img class="hdr__img" src="./img/img-header-2.jpg" alt="logo de empresa 'Speed Wheels'">
+        <nav class="hdr__nav">
+            <a href="./index.html" class="hdr__nav--link">Inicio</a>
+            <a href="#" class="hdr__nav--link">Servicios</a>
+            <a href="./registro.html" class="hdr__nav--link">Registro</a>
+            <a href="" class="hdr__nav--link" id="attention-link">Atención telefonica</a>
         </nav>
-        <section class="header__icons">
+        <section class="hdr__sec-icns">
             <i><img src="./img/facebook.svg" alt="icono de facebook"></i>
             <i><img src="./img/instagram.svg" alt="icono de instagram"></i>
             <i><img src="./img/twitter.svg" alt="icono de  twitter"></i>
-            <i class="header__icons--menu"><img src="./img/menu.svg" alt="icono del menu"></i>
+            <i class="hdr__icn--menu"><img src="./img/menu.svg" alt="icono del menu"></i>
         </section>
-        <section class="header__menu">
+        <section class="hdr__sec--menu">
+            <i class="hdr__menu--icn-cls"><img src="./img/x.svg" alt="icono para cerrar menu"></i>
             <span>Menu</span>
             <p>Tablas de precios &#40;Proximante&#41;</p>
             <p>Control de servicios &#40;Proximante&#41;</p>
@@ -33,50 +34,36 @@
             <p>Salir</p>
         </section>
     </header>
+
     <main class="main__services">
         <article>
-            <h1 class="main__services--title">Conoce todos nuestros Servicios</h1>
-            <section class="main__services--container">
-                <div class="main__services--pack">
-                    <span>Afinacion menor</span>
+            <h1 class="main__ser--ttl">Conoce todos nuestros Servicios</h1>
+            <section class="main__ser--pck-cntr">
+                <div class="main__ser--pck">
+                    <span class="main__ser--pck-ttl">Servicio mayor</span>
                     <ul>
-                        <li>Cambio de aceite</li>
-                        <li>Cambio de filtro de aceite</li>
-                        <li>Cambio de filtro de gasolina</li>
-                        <li>Cambio de filtro de aire</li>
-                        <li>Cambio de bujias en caso de ser necesario</li>
-                        <li>Lavado de motor y carroceria</li>
-                    </ul>
-                    <div class="main__serv--pack-butt-cont">
-                        <img src="./img/icon-whatsapp.png" alt="icono-whatapp" class="whatsapp-icon">
-                        <button class="button-link whatsapp-button">Cotizar</button>
-                    </div>
-                </div>
-                <div class="main__services--pack">
-                    <span>Afinacion mayor</span>
-                    <ul>
-                        <li>Cambio de aceite</li>
-                        <li>Cambio de filtro de aceite</li>
-                        <li>Cambio de filtro de gasolina</li>
                         <li>Lavado de inyectores</li>
+                        <li>Cambio de bujías en caso de ser necesario</li>
+                        <li>Cambio de aceite y filtro</li>
+                        <li>Cambio de filtro de gasolina</li>
                         <li>Cambio de filtro de aire</li>
-                        <li>Cambio de bujias en caso de ser necesario</li>
-                        <li>Revision de frenos y lavado de mecanismos</li>
-                        <li>Rotacion de llantas</li>
-                        <li>Revison de llanta y presion de las mismas</li>
-                        <li>Revison de condiciones de alineacion y balanceo</li>
-                        <li>Inspeccion de sistema de suspension</li>
-                        <li>Revision de sistema de enfriamiento</li>
-                        <li>Revision de puntos de seguridad</li>
+                        <li>Lavado de cuerpo de aceleración</li>
+                        <li>Revisión de frenos y lavado de componentes</li>
+                        <li>Rotación de llantas en caso de ser necesario</li>
+                        <li>Revisión de estado de llantas y presión</li>
+                        <li>Revisión de condiciones de alineación y balanceo</li>
+                        <li>Revisión bandas y accesorios</li>
+                        <li>Revisión de sistema de enfriamiento</li>
+                        <li>Relleno de niveles de motor</li>
                         <li>Lavado de motor y carroceria</li>
                     </ul>
-                    <div class="main__serv--pack-butt-cont">
-                        <img src="./img/icon-whatsapp.png" alt="icono-whatapp" class="whatsapp-icon">
+                    <div class="main__ser--pck-btn">
+                        <img src="./img/secondary-whatsapp-icon.png" alt="icono-whatapp" class="whatsapp-icon">
                         <button class="button-link whatsapp-button">Cotizar</button>
                     </div>
                 </div>
-                <div class="main__services--pack">
-                    <span>Paquete carretera</span>
+                <div class="main__ser--pck">
+                    <span class="main__ser--pck-ttl">Paquete carretera</span>
                     <ul>
                         <li>Cambio de aceite</li>
                         <li>Cambio de filtro de aceite</li>
@@ -86,13 +73,13 @@
                         <li>Revison de llanta y presion de las mismas</li>
                         <li>Lavado de motor y carroceria</li>
                     </ul>
-                    <div class="main__serv--pack-butt-cont">
-                        <img src="./img/icon-whatsapp.png" alt="icono-whatapp" class="whatsapp-icon">
+                    <div class="main__ser--pck-btn">
+                        <img src="./img/secondary-whatsapp-icon.png" alt="icono-whatapp" class="whatsapp-icon">
                         <button class="button-link whatsapp-button">Cotizar</button>
                     </div>
                 </div>
-                <div class="main__services--pack">
-                    <span>Frenos</span>
+                <div class="main__ser--pck">
+                    <span class="main__ser--pck-ttl">Frenos</span>
                     <ul>
                         <li>Cambiio de balatas</li>
                         <li>Rectificado de discos o tambores</li>
@@ -100,29 +87,30 @@
                         <li>Limpieza de mecanismos</li>
                         <li>Engrasado de mecanismos</li>
                     </ul>
-                    <div class="main__serv--pack-butt-cont">
-                        <img src="./img/icon-whatsapp.png" alt="icono-whatapp" class="whatsapp-icon">
+                    <div class="main__ser--pck-btn">
+                        <img src="./img/secondary-whatsapp-icon.png" alt="icono-whatapp" class="whatsapp-icon">
                         <button class="button-link whatsapp-button">Cotizar</button>
                     </div>
                 </div>
             </section>
         </article>
-        <article class="main__services--comments">
+        <article class="main__ser--com">
             <h2>Opina sobre nuestros servicios</h2>
-            <form class="main__services--form">
-                <fieldset class="main__services--fielset">
-                    <div class="main__comments"></div>
-                    <div class="main__services--textarea">
+            <form class="main__ser--frm">
+                <fieldset class="main__ser--flst">
+                    <div class="main__com--box-div"></div>
+                    <div class="main__ser--txtar">
                         <label>Escribe aqui tus comentarios:</label>
-                        <textarea id="main__services--comments-area"></textarea>
+                        <textarea id="main__ser--com-ar"></textarea>
                     </div>
-                    <div class="main__services--comments-button">
+                    <div class="main__ser--com-btn">
                         <input type="submit" value="Enviar" id="submitButton">
                     </div>
                 </fieldset>
             </form>
         </article>
     </main>
+
     <footer class="footer">
         <div><img src="./img/img-footer.jpg" alt=""></div>
         <section>
