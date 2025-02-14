@@ -1,15 +1,22 @@
 const handleMenu = () => {
-    const iconoMenu = document.querySelector(".header__icons--menu");
+    const iconoMenu = document.querySelector(".hdr__icn--menu");
     if (iconoMenu) {
         iconoMenu.addEventListener("click", () => {
-            const menu = document.querySelector(".header__menu");
-            menu.classList.toggle("header__menu--show");
+            const menu = document.querySelector(".hdr__sec--menu");
+            menu.classList.toggle("hdr__menu--show");
         });
     }
+
+    const closeMenu = document.querySelector(".hdr__menu--icn-cls");
+
+    closeMenu.addEventListener("click", () => {
+        const menu = document.querySelector(".hdr__sec--menu"); 
+        menu.classList.toggle("hdr__menu--show");
+    })  
 };
 
 const renderComments = () => {
-    const commmentsContainer = document.querySelector(".main__comments");
+    const commmentsContainer = document.querySelector(".main__com--box-div");
     if(commmentsContainer) {
         commmentsContainer.innerHTML ="";
         const comments = getComments();
@@ -42,23 +49,23 @@ const addComment = (comment) => {
 };
 
 const handleComments = () => {
-    const formServices = document.querySelector(".main__services--form");
+    const formServices = document.querySelector(".main__ser--frm");
     if(formServices) {
         renderComments();
         formServices.addEventListener("submit", ( e ) => {
             e.preventDefault();
 
-            const commentText = document.getElementById("main__services--comments-area").value.trim();
+            const commentText = document.getElementById("main__ser--com-ar").value.trim();
             if(commentText) {
                 addComment(commentText);
-                document.getElementById("main__services--commments-area").value = "";
+                document.getElementById("main__ser--com-ar").value = "";
             }
         });
     }
 };
 
 const handleRegister = () => {
-    const formRegister = document.querySelector(".main__section--register-form");
+    const formRegister = document.querySelector(".main__sec--rgtr-frm");
     if(formRegister) {
         formRegister.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -79,7 +86,7 @@ const handleRegister = () => {
 
             const welcomeMessage = document.createElement("section");
             welcomeMessage.textContent = "Bienvenido! Pronto se agregarán funciones y/o promociones a usuarios registrados.";
-            welcomeMessage.className = document.querySelector(".main__section--register");
+            welcomeMessage.className = document.querySelector(".main__sec--rgtr");
             sectionRegister.appendChild(welcomeMessage);
             formRegister.style.display = "none";
 
@@ -88,18 +95,18 @@ const handleRegister = () => {
     }
 };
 
-const handleWhatsAppButton = () => {
-    const whatsappButton = document.getElementById("whatsapp-button");
+const handleAttentionLink = () => {
+    const attention = document.getElementById("attention-link");
 
-    if(whatsappButton) {
-        whatsappButton.addEventListener("click",() => {
+    if(attention) {
+        attention.addEventListener("click",() => {
             window.open("https://wa.me/524426587901?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20el%20servicio%20de%20afinaci%C3%B3n", "_blank");
         });
     }     
 };
 
 const handleWhatsAppButtons = () => {
-    const whatsAppButtons = document.querySelectorAll(".whatsapp-button");
+    const whatsAppButtons = document.querySelectorAll(".main__ser--pck-btn");
 
     whatsAppButtons.forEach(button => {
         button.addEventListener("click", () => {
@@ -112,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handleMenu();
     handleComments();
     handleRegister();
-    handleWhatsAppButton()
+    handleAttentionLink()
     handleWhatsAppButtons()
 });
 

@@ -7,8 +7,8 @@ body .header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 60px;
-  background-color: #000000;
+  height: 70px;
+  background-color: #1e1a1a;
   border-bottom: 3px solid #dc1f30;
   position: fixed;
   z-index: 1;
@@ -23,74 +23,89 @@ body .header {
     flex-direction: column;
   }
 }
-body .header .header__img {
-  width: 80px;
+body .header .hdr__img {
+  width: 150px;
   padding: 10px;
 }
-@media screen and (max-width: 80em) {
-  body .header .header__img {
-    width: 75px;
+@media screen and (max-width: 85em) {
+  body .header .hdr__img {
+    width: 120px;
   }
 }
-body .header .header__links {
+body .header .hdr__nav {
   width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-@media screen and (max-width: 80em) {
-  body .header .header__links {
+@media screen and (max-width: 85em) {
+  body .header .hdr__nav {
     width: 55%;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .header .header__links {
+  body .header .hdr__nav {
     gap: 5px 20px;
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-around;
   }
 }
+@media screen and (max-width: 46rem) {
+  body .header .hdr__nav {
+    gap: 5px 45px;
+  }
+}
 @media screen and (max-width: 32rem) {
-  body .header .header__links {
-    gap: 5px 40px;
+  body .header .hdr__nav {
+    gap: 5px 50px;
     padding: 10px;
     padding-top: 0;
     box-sizing: border-box;
   }
 }
-body .header .header__links .header__links--link {
+body .header .hdr__nav .hdr__nav--link {
   font-family: "Caveat", cursive;
   color: aliceblue;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 600;
 }
-@media screen and (max-width: 80em) {
-  body .header .header__links .header__links--link {
+@media screen and (max-width: 85em) {
+  body .header .hdr__nav .hdr__nav--link {
     font-size: clamp(1.25rem, 3vw, 1.5rem);
   }
 }
+@media screen and (max-width: 32rem) {
+  body .header .hdr__nav .hdr__nav--link {
+    font-size: clamp(1.25rem, 6vw, 1.75rem);
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .header .hdr__nav .hdr__nav--link {
+    font-size: 1.5rem;
+  }
+}
 @media (hover: hover) {
-  body .header .header__links .header__links--link:hover {
+  body .header .hdr__nav .hdr__nav--link:hover {
     color: #dc1f30;
   }
 }
-body .header .header__icons {
+body .header .hdr__sec-icns {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 30%;
   padding: 10px;
 }
-@media screen and (max-width: 80em) {
-  body .header .header__icons {
+@media screen and (max-width: 85em) {
+  body .header .hdr__sec-icns {
     width: 25%;
     padding: 8px;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .header .header__icons {
+  body .header .hdr__sec-icns {
     position: absolute;
     top: 60px;
     right: 0;
@@ -98,273 +113,301 @@ body .header .header__icons {
   }
 }
 @media screen and (max-width: 32rem) {
-  body .header .header__icons {
+  body .header .hdr__sec-icns {
     position: absolute;
-    width: 90%;
+    width: 10%;
     flex-direction: column-reverse;
     align-items: flex-end;
-    margin-top: 60px;
+    margin-top: 70px;
     padding: 10px 0;
   }
 }
-body .header .header__icons i {
+body .header .hdr__sec-icns i {
   cursor: pointer;
 }
 @media (hover: hover) {
-  body .header .header__icons i:hover {
+  body .header .hdr__sec-icns i:hover {
     border-bottom: solid 3px red;
   }
 }
-body .header .header__icons i img {
-  width: 25px;
+body .header .hdr__sec-icns i img {
+  width: 30px;
   filter: invert(100%);
 }
-@media screen and (max-width: 80em) {
-  body .header .header__icons i img {
+@media screen and (max-width: 85em) {
+  body .header .hdr__sec-icns i img {
     width: clamp(22px, 2vw, 25px);
   }
 }
 @media screen and (max-width: 32rem) {
-  body .header .header__icons i img {
+  body .header .hdr__sec-icns i img {
     width: clamp(17px, 6vw, 25px);
   }
 }
-body .header .header__icons i img:hover {
+body .header .hdr__sec-icns i img:hover {
   opacity: 0.5;
 }
-body .header .header__menu {
+body .header .hdr__sec--menu {
   display: none;
 }
-body .header .header__menu span {
+body .header .hdr__sec--menu span {
   color: #cfc4c4;
   padding: 20px 20px;
   font-size: 2rem;
   font-weight: 900;
 }
-body .header .header__menu p {
+body .header .hdr__sec--menu p {
   color: #cfc4c4;
   padding: 20px;
   font-size: 1.5rem;
 }
 @media screen and (max-width: 46rem) {
-  body .header .header__menu p {
+  body .header .hdr__sec--menu p {
     font-size: clamp(1.25rem, 5vw, 1.5rem);
   }
 }
-body .header .header__menu.header__menu--show {
+body .header .hdr__sec--menu.hdr__menu--show {
   display: flex;
   flex-direction: column;
   width: 30%;
   position: absolute;
-  background-color: #000000;
+  background-color: #1e1a1a;
   height: auto;
   right: 0;
-  top: 60px;
+  top: 70px;
   box-sizing: border-box;
-  border-left: 2px solid #dc1f30;
-  border-bottom: 2px solid #dc1f30;
+  border-left: 3px solid #dc1f30;
+  border-bottom: 3px solid #dc1f30;
 }
-body .header .header__menu.header__menu--show .header__menu--icon-close {
+body .header .hdr__sec--menu.hdr__menu--show .hdr__menu--icn-cls {
   position: absolute;
   right: 10px;
   top: 10px;
   display: none;
 }
 @media screen and (max-width: 46rem) {
-  body .header .header__menu.header__menu--show .header__menu--icon-close {
+  body .header .hdr__sec--menu.hdr__menu--show .hdr__menu--icn-cls {
     display: block;
   }
 }
-body .header .header__menu.header__menu--show .header__menu--icon-close img {
+body .header .hdr__sec--menu.hdr__menu--show .hdr__menu--icn-cls img {
   filter: invert(100%);
 }
-@media screen and (max-width: 80em) {
-  body .header .header__menu.header__menu--show {
+@media screen and (max-width: 85em) {
+  body .header .hdr__sec--menu.hdr__menu--show {
     width: clamp(40%, 3vw, 50%);
   }
 }
 @media screen and (max-width: 46rem) {
-  body .header .header__menu.header__menu--show {
+  body .header .hdr__sec--menu.hdr__menu--show {
     right: 10%;
     width: 80%;
     top: 130px;
     border: 2px solid #dc1f30;
   }
 }
-body .main .main__section-one {
+body .main .main__sec-one {
   display: flex;
   justify-content: space-between;
   align-items: center;
   justify-content: center;
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__section-one {
+  body .main .main__sec-one {
     background-color: #2f2b2d;
   }
 }
-body .main .main__section-one .main__section-one--title {
+body .main .main__sec-one .main__sec-on--ttl {
+  font-family: "Goblin One", serif;
   width: 45%;
   font-size: 2.75rem;
+  font-weight: 100;
   text-align: center;
-  letter-spacing: 3px;
-  color: #ff0000;
-  text-shadow: -2px 0px 2px #ffffff;
-  background-color: #000000;
+  color: #ffffff;
+  background-color: #1e1a1a;
   padding: 30px 50px;
-  margin-top: 95px;
+  margin-top: 115px;
   border-radius: 100px;
   border: 2px solid #ff0000;
 }
-@media screen and (max-width: 96.875em) {
-  body .main .main__section-one .main__section-one--title {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-one .main__sec-on--ttl {
     width: 52.5%;
   }
 }
-@media screen and (max-width: 80em) {
-  body .main .main__section-one .main__section-one--title {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-one .main__sec-on--ttl {
     width: 70%;
     font-size: clamp(2rem, 4vw, 2.75rem);
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__section-one .main__section-one--title {
+  body .main .main__sec-one .main__sec-on--ttl {
     border: none;
     padding: 0;
     width: 90%;
+    color: #c12131;
     background-color: #2f2b2d;
     margin-top: 115px;
     font-size: clamp(2rem, 4vw, 2.5rem);
-    text-shadow: -1px 0px 2px #ffffff;
+    text-shadow: 0px 3px 2px #000000;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__section-one .main__section-one--title {
-    width: 84%;
-    margin-top: 130px;
+  body .main .main__sec-one .main__sec-on--ttl {
+    letter-spacing: 3px;
+    margin-top: 160px;
     background-color: #2f2b2d;
-    font-size: clamp(1.8rem, 8vw, 2rem);
+    font-weight: 100;
+    font-size: clamp(1.25rem, 5vw, 2rem);
+    text-shadow: 0px 3px 1px #000000;
   }
 }
-body .main .main__welcome {
+body .main .main__sec-welcome {
   display: flex;
   width: 90%;
-  height: 180px;
+  height: 210px;
   margin: 0 auto;
-  border: 2px solid #ffffff;
+  border: 2px solid #c12131;
   overflow: hidden;
   position: relative;
-  background-color: #001f93;
+  background-color: #1e1a1a;
   border-radius: 15px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__welcome {
-    background-color: #001f93;
+@media screen and (max-width: 85em) {
+  body .main .main__sec-welcome {
+    background-color: #1e1a1a;
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas: "main__welcome--title main__welcome--title main__welcome--title" "main__welcome--text main__welcome--text main__welcome--img" "main__welcome--text main__welcome--text main__welcome--img";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "main__welcome--title main__welcome--title" "main__welcome--text main__welcome--img" "main__welcome--text  main__welcome--img";
   }
-  body .main .main__welcome .main__welcome--title {
+  body .main .main__sec-welcome .main__sec-wel--ttl {
     grid-area: main__welcome--title;
   }
-  body .main .main__welcome .main__welcome--text {
+  body .main .main__sec-welcome .main__welcome--text {
     grid-area: main__welcome--text;
     width: 100%;
   }
-  body .main .main__welcome .main__welcome--img {
+  body .main .main__sec-welcome .main__welcome--img {
     grid-area: main__welcome--img;
     display: flex;
     width: 20%;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__welcome {
+  body .main .main__sec-welcome {
     width: 80%;
     display: flex;
     flex-direction: column;
-    background-color: #c2c5ce;
+    background-color: #1e1a1a;
+    border: none;
+    border: 2px solid #ffffff;
   }
 }
-body .main .main__welcome .main__welcome--title {
+@media screen and (max-width: 32rem) {
+  body .main .main__sec-welcome {
+    border: none;
+  }
+}
+body .main .main__sec-welcome .main__sec-wel--ttl {
   display: flex;
   justify-content: space-between;
   align-items: center;
   justify-content: center;
-  width: 80%;
-  color: #ff0000;
+  width: 75%;
+  margin: 15px 35px;
+  color: #c12131;
   position: absolute;
-  font-size: 2.5rem;
-  text-shadow: -1px 0px 2px #000000;
+  font-family: "Caveat", cursive;
+  font-size: 3.5rem;
+  border-radius: 15px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__welcome .main__welcome--title {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-welcome .main__sec-wel--ttl {
     font-size: clamp(2rem, 4vw, 3rem);
     margin: 10px 0px;
     width: 100%;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__welcome .main__welcome--title {
+  body .main .main__sec-welcome .main__sec-wel--ttl {
     width: 100%;
-    font-size: clamp(1.725rem, 4vw, 2rem);
+    font-size: clamp(1.75rem, 5vw, 2rem);
+    color: #ffffff;
+    background-color: #c12131;
     padding: 0 10px;
     box-sizing: border-box;
     text-align: center;
+    border-radius: 0px;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__welcome .main__welcome--title {
-    width: 85%;
+  body .main .main__sec-welcome .main__sec-wel--ttl {
+    width: 75%;
     margin: 0 auto;
-    padding-top: 20px;
+    padding-top: 5px;
     position: static;
-    font-size: clamp(1.25rem, 6vw, 2.5rem);
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    color: #ffffff;
     text-align: center;
+    background-color: #1e1a1a;
   }
 }
-body .main .main__welcome .main__welcome--text {
+body .main .main__sec-welcome .main__sec-wel--txt {
   width: 100%;
-  background-color: #001f93;
+  background-color: #1e1a1a;
+  border-radius: 15px;
   padding-top: 80px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__welcome .main__welcome--text {
-    background-color: #001f93;
+@media screen and (max-width: 85em) {
+  body .main .main__sec-welcome .main__sec-wel--txt {
+    background-color: #1e1a1a;
     padding-top: clamp(30px, 4vw, 80px);
     width: 110%;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__welcome .main__welcome--text {
+  body .main .main__sec-welcome .main__sec-wel--txt {
     width: 100%;
     padding-top: 50px;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__welcome .main__welcome--text {
+  body .main .main__sec-welcome .main__sec-wel--txt {
     padding-top: 0px;
+    background-color: #c12131;
+    border-radius: 20px;
   }
 }
-body .main .main__welcome .main__welcome--text p {
-  font-size: 1.25rem;
+body .main .main__sec-welcome .main__sec-wel--txt p {
+  font-size: 1.75rem;
   text-align: justify;
   padding: 0 35px;
-  color: #cfc4c4;
+  color: #ffffff;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__welcome .main__welcome--text p {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-welcome .main__sec-wel--txt p {
     font-size: clamp(1rem, 2vw, 1.25rem);
   }
 }
-@media screen and (max-width: 32rem) {
-  body .main .main__welcome .main__welcome--text p {
-    margin: 5px;
-    font-size: clamp(0.875rem, 4vw, 1rem);
-    padding: 0 10px;
+@media screen and (max-width: 46rem) {
+  body .main .main__sec-welcome .main__sec-wel--txt p {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
   }
 }
-body .main .main__welcome .main__welcome--text p span {
+@media screen and (max-width: 32rem) {
+  body .main .main__sec-welcome .main__sec-wel--txt p {
+    margin: 5px;
+    font-family: "Caveat", cursive;
+    font-size: clamp(1.25rem, 6vw, 1.75rem);
+    padding: 0 10px;
+    color: #ffffff;
+    text-shadow: 1px 1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
+  }
+}
+body .main .main__sec-welcome .main__sec-wel--txt p span {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -372,43 +415,56 @@ body .main .main__welcome .main__welcome--text p span {
   width: 100%;
   font-size: 2rem;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__welcome .main__welcome--text p span {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-welcome .main__sec-wel--txt p span {
     display: none;
   }
 }
-body .main .main__welcome .main__welcome--text .main__welcome--button {
+body .main .main__sec-welcome .main__sec-wel--txt .main__sec-wel--btn {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
-  width: 100px;
-  font-size: 1rem;
+  right: 0px;
+  bottom: 0px;
+  width: 120px;
+  height: 30px;
+  font-size: 1.25rem;
   color: #ffffff;
-  background-color: #338726;
-  box-shadow: -4px 3px 3px #ffffff;
+  background-color: #c12131;
+  box-shadow: -4px 0px 3px #ffffff;
   border-radius: 15px;
   transition: all 0.25s ease;
   cursor: pointer;
 }
+@media screen and (max-width: 85em) {
+  body .main .main__sec-welcome .main__sec-wel--txt .main__sec-wel--btn {
+    font-size: 1rem;
+    width: 100px;
+  }
+}
 @media screen and (max-width: 46rem) {
-  body .main .main__welcome .main__welcome--text .main__welcome--button {
-    width: 80px;
-    font-size: 14px;
+  body .main .main__sec-welcome .main__sec-wel--txt .main__sec-wel--btn {
+    width: 105px;
+    font-size: 1.15rem;
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 32rem) {
+  body .main .main__sec-welcome .main__sec-wel--txt .main__sec-wel--btn {
+    background-color: #1e1a1a;
   }
 }
 @media (hover: hover) {
-  body .main .main__welcome .main__welcome--text .main__welcome--button:hover {
-    color: #338726;
+  body .main .main__sec-welcome .main__sec-wel--txt .main__sec-wel--btn:hover {
+    color: #c12131;
     box-shadow: none;
     background-color: #ffffff;
   }
 }
-body .main .main__welcome .main__welcome--img {
+body .main .main__sec-welcome .main__sec-wel--img {
   width: 20%;
   padding: 50px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__welcome .main__welcome--img {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-welcome .main__sec-wel--img {
     width: 100%;
     padding: 10px;
     padding-top: 75px;
@@ -418,197 +474,235 @@ body .main .main__welcome .main__welcome--img {
     justify-content: center;
   }
 }
-body .main .main__welcome .main__welcome--img img {
+body .main .main__sec-welcome .main__sec-wel--img img {
   width: 100%;
-  height: 400px;
+  height: 600px;
   display: flex;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__welcome .main__welcome--img img {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-welcome .main__sec-wel--img img {
     width: clamp(60%, 4vw, 80%);
     height: auto;
   }
 }
-body .main .main__check {
+body .main .main__sec-check {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   align-items: center;
-  margin: 20px auto;
-  background-color: #000000;
+  margin: 50px auto;
+  background-color: #1e1a1a;
   padding: 20px;
   box-sizing: border-box;
 }
-body .main .main__check .main__check--form {
+@media screen and (max-width: 32rem) {
+  body .main .main__sec-check {
+    margin: 10px auto;
+  }
+}
+body .main .main__sec-check .main__sec-chk--frm {
   width: 85%;
 }
-@media screen and (max-width: 96.875em) {
-  body .main .main__check .main__check--form {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-check .main__sec-chk--frm {
     width: 95%;
   }
 }
-body .main .main__check .main__check--form .main__check--fieldset {
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset {
   display: flex;
   flex-direction: column;
   gap: 30px;
   padding: 30px 120px;
   border: 3px solid #ff0000;
 }
-@media screen and (max-width: 96.875em) {
-  body .main .main__check .main__check--form .main__check--fieldset {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset {
     padding: 30px 70px;
   }
 }
-@media screen and (max-width: 80em) {
-  body .main .main__check .main__check--form .main__check--fieldset {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset {
     padding: 30px 50px;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__check .main__check--form .main__check--fieldset {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset {
     padding: 30px;
   }
 }
-body .main .main__check .main__check--form .main__check--fieldset legend {
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset legend {
+  font-family: "Anton", serif;
   font-size: 2.5rem;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 100;
   text-align: center;
   padding: 0 20px;
   letter-spacing: 3px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__check .main__check--form .main__check--fieldset legend {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset legend {
     font-size: clamp(1.25rem, 3vw, 2.25rem);
   }
 }
-@media screen and (max-width: 32rem) {
-  body .main .main__check .main__check--form .main__check--fieldset legend {
-    font-size: clamp(1rem, 5vw, 1.75rem);
-    letter-spacing: 0;
+@media screen and (max-width: 46rem) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset legend {
+    font-size: clamp(1.25rem, 4vw, 2.25rem);
   }
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--options {
+@media screen and (max-width: 32rem) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset legend {
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
+    letter-spacing: 0;
+    width: 80%;
+  }
+}
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--options {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts {
     flex-direction: column;
   }
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--options label {
-  font-size: 1.5rem;
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts label {
+  font-size: 1.75rem;
   color: #b4cff5;
   letter-spacing: 3px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--options label {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts label {
     font-size: clamp(1.25rem, 2vw, 2.25rem);
     letter-spacing: 0;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--options label {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts label {
+    font-family: "Della Respira", serif;
+    font-weight: 300;
     text-align: center;
     padding-bottom: 15px;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--options label {
-    font-size: clamp(0.875rem, 2vw, 1.25rem);
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts label {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
   }
 }
 @media (hover: hover) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--options label:hover {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts label:hover {
     color: #dc1f30;
   }
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--options select {
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts select {
   width: 310px;
+  height: 30px;
   font-size: 1.25rem;
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--options select:hover {
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts select:hover {
   transform: scale(1.09);
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--options select option {
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts select option {
   text-align: center;
 }
-@media screen and (max-width: 96.875em) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--options select {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts select {
     width: 290px;
   }
 }
-@media screen and (max-width: 80em) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--options select {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts select {
     width: clamp(145px, 21vw, 290px);
     font-size: clamp(1rem, 2vw, 1.25rem);
   }
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs {
+@media screen and (max-width: 46rem) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts select {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 32rem) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__sec-chk--opts select {
+    width: 70%;
+  }
+}
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt {
     flex-direction: column;
   }
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label {
-  font-size: 1.5rem;
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt label {
+  font-size: 1.75rem;
   color: #b4cff5;
   letter-spacing: 3px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt label {
     font-size: clamp(1.25rem, 2vw, 2.25rem);
     letter-spacing: 0;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt label {
+    font-family: "Della Respira", serif;
+    font-weight: 300;
     text-align: center;
     padding-bottom: 15px;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label {
-    font-size: clamp(0.875rem, 2vw, 1.25rem);
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt label {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
   }
 }
 @media (hover: hover) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs label:hover {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt label:hover {
     color: #dc1f30;
   }
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs input {
-  width: 300px;
-  height: 20px;
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt input {
+  width: 305px;
+  height: 25px;
 }
-@media screen and (max-width: 96.875em) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs input {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt input {
     width: 283px;
   }
 }
-@media screen and (max-width: 80em) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs input {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt input {
     width: clamp(145px, 20.5vw, 290px);
   }
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--inputs input:hover {
+@media screen and (max-width: 46rem) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt input {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 32rem) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt input {
+    width: 70%;
+  }
+}
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--inpt input:hover {
   transform: scale(1.09);
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit {
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--sum {
   text-align: center;
 }
-body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit input {
+body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--sum input {
   width: 300px;
-  font-size: 1.5rem;
+  height: 50px;
+  font-size: 2rem;
   font-weight: 900;
   color: #ffffff;
   background-color: #338726;
@@ -616,24 +710,32 @@ body .main .main__check .main__check--form .main__check--fieldset .main__check--
   transition: all 0.3s ease;
   cursor: pointer;
 }
+@media screen and (max-width: 85em) {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--sum input {
+    width: 40%;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+}
 @media screen and (max-width: 46rem) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit input {
-    width: 150px;
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--sum input {
+    width: 40%;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit input {
-    width: 120px;
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--sum input {
+    width: 50%;
     font-size: 1.25rem;
+    font-family: "Goblin One", Arial, Helvetica, sans-serif;
+    border-radius: 30px;
   }
 }
 @media (hover: hover) {
-  body .main .main__check .main__check--form .main__check--fieldset .main__check--sumbit input:hover {
+  body .main .main__sec-check .main__sec-chk--frm .main__sec-chk--fset .main__div-chk--sum input:hover {
     background-color: #ffffff;
     color: #338726;
   }
 }
-body .main .main__check .main__check--answer-box {
+body .main .main__sec-check .main__chk--answ-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -641,35 +743,19 @@ body .main .main__check .main__check--answer-box {
   height: 200px;
   background-color: #dc1f30;
   color: #e8e900;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
   font-weight: 900;
   margin: 20px 0;
   border: 2px solid #ffffff;
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__check .main__check--answer-box {
+  body .main .main__sec-check .main__chk--answ-box {
     font-size: clamp(1.5rem, 5vw, 2rem);
     padding: 0px 10px;
   }
 }
-body .main .main__check .main__check--answer-box .main__check--new-button {
-  width: 300px;
-  background-color: #338726;
-  margin: 20px;
-  border-radius: 15px;
-  font-size: 1.5rem;
-  font-weight: 900;
-  padding: 10px;
-}
-@media screen and (max-width: 46rem) {
-  body .main .main__check .main__check--answer-box .main__check--new-button {
-    margin: 20px 0;
-    width: 180px;
-    font-size: clamp(1rem, 3vw, 1.5rem);
-  }
-}
-body .main .main__check .main__check--answer-box-two {
+body .main .main__sec-check .main__chk--answ-box-two {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -684,12 +770,12 @@ body .main .main__check .main__check--answer-box-two {
   border: 2px solid #ffffff;
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__check .main__check--answer-box-two {
+  body .main .main__sec-check .main__chk--answ-box-two {
     font-size: clamp(1.5rem, 5vw, 2rem);
     padding: 0px 10px;
   }
 }
-body .main .main__check .main__check--answer-box-three {
+body .main .main__sec-check .main__chk--answ-box-thr {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -704,28 +790,12 @@ body .main .main__check .main__check--answer-box-three {
   border: 2px solid #ffffff;
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__check .main__check--answer-box-three {
+  body .main .main__sec-check .main__chk--answ-box-thr {
     font-size: clamp(1.5rem, 5vw, 2rem);
     padding: 0px 10px;
   }
 }
-body .main .main__check .main__check--answer-box-three .main__check--new-button-two {
-  width: 300px;
-  background-color: #338726;
-  margin: 20px;
-  border-radius: 15px;
-  font-size: 1.5rem;
-  font-weight: 900;
-  padding: 10px;
-}
-@media screen and (max-width: 46rem) {
-  body .main .main__check .main__check--answer-box-three .main__check--new-button-two {
-    margin: 20px 0;
-    width: 180px;
-    font-size: clamp(1rem, 3vw, 1.5rem);
-  }
-}
-body .main .main__check .main__check--answer-box-four {
+body .main .main__sec-check .main__chk--answ-box-fr {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -740,114 +810,154 @@ body .main .main__check .main__check--answer-box-four {
   border: 2px solid #ffffff;
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__check .main__check--answer-box-four {
+  body .main .main__sec-check .main__chk--answ-box-fr {
     font-size: clamp(1.5rem, 5vw, 2rem);
     padding: 0px 10px;
   }
 }
-body .main .main__offers h3 {
-  font-size: 3.25rem;
+body .main .main__sec-offers h3 {
+  font-size: 3.5rem;
   text-align: center;
-  color: #ff0000;
-  text-shadow: -4px 0px 3px #ffffff;
+  color: #ffffff;
   letter-spacing: 2px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers h3 {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers h3 {
     font-size: clamp(2.25rem, 4vw, 3rem);
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__offers h3 {
+  body .main .main__sec-offers h3 {
     padding: 10px;
+    color: #c12131;
+    text-shadow: 0 1px 1px #000000;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__offers h3 {
-    font-size: clamp(1.75rem, 7vw, 2rem);
-    text-shadow: -1px 0px 3px #ffffff;
+  body .main .main__sec-offers h3 {
+    font-size: clamp(1rem, 5vw, 2rem);
+    font-family: "Goblin One", serif;
+    color: #c12131;
+    margin-top: 0;
   }
 }
-body .main .main__offers .main__offers--packs {
+body .main .main__sec-offers .main__sec-off--pks {
   display: flex;
   width: 100%;
   justify-content: space-around;
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__offers .main__offers--packs {
+  body .main .main__sec-offers .main__sec-off--pks {
     flex-direction: column;
     align-items: center;
     gap: 15px;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one {
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 35%;
-  background-color: #dc1f30;
-  border: 2px solid #ffffff;
+  background-color: #c12131;
+  border: 3px solid #ffffff;
   border-radius: 15px;
 }
-@media screen and (max-width: 96.875em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one {
     width: 42.5%;
     justify-content: flex-start;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one {
     width: 80%;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one span {
-  font-size: 2.5rem;
-  font-weight: 900;
-  margin: 10px;
-  padding: 10px;
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one .main__sec-off--pk-ttl {
+  font-family: "Faster One", Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  word-spacing: 180px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 0;
   color: #000000;
+  background-color: #ffffff;
   text-shadow: -2px 0px 2px #fffdfd;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one span {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one .main__sec-off--pk-ttl {
+    word-spacing: 300px;
+  }
+}
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one .main__sec-off--pk-ttl {
     font-size: clamp(1.25rem, 4vw, 2.5rem);
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one span {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one .main__sec-off--pk-ttl {
     font-size: clamp(1.75rem, 5vw, 2.5rem);
     text-align: center;
+    margin: 0;
+    margin-top: 20px;
+    background-color: #ffffff;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one ul {
+@media screen and (max-width: 32rem) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one .main__sec-off--pk-ttl {
+    font-size: clamp(1.75rem, 7vw, 2rem);
+  }
+}
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one ul {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  margin-top: 40px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one ul {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one ul {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one ul {
     gap: 20px;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one ul li {
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one ul li {
   font-family: "Neuton", serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #ffffff;
-  text-shadow: -3px 0px 1px #000000;
   font-weight: 600;
+  text-shadow: 2px 2px 0 #000000, -2px 2px 0 #000000, 2px -2px 0 #000000, -2px -2px 0 #000000;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one ul li {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one ul li {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one ul li {
     font-size: clamp(1.15rem, 2vw, 1.5rem);
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one ul li {
-    font-size: clamp(1.15rem, 4vw, 2rem);
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one ul li {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    font-family: "Fugaz One", serif;
+    font-weight: 100;
+    text-shadow: 2px 2px 0 #000000, -2px 2px 0 #000000, 2px -2px 0 #000000, -2px -2px 0 #000000;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one section {
+@media screen and (max-width: 32rem) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one ul li {
+    font-size: clamp(1.15rem, 4vw, 1.25rem);
+    padding: 0 10px;
+  }
+}
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section {
   display: flex;
   width: 85%;
   justify-content: space-around;
@@ -855,13 +965,13 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one section {
   margin-top: 20px;
   padding: 40px 10px;
 }
-@media screen and (max-width: 96.875em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section {
     gap: 35px;
   }
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section {
     flex-direction: column;
     align-items: center;
     padding: 10px;
@@ -869,7 +979,7 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one section {
     gap: 10px;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one section div {
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -881,96 +991,120 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one section d
   box-sizing: border-box;
   border-radius: 85px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div {
     width: 75%;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div {
     width: 90%;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one section div .title-button {
-  font-size: 1.45rem;
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main-off--div-ttl {
+  font-family: "Goblin One", Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  text-align: center;
   margin: 5px;
   padding: 5px;
   color: #000000;
   text-shadow: 4px 0px 2px #fffdfd;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .title-button {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main-off--div-ttl {
+    font-size: clamp(1rem, 1vw, 1.75rem);
+  }
+}
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main-off--div-ttl {
+    font-size: clamp(1rem, 2vw, 2rem);
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .title-button {
-    font-size: clamp(1.15rem, 5vw, 2rem);
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main-off--div-ttl {
+    font-size: clamp(1rem, 4vw, 2rem);
+    font-family: "Goblin One", Arial, Helvetica, sans-serif;
     padding: 5px 0px;
     margin: 15px 0px;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one section div p {
-  font-size: 1rem;
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div p {
+  font-size: 1.5rem;
   font-weight: 900;
   text-shadow: 4px 0px 2px #ffffff;
   margin: 5px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div p {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+}
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div p {
     font-size: clamp(1.15rem, 2vw, 1.4rem);
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div p {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div p {
     font-size: clamp(1rem, 4vw, 1.5rem);
     text-align: center;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn {
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn {
   display: flex;
   flex-direction: row;
   border: none;
   position: relative;
   align-items: center;
   padding: 0px 5px;
-  width: 130px;
+  width: 180px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn {
-    width: 155px;
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn {
+    width: 90%;
     padding-bottom: 15px;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn {
-    width: 200px;
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn {
+    width: 65%;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn {
-    width: 120px;
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn {
+    width: 85%;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn img {
-  width: 45px;
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn img {
+  width: 55px;
   position: absolute;
   left: 0px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn img {
-    left: 14px;
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn img {
+    width: clamp(30px, 3vw, 55px);
+  }
+}
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn img {
+    width: clamp(45px, 5vw, 70px);
+    left: clamp(-1px, -1vw, 14px);
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn img {
-    width: 30px;
-    left: 8px;
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn img {
+    width: 50px;
+    left: 4px;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn button {
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn button {
   width: 100%;
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   font-weight: 900;
   padding: 10px;
   border-radius: 10px;
@@ -979,25 +1113,32 @@ body .main .main__offers .main__offers--packs .main__offers--packs-one section d
   transition: all 0.3s ease-in;
   cursor: pointer;
 }
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn button {
+    margin: 0 auto;
+    font-size: clamp(1rem, 1vw, 1.25rem);
+  }
+}
 @media screen and (max-width: 46rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn button {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn button {
     width: 100%;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn button {
-    width: 155px;
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn button {
+    width: 100%;
     padding: 5px;
+    padding-left: 20px;
     box-sizing: border-box;
   }
 }
 @media (hover: hover) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-one section div .main__off--pack-div-btn button:hover {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-one section .main__sec-off--div .main__off--div-btn button:hover {
     color: #338726;
     background-color: #ffffff;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-two {
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -1007,69 +1148,111 @@ body .main .main__offers .main__offers--packs .main__offers--packs-two {
   border-radius: 15px;
   border: 2px solid #ffffff;
 }
-@media screen and (max-width: 96.875em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two {
     width: 42.5%;
     justify-content: flex-start;
   }
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two {
     justify-content: space-between;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two {
     width: 80%;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-two span {
-  font-size: 2.5rem;
-  font-weight: 900;
-  padding: 10px;
-  color: #000000;
-  text-shadow: -2px 0px 2px #ffffff;
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two .main__off--pk-ttl-two {
+  width: 100%;
+  font-family: "Faster One", Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  font-weight: 100;
+  margin-top: 10px;
+  padding: 10px 0;
+  background-color: #ffffff;
+  text-align: center;
+  word-spacing: 500px;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two span {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two .main__off--pk-ttl-two {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two .main__off--pk-ttl-two {
     font-size: clamp(1.25rem, 4vw, 2.5rem);
-    margin-top: 10px;
+    margin-top: 20px;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two span {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two .main__off--pk-ttl-two {
+    width: 100%;
+    text-align: center;
     font-size: clamp(1.75rem, 5vw, 2.5rem);
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-two ul {
+@media screen and (max-width: 32rem) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two .main__off--pk-ttl-two {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px 0;
+    margin: 20px 0;
+    font-weight: 100;
+    word-spacing: 200px;
+    font-size: clamp(1.75rem, 7vw, 2rem);
+  }
+}
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin: 0;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two ul {
-    gap: 25px;
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two ul {
+    margin-top: 20px;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-two ul li {
-  font-family: "Neuton", serif;
-  font-size: 1.5rem;
-  color: #fffdfd;
-  text-shadow: -2px 0px 0px #000000;
-  font-weight: 600;
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two ul {
+    margin-top: 15px;
+    gap: 35px;
+  }
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two ul li {
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two ul li {
+  font-family: "Neuton", serif;
+  font-size: 2rem;
+  color: #fffdfd;
+  font-weight: 600;
+  text-shadow: 2px 2px 0 #000000, -2px 2px 0 #000000, 2px -2px 0 #000000, -2px -2px 0 #000000;
+}
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two ul li {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two ul li {
     font-size: clamp(1.15rem, 2vw, 1.5rem);
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two ul li {
-    font-size: clamp(1.15rem, 4vw, 2rem);
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two ul li {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    font-weight: 100;
+    font-family: "Fugaz One", serif;
+    text-shadow: 2px 2px 0 #000000, -2px 2px 0 #000000, 2px -2px 0 #000000, -2px -2px 0 #000000;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-two section {
+@media screen and (max-width: 32rem) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two ul li {
+    font-size: clamp(1.15rem, 4vw, 1.25rem);
+    padding: 0 10px;
+  }
+}
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1081,61 +1264,78 @@ body .main .main__offers .main__offers--packs .main__offers--packs-two section {
   border-radius: 85px;
   margin: 28px 0;
 }
-@media screen and (max-width: 96.875em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two section {
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section {
     width: 75%;
   }
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two section {
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section {
     width: 80%;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two section {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section {
     height: 150px;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-two section .main__offers--packs-button {
-  font-size: 1.5rem;
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-tw-ttl {
+  font-family: "Goblin One", Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
   margin: 5px;
   padding: 10px;
   color: #000000;
   text-shadow: 4px 0px 2px #ffffff;
   text-align: center;
 }
-@media screen and (max-width: 80em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two section .main__offers--packs-button {
-    font-size: clamp(1.25rem, 3vw, 1.75rem);
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-tw-ttl {
+    font-size: clamp(1rem, 2vw, 1.75rem);
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two section .main__offers--packs-button {
-    font-size: clamp(1.15rem, 5vw, 2rem);
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-tw-ttl {
+    font-family: "Goblin One", Arial, Helvetica, sans-serif;
+    font-size: clamp(1rem, 4vw, 2rem);
+    padding: 0;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-two section div {
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-btn {
   position: relative;
 }
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-btn {
+    width: 60%;
+  }
+}
 @media screen and (max-width: 32rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two section div {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-btn {
     width: 135px;
     padding: 10px;
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-two section div img {
-  width: 50px;
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-btn img {
+  width: 80px;
   position: absolute;
+  top: -12px;
 }
-@media screen and (max-width: 32rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two section div img {
-    width: 45px;
-    left: 5px;
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-btn img {
+    width: clamp(50px, 5vw, 80px);
+    left: 0;
+    top: clamp(-3px, 2vw, -12px);
   }
 }
-body .main .main__offers .main__offers--packs .main__offers--packs-two section div button {
-  width: 180px;
-  font-size: 1rem;
+@media screen and (max-width: 32rem) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-btn img {
+    width: 45px;
+    left: 8px;
+    top: 9px;
+  }
+}
+body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-btn button {
+  width: 250px;
+  font-size: 1.5rem;
   font-weight: 900;
   padding: 10px;
   border-radius: 10px;
@@ -1144,19 +1344,24 @@ body .main .main__offers .main__offers--packs .main__offers--packs-two section d
   transition: all 0.3s ease-in;
   cursor: pointer;
 }
-@media screen and (max-width: 96.875em) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two section div button {
-    width: 165px;
+@media screen and (max-width: 120em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-btn button {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 85em) {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-btn button {
+    font-size: clamp(1rem, 2vw, 1.5rem);
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two section div button {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-btn button {
     width: 100%;
     font-size: clamp(0.875rem, 3vw, 1.25rem);
   }
 }
 @media (hover: hover) {
-  body .main .main__offers .main__offers--packs .main__offers--packs-two section div button:hover {
+  body .main .main__sec-offers .main__sec-off--pks .main__sec-off--pk-two section .main__off--div-btn button:hover {
     color: #338726;
     background-color: #fffdfd;
   }
@@ -1165,13 +1370,12 @@ body .main .main__photos {
   width: 100%;
 }
 body .main .main__photos h4 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: center;
-  color: #ff0000;
-  text-shadow: -4px 0px 3px #ffffff;
+  color: #ffffff;
   letter-spacing: 2px;
 }
-@media screen and (max-width: 80em) {
+@media screen and (max-width: 85em) {
   body .main .main__photos h4 {
     font-size: clamp(2.5rem, 4vw, 4rem);
   }
@@ -1180,12 +1384,15 @@ body .main .main__photos h4 {
   body .main .main__photos h4 {
     padding: 10px;
     font-size: clamp(2rem, 6vw, 2.5rem);
-    text-shadow: -2px 0px 3px #ffffff;
+    color: #c12131;
+    text-shadow: 0px 2px 1px #000000;
   }
 }
 @media screen and (max-width: 32rem) {
   body .main .main__photos h4 {
-    font-size: clamp(1.75rem, 8vw, 2rem);
+    font-family: "Goblin One";
+    font-size: clamp(1.25rem, 5vw, 2rem);
+    text-shadow: 0px 2px 3px #000000;
   }
 }
 body .main .main__photos section {
@@ -1220,13 +1427,12 @@ body .aside {
   width: 100%;
 }
 body .aside h5 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: center;
-  color: #ff0000;
-  text-shadow: -4px 0px 3px #ffffff;
+  color: #ffffff;
   letter-spacing: 2px;
 }
-@media screen and (max-width: 80em) {
+@media screen and (max-width: 85em) {
   body .aside h5 {
     font-size: clamp(2.5rem, 5vw, 4rem);
   }
@@ -1234,13 +1440,15 @@ body .aside h5 {
 @media screen and (max-width: 46rem) {
   body .aside h5 {
     padding: 10px;
+    color: #c12131;
+    text-shadow: 0px 2px 1px #000000;
     font-size: clamp(2rem, 6vw, 2.5rem);
-    text-shadow: -2px 0px 3px #ffffff;
   }
 }
 @media screen and (max-width: 32rem) {
   body .aside h5 {
-    font-size: clamp(1.75rem, 8vw, 2rem);
+    font-family: "Goblin One";
+    font-size: clamp(1.25rem, 5vw, 2rem);
   }
 }
 body .aside section {
@@ -1337,37 +1545,41 @@ body .footer section p {
 body .main__services article {
   width: 100%;
 }
-body .main__services article .main__services--title {
-  font-size: 3.25rem;
+body .main__services article .main__ser--ttl {
+  font-family: "Goblin One", Arial, Helvetica, sans-serif;
+  font-size: 3rem;
   text-align: center;
-  color: #ff0000;
-  text-shadow: -4px 0px 3px #ffffff;
+  color: #c12131;
   letter-spacing: 2px;
   margin: 0;
   padding-top: 90px;
   padding-bottom: 40px;
   font-size: clamp(2.5rem, 3vw, 3rem);
+  text-shadow: 1px 1px 0 #ffffff, -1px 1px 0 #ffffff, 1px -1px 0 #ffffff, -1px -1px 0 #ffffff;
 }
-@media screen and (max-width: 80em) {
-  body .main__services article .main__services--title {
-    padding-top: 80px;
-    margin-bottom: 30px;
+@media screen and (max-width: 85em) {
+  body .main__services article .main__ser--ttl {
+    padding-bottom: 20px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    width: 90%;
+    margin: 0 auto;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main__services article .main__services--title {
-    font-size: clamp(2rem, 3vw, 2.5rem);
-    padding-top: 130px;
+  body .main__services article .main__ser--ttl {
+    font-size: 1.75rem;
+    padding-top: 100px;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main__services article .main__services--title {
-    font-size: clamp(1.5rem, 7vw, 2rem);
-    padding-left: 30px;
-    padding-right: 30px;
+  body .main__services article .main__ser--ttl {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+    text-shadow: 0px 3px 1px #000000;
+    width: 90%;
+    padding-top: 145px;
   }
 }
-body .main__services article .main__services--container {
+body .main__services article .main__ser--pck-cntr {
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -1375,200 +1587,355 @@ body .main__services article .main__services--container {
   justify-content: space-around;
   gap: 30px 0;
 }
-@media screen and (max-width: 80em) {
-  body .main__services article .main__services--container {
+@media screen and (max-width: 85em) {
+  body .main__services article .main__ser--pck-cntr {
     width: 90%;
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main__services article .main__services--container {
+  body .main__services article .main__ser--pck-cntr {
     flex-direction: column;
     align-items: center;
   }
 }
-body .main__services article .main__services--container .main__services--pack {
+body .main__services article .main__ser--pck-cntr .main__ser--pck {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 40%;
-  background-color: #872826;
+  background-color: #c12131;
   height: auto;
+  border: 3px solid #ffffff;
 }
-@media screen and (max-width: 80em) {
-  body .main__services article .main__services--container .main__services--pack {
-    width: 45%;
+@media screen and (max-width: 85em) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck {
+    width: 70%;
+    margin: 0 auto;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main__services article .main__services--container .main__services--pack {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck {
     width: 80%;
   }
 }
-body .main__services article .main__services--container .main__services--pack span {
-  font-size: 2rem;
-  text-align: center;
-  margin: 5px;
-  font-weight: 900;
-}
-@media screen and (max-width: 46rem) {
-  body .main__services article .main__services--container .main__services--pack span {
-    font-size: clamp(1.5rem, 5vw, 2rem);
+@media screen and (max-width: 32rem) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck {
+    width: 90%;
+    border-radius: 20px;
   }
 }
-body .main__services article .main__services--container .main__services--pack ul {
+body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-ttl {
+  width: 100%;
+  font-family: "Faster One", Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  font-weight: 100;
+  word-spacing: 200px;
+  background-color: #ffffff;
+  text-align: center;
+  margin-top: 25px;
+  padding: 25px 0;
+}
+@media screen and (max-width: 85em) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-ttl {
+    font-size: clamp(2rem, 5vw, 3rem);
+    word-spacing: 500px;
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-ttl {
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+  }
+}
+@media screen and (max-width: 32rem) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-ttl {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    font-weight: 100;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    word-spacing: 35px;
+    margin: 20px 0;
+  }
+}
+body .main__services article .main__ser--pck-cntr .main__ser--pck ul {
   width: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-body .main__services article .main__services--container .main__services--pack ul li {
-  font-family: "Neuton", serif;
-  font-size: 1.5rem;
-  color: #fffdfd;
-  text-shadow: -2px 0px 0px #000000;
-  font-weight: 600;
+@media screen and (max-width: 32rem) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck ul {
+    width: 90%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-top: 0;
+  }
 }
-@media screen and (max-width: 80em) {
-  body .main__services article .main__services--container .main__services--pack ul li {
-    font-size: clamp(1.25rem, 3vw, 1.5rem);
+body .main__services article .main__ser--pck-cntr .main__ser--pck ul li {
+  font-family: "Fugaz One", Arial, Helvetica, sans-serif;
+  font-size: 1.75rem;
+  color: #fffdfd;
+  font-weight: 100;
+  text-shadow: 1px 1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
+}
+@media screen and (max-width: 85em) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck ul li {
+    font-size: clamp(1.25rem, 3vw, 1.85rem);
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main__services article .main__services--container .main__services--pack ul li {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck ul li {
     font-size: clamp(1rem, 4vw, 1.5rem);
+    font-weight: 100;
   }
 }
-body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont {
+body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn {
   position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 120em) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 85em) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn {
+    width: 60%;
+  }
 }
 @media screen and (max-width: 46rem) {
-  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont {
-    width: 405px;
-    display: flex;
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn {
+    width: 60%;
     flex-direction: column;
     align-items: center;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont {
-    width: 150px;
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn {
+    width: 75%;
   }
 }
-body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .whatsapp-icon {
-  width: 60px;
+body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn .whatsapp-icon {
+  width: 55px;
   position: absolute;
-  top: 13px;
-  left: 40px;
+  top: 22px;
+  left: 25px;
+}
+@media screen and (max-width: 85em) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn .whatsapp-icon {
+    width: 45px;
+    left: clamp(25px, 5vw, 60px);
+  }
 }
 @media screen and (max-width: 46rem) {
-  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .whatsapp-icon {
-    left: 120px;
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn .whatsapp-icon {
+    left: 10px;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .whatsapp-icon {
-    left: -5px;
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn .whatsapp-icon {
+    left: inherit;
+    width: 60px;
+    top: 4px;
+    border-radius: 50px;
+    border: 10px solid #4fe760;
+    background-color: #4fe760;
+    right: 0px;
   }
 }
-body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .button-link {
-  width: 200px;
-  font-size: 1rem;
+body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn .button-link {
+  width: 100%;
+  height: 60px;
+  font-size: 1.5rem;
   font-weight: 900;
   margin: 20px;
   padding: 10px;
   border-radius: 10px;
   color: #fffdfd;
-  background-color: #32d951;
+  background-color: #4fe760;
   transition: all 0.3s ease-in;
   cursor: pointer;
 }
-@media screen and (max-width: 46rem) {
-  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .button-link {
-    width: 50%;
+@media screen and (max-width: 85em) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn .button-link {
+    height: 50px;
+    padding: 0;
   }
 }
-@media screen and (max-width: 32rem) {
-  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .button-link {
+@media screen and (max-width: 46rem) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn .button-link {
     width: 100%;
   }
 }
+@media screen and (max-width: 32rem) {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn .button-link {
+    width: 100%;
+    font-family: "Goblin One", Arial, Helvetica, sans-serif;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-weight: 100;
+    border: none;
+    border-radius: 50px;
+    text-align: left;
+    padding-left: clamp(5px, 11vw, 65px);
+    margin-bottom: 20px;
+  }
+}
 @media (hover: hover) {
-  body .main__services article .main__services--container .main__services--pack .main__serv--pack-butt-cont .button-link.button-link:hover {
+  body .main__services article .main__ser--pck-cntr .main__ser--pck .main__ser--pck-btn .button-link.button-link:hover {
     color: #338726;
     background-color: #ffffff;
   }
 }
-body .main__services .main__services--comments {
+body .main__services .main__ser--com {
   width: 100%;
   height: 100%;
   margin-top: 40px;
   background-color: #a5a19e;
 }
-body .main__services .main__services--comments h2 {
-  font-size: 2rem;
+body .main__services .main__ser--com h2 {
+  font-size: 3.5rem;
   padding: 10px 30px;
   margin: 0px;
-  color: #ff0000;
+  color: #c12131;
   text-shadow: -2px 0px 2px #000000;
 }
+@media screen and (max-width: 85em) {
+  body .main__services .main__ser--com h2 {
+    font-size: clamp(1.75rem, 5vw, 3rem);
+  }
+}
 @media screen and (max-width: 46rem) {
-  body .main__services .main__services--comments h2 {
+  body .main__services .main__ser--com h2 {
     font-size: clamp(1.2rem, 5vw, 2rem);
     padding: 10px 15px;
   }
 }
-body .main__services .main__services--comments .main__services--form {
+@media screen and (max-width: 32rem) {
+  body .main__services .main__ser--com h2 {
+    font-family: "Goblin One", Arial, Helvetica, sans-serif;
+    font-size: clamp(1.25rem, 5vw, 2rem);
+    font-weight: 100;
+    text-shadow: 0px 2px 3px #000000;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+body .main__services .main__ser--com .main__ser--frm {
   padding-bottom: 15px;
 }
-body .main__services .main__services--comments .main__services--form .main__services--fielset {
+body .main__services .main__ser--com .main__ser--frm .main__ser--flst {
   width: 90%;
   margin: 0 auto;
-  padding: 15px;
+  padding: 15px 0;
   padding-bottom: 0;
 }
-body .main__services .main__services--comments .main__services--form .main__services--fielset .main__comments {
+body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__com--box-div {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding-left: 15px;
 }
-body .main__services .main__services--comments .main__services--form .main__services--fielset .main__comments .main__services--new-comment {
-  background-color: #699967;
+@media screen and (max-width: 32rem) {
+  body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__com--box-div {
+    padding: 0;
+    align-items: center;
+  }
+}
+body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__com--box-div .main__services--new-comment {
+  padding: 10px 0;
+  font-size: 1.75rem;
+  color: #ffffff;
+}
+body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__com--box-div .main__services--new-comment a {
+  font-weight: 900;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media screen and (max-width: 85em) {
+  body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__com--box-div .main__services--new-comment {
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
+  }
+}
+@media screen and (max-width: 46rem) {
+  body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__com--box-div .main__services--new-comment {
+    padding: 0;
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+}
+body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__com--box-div .main__services--new-comment {
+  background-color: #cB5959;
   border: 2px outset #ffffff;
   padding: 10px 20px;
   width: 80%;
+  border: none;
 }
-body .main__services .main__services--comments .main__services--form .main__services--fielset .main__services--textarea {
+body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__ser--txtar {
   display: flex;
   flex-direction: column;
 }
-body .main__services .main__services--comments .main__services--form .main__services--fielset .main__services--textarea label {
-  font-size: 1.5rem;
-  padding: 10px;
-  padding-bottom: 20px;
+@media screen and (max-width: 32rem) {
+  body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__ser--txtar {
+    align-items: center;
+  }
+}
+body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__ser--txtar label {
+  font-size: 2rem;
+  padding: 10px 30px;
   color: #000000;
   font-weight: 900;
 }
-@media screen and (max-width: 46rem) {
-  body .main__services .main__services--comments .main__services--form .main__services--fielset .main__services--textarea label {
-    font-size: clamp(1.1rem, 3vw, 1.5rem);
+@media screen and (max-width: 85em) {
+  body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__ser--txtar label {
+    font-size: clamp(1.75rem, 3vw, 2rem);
   }
 }
-body .main__services .main__services--comments .main__services--form .main__services--fielset .main__services--textarea #main__services--comments-area {
+@media screen and (max-width: 46rem) {
+  body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__ser--txtar label {
+    font-size: clamp(1.75rem, 3vw, 2rem);
+  }
+}
+@media screen and (max-width: 32rem) {
+  body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__ser--txtar label {
+    width: 100%;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-family: "Goldman", serif;
+    font-weight: 100;
+    box-sizing: border-box;
+    padding-left: 10px;
+  }
+}
+body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__ser--txtar #main__ser--com-ar {
   width: 90%;
   height: 200px;
   background-color: gray;
   margin: 0 auto;
 }
-body .main__services .main__services--comments .main__services--form .main__services--fielset .main__services--comments-button {
+@media screen and (max-width: 32rem) {
+  body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__ser--txtar #main__ser--com-ar {
+    margin: 0;
+  }
+}
+body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__ser--com-btn {
   width: 90%;
   display: flex;
   justify-content: end;
   margin: 0 auto;
   padding: 15px 0;
 }
-body .main__services .main__services--comments .main__services--form .main__services--fielset .main__services--comments-button input {
+@media screen and (max-width: 32rem) {
+  body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__ser--com-btn {
+    margin: 0;
+  }
+}
+body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__ser--com-btn input {
+  font-family: "Goldman", Arial, Helvetica, sans-serif;
   background-color: #0dc01f;
   width: 100px;
   color: #ffffff;
@@ -1576,7 +1943,7 @@ body .main__services .main__services--comments .main__services--form .main__serv
   cursor: pointer;
 }
 @media (hover: hover) {
-  body .main__services .main__services--comments .main__services--form .main__services--fielset .main__services--comments-button input:hover {
+  body .main__services .main__ser--com .main__ser--frm .main__ser--flst .main__ser--com-btn input:hover {
     color: #338726;
     background-color: #ffffff;
   }
@@ -1593,8 +1960,7 @@ body .main__register {
 body .main__register h1 {
   font-size: 3.25rem;
   text-align: center;
-  color: #ff0000;
-  text-shadow: -4px 0px 3px #ffffff;
+  color: #ffffff;
   letter-spacing: 2px;
   margin: 0px;
   padding-bottom: 30px;
@@ -1606,24 +1972,27 @@ body .main__register h1 {
 }
 @media screen and (max-width: 32rem) {
   body .main__register h1 {
+    font-family: "Goblin One", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    color: #c12131;
+    text-shadow: 0px 2px 3px #000000;
     padding-top: 45px;
-    font-size: clamp(1.75rem, 7vw, 2rem);
-    padding-left: 25px;
-    padding-right: 25px;
+    font-size: clamp(1.25rem, 5vw, 2rem);
+    margin-top: 20px;
   }
 }
-body .main__register .main__section--register {
+body .main__register .main__sec--rgtr {
   width: 100%;
-  background-color: #000000;
+  background-color: #1e1a1a;
   padding: 30px 0px;
 }
 @media screen and (max-width: 32rem) {
-  body .main__register .main__section--register {
+  body .main__register .main__sec--rgtr {
     width: 85%;
     padding: 0;
   }
 }
-body .main__register .main__section--register .main__section--register-welcome {
+body .main__register .main__sec--rgtr .main__section--register-welcome {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1635,27 +2004,27 @@ body .main__register .main__section--register .main__section--register-welcome {
   border: 2px solid #ffffff;
   font-size: 2rem;
 }
-@media screen and (max-width: 80em) {
-  body .main__register .main__section--register .main__section--register-welcome {
+@media screen and (max-width: 85em) {
+  body .main__register .main__sec--rgtr .main__section--register-welcome {
     font-size: 1.75rem;
     text-align: center;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main__register .main__section--register .main__section--register-welcome {
+  body .main__register .main__sec--rgtr .main__section--register-welcome {
     font-size: clamp(1.25rem, 4vw, 1.5rem);
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main__register .main__section--register .main__section--register-welcome {
+  body .main__register .main__sec--rgtr .main__section--register-welcome {
     font-size: clamp(1rem, 5vw, 1.25rem);
   }
 }
-body .main__register .main__section--register .main__section--register-form {
+body .main__register .main__sec--rgtr .main__sec--rgtr-frm {
   width: 100%;
   display: flex;
 }
-body .main__register .main__section--register .main__section--register-form fieldset {
+body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1667,11 +2036,11 @@ body .main__register .main__section--register .main__section--register-form fiel
   border: 3px solid #ff0000;
 }
 @media screen and (max-width: 32rem) {
-  body .main__register .main__section--register .main__section--register-form fieldset {
+  body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset {
     padding-top: 150px;
   }
 }
-body .main__register .main__section--register .main__section--register-form fieldset legend {
+body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset legend {
   font-size: 2rem;
   color: #ffffff;
   font-weight: 600;
@@ -1680,65 +2049,71 @@ body .main__register .main__section--register .main__section--register-form fiel
   letter-spacing: 3px;
 }
 @media screen and (max-width: 46rem) {
-  body .main__register .main__section--register .main__section--register-form fieldset legend {
+  body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset legend {
     font-size: clamp(1.25rem, 4vw, 1.75rem);
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main__register .main__section--register .main__section--register-form fieldset legend {
+  body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset legend {
+    width: 90%;
+    box-sizing: border-box;
+    font-family: "Goldman", Arial, Helvetica, sans-serif;
+    font-weight: 300;
     position: absolute;
-    margin-top: -145px;
-    font-size: clamp(1rem, 6vw, 1.5rem);
-    padding: 10px clamp(45px, 14vw, 65px);
+    margin-top: -125px;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    padding: 10px clamp(45px, 14vw, 70px);
   }
 }
-body .main__register .main__section--register .main__section--register-form fieldset div {
+body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-items: flex-start;
   width: 60%;
 }
-@media screen and (max-width: 80em) {
-  body .main__register .main__section--register .main__section--register-form fieldset div {
+@media screen and (max-width: 85em) {
+  body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div {
     flex-direction: column;
     width: 80%;
   }
 }
-body .main__register .main__section--register .main__section--register-form fieldset div label {
+body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div label {
+  font-family: "Goldman", Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   color: #b4cff5;
 }
-@media screen and (max-width: 80em) {
-  body .main__register .main__section--register .main__section--register-form fieldset div label {
+@media screen and (max-width: 85em) {
+  body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div label {
     text-align: left;
     padding-bottom: 15px;
   }
 }
 @media screen and (max-width: 46rem) {
-  body .main__register .main__section--register .main__section--register-form fieldset div label {
+  body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div label {
     font-size: clamp(1.225rem, 4vw, 1.5rem);
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main__register .main__section--register .main__section--register-form fieldset div label {
-    font-size: clamp(1rem, 5vw, 1.225rem);
+  body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div label {
+    font-size: clamp(1rem, 4vw, 1.225rem);
+    font-weight: 100;
   }
 }
-body .main__register .main__section--register .main__section--register-form fieldset div input {
+body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div input {
   width: 400px;
 }
-@media screen and (max-width: 96.875em) {
-  body .main__register .main__section--register .main__section--register-form fieldset div input {
+@media screen and (max-width: 120em) {
+  body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div input {
     width: clamp(350px, 25vw, 400px);
   }
 }
-@media screen and (max-width: 80em) {
-  body .main__register .main__section--register .main__section--register-form fieldset div input {
+@media screen and (max-width: 85em) {
+  body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div input {
     width: 100%;
   }
 }
-body .main__register .main__section--register .main__section--register-form fieldset div input.button-register {
+body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div input.button-register {
   margin: 0 auto;
   margin-top: 40px;
   width: 400px;
@@ -1746,23 +2121,24 @@ body .main__register .main__section--register .main__section--register-form fiel
   font-weight: 900;
   padding: 10px;
   border-radius: 10px;
-  background-color: #338726;
+  background-color: #5bd071;
   color: #fffdfd;
   transition: all 0.3s ease-in;
   cursor: pointer;
 }
-@media screen and (max-width: 80em) {
-  body .main__register .main__section--register .main__section--register-form fieldset div input.button-register {
+@media screen and (max-width: 85em) {
+  body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div input.button-register {
     width: 60%;
   }
 }
 @media screen and (max-width: 32rem) {
-  body .main__register .main__section--register .main__section--register-form fieldset div input.button-register {
+  body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div input.button-register {
     margin-top: 0px;
+    border-radius: 30px;
   }
 }
 @media (hover: hover) {
-  body .main__register .main__section--register .main__section--register-form fieldset div input.button-register:hover {
+  body .main__register .main__sec--rgtr .main__sec--rgtr-frm fieldset div input.button-register:hover {
     color: #338726;
     background-color: #fffdfd;
   }
